@@ -2,26 +2,38 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export EDITOR=vim # Editeur par défaut
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+export TERM='xterm-color'
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s" # Coloration syntaxique LESS
+export LESS=' -R '
+GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
+HISTSIZE=1000 # Nombre de commande max dans l'historique
+HISTFILESIZE=2000 # Taille maxi du fichier d'historique
+HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+shopt -s histappend # append to the history file, don't overwrite it
+shopt -s checkwinsize # redimenssionne le terminal après l'exécution d'une commande
+shopt -s cdspell # autocorrects cd misspellings
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+# Auto-Complétion
+complete -cf sudo
+complete -cf man
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+# Enable git prompt bash functions, usefull for PS1
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
 fi
 
 # Alias definitions.
@@ -47,25 +59,6 @@ fi
 # PS1
 export PS1="[\[\e[01;32m\]\\u@\\h \[\e[01;34m\]\\W\[\e[01;00m\]]\\\$ "
 #export PS1="\[\e[1;32m\][\t] \u:\$(pwd)\n$ \[\e[m\]"
-
-# Editeur de texte par défaut
-export EDITOR=vim 
-
-# Auto-Complétion
-complete -cf sudo
-complete -cf man
-
-# autocorrects cd misspellings
-shopt -s cdspell         
-
-# lignes de l'historique par session bash
-export HISTSIZE=5000
-# lignes de l'historique conservées
-export HISTFILESIZE=20000
-
-# Variablew d'environements supp
-export AXIS2_HOME="/opt/axis2-1.6.2"
-export JAVA_HOME="/usr/bin/java"
 
 # ls indicators meaning : 
 # / is a directory
