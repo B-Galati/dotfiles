@@ -1,0 +1,18 @@
+[global_config]
+[keybindings]
+  close_term = <Primary>w
+[profiles]
+  [[default]]
+    background_darkness = 0.92
+    background_image = None
+    background_type = transparent
+    foreground_color = "#ffffff"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
