@@ -57,8 +57,11 @@ if ! shopt -oq posix; then
 fi
 
 # PS1
-export PS1="[\[\e[01;32m\]\\u@\\h \[\e[01;34m\]\\W\[\e[01;00m\]]\\\$ "
-#export PS1="\[\e[1;32m\][\t] \u:\$(pwd)\n$ \[\e[m\]"
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\e[01;31m\]$(__git_ps1)\[\033[00m\]\n\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
 
 # ls indicators meaning : 
 # / is a directory
