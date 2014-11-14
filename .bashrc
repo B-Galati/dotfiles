@@ -11,6 +11,7 @@ case $- in
 esac
 
 export TERM='xterm-color'
+color_prompt=yes
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s" # Coloration syntaxique LESS
 export LESS=' -R '
 GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
