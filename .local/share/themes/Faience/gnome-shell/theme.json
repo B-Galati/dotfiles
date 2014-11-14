@@ -1,0 +1,10 @@
+{ 
+   "shell-theme": {
+   "name": "Faience",
+   "author": "tiheum",
+   "version": "0.2",
+   "type":   "custom",
+   "thumbnail": "preview-faience.jpg",
+   "url": "http://tiheum.deviantart.com"
+    }
+}

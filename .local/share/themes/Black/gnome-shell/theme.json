@@ -1,0 +1,11 @@
+{ 
+   "shell-theme": {
+       "name": "X3ME - Ubuntu", 
+       "author": "ALEX3ME", 
+       "version": "1.0",
+       "type": "custom",
+       "disabled": false,
+       "thumbnail": "preview.png", 
+       "url": "http://alex3me.deviantart.com/" 
+   }
+}

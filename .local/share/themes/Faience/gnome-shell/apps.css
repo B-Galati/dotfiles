@@ -1,0 +1,209 @@
+/* Apps */
+
+.icon-grid {
+    spacing: 36px;
+    -shell-grid-item-size: 100px; /* 118px */
+}
+
+.contact-grid {
+    spacing: 36px;
+    -shell-grid-item-size: 272px; /* 2 * -shell-grid-item-size + spacing */
+}
+
+.icon-grid .overview-icon {
+    icon-size: 64px;
+}
+
+.all-app {
+    padding: 4px 8px;
+    spacing: 20px;
+}
+
+.all-app:rtl {
+}
+
+.app-filter {
+    padding: 4px 6px;
+    font-size: 10pt;
+    font-weight: bold;
+    color: rgba(255,255,255,0.5);
+    width: 265px;
+    margin-bottom: 0.5em;
+    margin-left: 24px;
+    transition-duration: 100;
+}
+
+.app-filter:hover {
+    color: rgba(255,255,255,0.9);
+}
+
+.app-filter:selected {
+    color: #ffffff;
+    background-gradient-direction: horizontal;
+    background-gradient-end: rgba(255,255,255,0.0);
+    background-gradient-start: rgba(255,255,255,0.2);
+		border-radius: 3px; 
+}
+
+.app-filter:selected:rtl {
+    background-gradient-end: rgba(255,255,255,0.2);
+    background-gradient-start: rgba(255,255,255,0.0);
+}
+
+.app-filter:focus {
+    outline: 1px solid #aaa;
+}
+
+.dash-item-container > .app-well-app {
+    padding: 4px 8px;
+}
+
+.remove-favorite-icon {
+    color: #a0a0a0;
+}
+
+.remove-favorite-icon:hover {
+    color: white;
+    icon-shadow: black 0px 2px 2px;
+}
+
+.app-well-app > .overview-icon,
+.remove-favorite > .overview-icon,
+.search-result-content > .overview-icon,
+#overview .journal-item {
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 9pt;
+    color: white;
+    transition-duration: 200;
+    text-align: center;
+    text-shadow: black 0px 1px 2px;
+    border: 0px; 
+}
+
+.contact {
+    width: 272px; /* Same width as two normal results + spacing */
+    height: 118px; /* Aspect ratio = 1.75. Normal US business card ratio */
+    border-radius: 4px;
+    padding: 3px;
+    border: 1px rgba(0,0,0,0);
+    transition-duration: 200;
+}
+
+.contact-content {
+    border-radius: 3px;
+    padding: 8px;
+    width: 232px;
+    height: 84px;
+    background-color: rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.25);
+    color: white;
+    text-align: left;
+}
+
+.contact-icon {
+  border-radius: 3px;
+}
+
+.contact-details {
+  padding: 6px 8px 11px 8px;
+}
+
+.contact-details-alias {
+  font-size: 16px;
+  padding-bottom: 11px;
+}
+
+.contact-details-status {
+  font-size: 10pt;
+}
+
+.contact-details-status-icon {
+  padding-right: 2px;
+}
+
+
+.contact, 
+.app-well-app > .overview-icon, 
+.search-result-content > .overview-icon { 
+	border: 1px solid transparent; 
+}
+
+.app-well-app.running > .overview-icon {
+    /*border-image: url("img/dash-button.svg") 5 5 5 5 stretch;*/
+    background-gradient-direction: vertical;
+    background-gradient-end: rgba(255,255,255,0.05);
+    background-gradient-start: rgba(255,255,255,0.2);
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 3px 0px rgba(255,255,255,0.3);
+    transition-duration: 200;
+}
+
+.contact:selected,
+.app-well-app:selected > .overview-icon,
+.search-result-content:selected > .overview-icon {
+		background-gradient: none;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid transparent;
+    box-shadow: inset 0px 1px 3px 1px rgba(0,0,0,0.1);
+}
+
+.contact:hover,
+.app-well-app:hover > .overview-icon,
+.app-well-app.running:hover > .overview-icon,
+.remove-favorite:hover > .overview-icon,
+.search-result-content:hover > .overview-icon,
+#overview .journal-item:hover > .overview-icon, #overview .journal-item-selection  > .overview-icon{
+    background-gradient-direction: none;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid transparent;
+    box-shadow: inset 0px 1px 3px 1px rgba(0,0,0,0.1);
+}
+
+.contact:focus,
+.app-well-app:focus > .overview-icon,
+.search-result-content:focus > .overview-icon {
+    background-gradient-direction: none;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid transparent;
+    box-shadow: inset 0px 1px 3px 1px rgba(0,0,0,0.1);
+}
+
+.app-well-menu {
+    font-size: 9pt;
+}
+
+#overview .journal-item {
+  spacing: 8px;
+  padding-top: 8px;
+}
+
+#overview .journal-item:hover, #overview .journal-item-selection {
+  background: none;
+}
+
+#overview .journal-item > .overview-icon {
+  icon-size: 96px;
+	border: 1px solid transparent; 
+  padding: 3px; 
+  border-radius: 4px;
+}
+
+#overview .journal-heading {
+    padding: 4px 0 4px 8px;
+    spacing: 4px;
+    font-size: 10pt;
+    color: rgba(255,255,255,0.7);
+		text-transform: uppercase;
+}
+
+#overview .journal-heading:hover {
+    color: #fff;
+}
+
+#overview .journal-heading-box {
+    font-size: 10pt;
+    padding: 8px 0px 0px;
+    border-image: url("img/search-section-border.svg") 2 2 0 2 stretch;
+}

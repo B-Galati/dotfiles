@@ -1,0 +1,66 @@
+/* Overview */
+
+#overview {
+    spacing: 12px;
+    /*background-color: rgba(255,255,255,0.15);*/
+
+}
+
+.workspace-controls {
+    visible-width: 32px; /* Amount visible before hovering */
+}
+
+.workspace-thumbnails-background {
+    /*border: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 0px;
+    border-radius: 6px 0px 0px 6px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.85);*/
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 0px;
+    border-radius: 4px 0px 0px 4px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.25);
+}
+
+.workspace-thumbnails-background:rtl {
+    border-right: 1px;
+    border-left: 0px;
+		border-radius: 0px 6px 6px 0px;
+}
+
+.workspace-thumbnails {
+    spacing: 7px;
+}
+
+.workspace-thumbnail-indicator {
+    outline: 1px solid white;
+    border: 1px solid rgba(0,0,0,0.8);
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.85);
+}
+
+.window-caption {
+    color: white;
+    spacing: 25px;
+    background: rgba(0,0,0,0.25);
+    border-radius: 3px;
+    font-size: 10pt;
+    padding: 3px 8px;
+    -shell-caption-spacing: 8px;
+		box-shadow: 0px 1px 4px 2px rgba(0,0,0,0.1);
+}
+
+.window-close {
+    background-image: url("img/close-window.svg");
+    height: 34px;
+    width: 34px;
+    -shell-close-overlap: 20px;
+}
+
+.window-close:rtl {
+    -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+

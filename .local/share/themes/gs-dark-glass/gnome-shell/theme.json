@@ -1,0 +1,10 @@
+{ 
+   "shell-theme": {
+   "name": "Dark Glass", 
+   "author": "Half-Left", 
+   "version": "1.0",
+   "type":   "custom",
+   "thumbnail": "preview-dark-glass.jpg", 
+   "url": "http://gnome-shell.deviantart.com/gallery/28081982#/d36szax" 
+    }
+}

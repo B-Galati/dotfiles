@@ -1,0 +1,74 @@
+@import url("stylesheet.css");
+#panel.bottom-panel {
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    height: 32px !important;
+    background-image: url(panel-bg.png);
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+  .bottom-panel .window-button > StWidget {
+    color: #DBDBD9;
+    transition-duration: 100ms;
+    background-image: url(button.png);
+    background-size: cover contain;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 3px 0px rgba(90,99,99,0.1);
+    padding: 4px 6px 2px !important;
+  }
+
+  .bottom-panel .window-button:hover > StWidget {
+    color: white;
+    text-shadow: black 0px 2px 2px;
+    background-image: url(dk-button.png);
+    background-repeat: repeat;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 3px 0px rgba(90,99,99,0.1);
+    padding: 2px 6px 2px !important;
+  }
+
+  .bottom-panel .window-button:active > StWidget {
+    color: white;
+    text-shadow: black 0px 2px 2px;
+    background-image: url(dk-button.png);
+    background-size: cover contain;
+    border: 1px solid transparent;
+    box-shadow: inset 0px 0px 2px 0px rgba(90,99,99,0.2);
+    padding: 1px 6px 2px !important;
+  }
+
+  .bottom-panel .window-button.focused > StWidget {
+    color: white;
+    text-shadow: black 0px 2px 2px;
+    background-image: url(dk-button.png);
+    background-size: cover contain;
+    border: 1px solid transparent;
+    box-shadow: inset 0px 0px 2px 0px rgba(90,99,99,0.6);
+    padding: 1px 6px 2px !important;
+  }
+
+  .bottom-panel .window-button.focused:hover > StWidget {
+    font-weight: bold;
+    color: white;
+    text-shadow: black 0px 2px 2px;
+    background-image: url(lt-button.png);
+    background-size: cover contain;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 3px 0px rgba(90,99,99,0.5);
+    padding: 2px 6px 2px !important;
+  }
+
+  .bottom-panel .window-button.minimized > StWidget {
+    color: #BFBFBF;
+    text-shadow: black 0px 2px 2px;
+    background-image: url(dk-button.png);
+    background-size: cover contain;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 3px 0px rgba(74,82,82,0.9);
+  }
+

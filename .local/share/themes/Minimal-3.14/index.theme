@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Minimal-3.14
+Type=X-GNOME-Metatheme
+Comment=Derived from NUMIX by the Numix Project
+
+[X-GNOME-Metatheme]
+GtkTheme=Minimal-3.14
+MetacityTheme=default
+IconTheme=default
+GtkColorScheme=base_color:#303030,fg_color:#CCCCCC,tooltip_fg_color:#FFFFFF,selected_bg_color:#4C4C4C,selected_fg_color:#FFFFFF,text_color:#CCCCCC,bg_color:#242424,tooltip_bg_color:#4C4C4C
+CursorTheme=default
+CursorSize=18
+NotificationTheme=slider
