@@ -1,0 +1,11 @@
+export TERM='xterm-color'
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s" # Coloration syntaxique LESS
+export LESS=' -R '
+
+# Configurer un proxy
+#export http_proxy='http://csproxy:80'
+#export https_proxy=$http_proxy
+#export ftp_proxy=$http_proxy
+#export rsync_proxy=$http_proxy
+#export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+

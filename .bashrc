@@ -10,9 +10,13 @@ case $- in
       *) return;;
 esac
 
-export TERM='xterm-color'
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s" # Coloration syntaxique LESS
-export LESS=' -R '
+# Load the shell dotfiles, and then some:
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{git-prompt.sh,bash_aliases,exports,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
 GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
 HISTSIZE=1000 # Nombre de commande max dans l'historique
 HISTFILESIZE=2000 # Taille maxi du fichier d'historique
@@ -39,27 +43,9 @@ else
 fi
 unset color_prompt
 
-# Auto-Complétion
-complete -cf sudo
-complete -cf man
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
-# Enable git prompt bash functions, usefull for PS1
-if [ -f ~/.git-prompt.sh ]; then
-    source ~/.git-prompt.sh
-fi
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -73,6 +59,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Auto-Complétion
+complete -cf sudo
+complete -cf man
+
 # ls indicators meaning : 
 # / is a directory
 # @ is a symlink
@@ -80,63 +70,3 @@ fi
 # = is a socket.
 # * for executable files
 # > is for a "door" -- a file type currently not implemented for Linux, but supported on Sun/Solaris.
-
-# Configurer un proxy
-#export http_proxy='http://csproxy:80'
-#export https_proxy=$http_proxy
-#export ftp_proxy=$http_proxy
-#export rsync_proxy=$http_proxy
-#export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
-
-# ############################################## #
-#                     FONCTIONS                  #
-# ############################################## #
-
-# colored man pages
-man() {
-	env \
-		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-		LESS_TERMCAP_md=$(printf "\e[1;31m") \
-		LESS_TERMCAP_me=$(printf "\e[0m") \
-		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[1;32m") \
-			man "$@"
-}
-
-# Extraire automatiquement une archive
-function extract()
-{
-    if [ -f $1 ] ; then
-        case $1 in
-            *.tar.bz2)   tar xvjf $1     ;;
-            *.tar.gz)    tar xvzf $1     ;;
-            *.bz2)       bunzip2 $1      ;;
-            *.rar)       unrar x $1      ;;
-            *.gz)        gunzip $1       ;;
-            *.tar)       tar xvf $1      ;;
-            *.tbz2)      tar xvjf $1     ;;
-            *.tgz)       tar xvzf $1     ;;
-            *.zip)       unzip $1        ;;
-            *.Z)         uncompress $1   ;;
-            *.7z)        7z x $1         ;;
-            *)           echo "'$1' cannot be extracted via >extract<" ;;
-        esac
-    else
-        echo "'$1' is not a valid file!"
-    fi
-}
-
-# lecture colorée de logs
-logview()
-{
-	ccze -A < $1 | less -R
-}
-
-# lecture colorée de logs en directfunction logview()
-logtail()
-{
-	tail -f $1 | ccze
-}
-

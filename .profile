@@ -8,18 +8,18 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+PATH="$PATH:/usr/sbin:/home/benoit/.gem/ruby/2.1.0/bin"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
 	. "$HOME/.bashrc"
     fi
-fi
-
-PATH="$PATH:/usr/sbin:/home/benoit/.gem/ruby/2.1.0/bin"
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
 fi
 
