@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="DimensionService">
+    <location key="WELCOME_SCREEN.0.180.1440.900" x="2172" y="279" />
+    <location key="FileChooserDialogImpl.1440.0.1920.1080" x="1955" y="183" />
+    <location key="com.intellij.ide.util.TipDialog.1440.0.1920.1080" x="431" y="444" />
+    <location key="OptionsEditor.1440.0.1920.1080" x="1783" y="102" />
+    <location key="NewPhpClassDialog.1440.0.1920.1080" x="2211" y="345" />
+    <location key="#com.intellij.ide.util.MemberChooser.1440.0.1920.1080" x="2208" y="246" />
+    <location key="#Browse_Repositories.1440.0.1920.1080" x="1979" y="190" />
+    <size key="FileChooserDialogImpl.1440.0.1920.1080" width="426" height="506" />
+    <size key="OptionsEditor.1440.0.1920.1080" width="1226" height="874" />
+    <size key="NewPhpClassDialog.1440.0.1920.1080" width="370" height="397" />
+    <size key="#com.intellij.ide.util.MemberChooser.1440.0.1920.1080" width="376" height="585" />
+    <size key="#Browse_Repositories.1440.0.1920.1080" width="826" height="706" />
+  </component>
+  <component name="LafManager">
+    <laf class-name="com.intellij.ide.ui.laf.darcula.DarculaLaf" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="log.debug.categories" value="" />
+    <property name="evlsprt3.8" value="13" />
+    <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
+    <property name="DefaultHtmlDoctype.Refreshed" value="1" />
+    <property name="PhpStorm.InitialConfiguration" value="true" />
+    <property name="PhpStorm.multiCaretsEnabled" value="true" />
+    <property name="installation.uid" value="283d7a8d-6218-47a8-b41d-23f4be59e88c" />
+    <property name="PhpStorm.initialConfigurationShown" value="true" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/workspace/test-sf2" />
+    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
+    <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
+    <property name="file.colors.enable.non.project" value="Yellow" />
+    <property name="Non-Project Files" value="Yellow" />
+    <property name="ProjectStructure.SecondLevelElements" value="0.2" />
+    <property name="PLUGIN_FILTER" value="twig&#10;atoum&#10;annotation&#10;symfon" />
+    <property name="KEYMAP" value="line&#10;settings&#10;project" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileTemplates.CurrentTab" value="Includes" />
+    <property name="FileTemplates.SelectedTemplate" value="Drupal Hook Implementation Doc Comment" />
+  </component>
+</application>
+
