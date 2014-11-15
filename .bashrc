@@ -17,10 +17,27 @@ GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
 HISTSIZE=1000 # Nombre de commande max dans l'historique
 HISTFILESIZE=2000 # Taille maxi du fichier d'historique
 HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
-
 shopt -s histappend # append to the history file, don't overwrite it
 shopt -s checkwinsize # redimenssionne le terminal après l'exécution d'une commande
 shopt -s cdspell # autocorrects cd misspellings
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# PS1
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\e[01;31m\]$(__git_ps1)\[\033[00m\]\n\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt
 
 # Auto-Complétion
 complete -cf sudo
@@ -56,13 +73,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# PS1
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\e[01;31m\]$(__git_ps1)\[\033[00m\]\n\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-
 # ls indicators meaning : 
 # / is a directory
 # @ is a symlink
@@ -70,10 +80,6 @@ fi
 # = is a socket.
 # * for executable files
 # > is for a "door" -- a file type currently not implemented for Linux, but supported on Sun/Solaris.
-
-# Coloration commande less
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-export LESS=' -R '
 
 # Configurer un proxy
 #export http_proxy='http://csproxy:80'
