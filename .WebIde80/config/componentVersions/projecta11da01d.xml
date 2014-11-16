@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <versions>
-  <component name="ChangeListManager" version="1416074877479" />
-  <component name="ChangesViewManager" version="1416074877480" />
-  <component name="CreatePatchCommitExecutor" version="1416074877482" />
-  <component name="DaemonCodeAnalyzer" version="1416074877482" />
-  <component name="Encoding" version="1416074877494" />
-  <component name="ExecutionTargetManager" version="1416074877494" />
-  <component name="FavoritesManager" version="1416074877494" />
-  <component name="FileEditorManager" version="1416074877496" />
-  <component name="FindManager" version="1416074877497" />
-  <component name="FrameworkRootSettings" version="1416074877497" />
-  <component name="IdeDocumentHistory" version="1416074877499" />
-  <component name="PhpProjectSharedConfiguration" version="1416074877578" />
+  <component name="ChangeListManager" version="1416134720557" />
+  <component name="ChangesViewManager" version="1416134720558" />
+  <component name="CreatePatchCommitExecutor" version="1416134720560" />
+  <component name="DaemonCodeAnalyzer" version="1416134720560" />
+  <component name="Encoding" version="1416134720562" />
+  <component name="ExecutionTargetManager" version="1416134737783" />
+  <component name="FavoritesManager" version="1416134720563" />
+  <component name="FileEditorManager" version="1416155961046" />
+  <component name="FindManager" version="1416149938653" />
+  <component name="FrameworkRootSettings" version="1416134720570" />
+  <component name="IdeDocumentHistory" version="1416155014013" />
+  <component name="PhpProjectSharedConfiguration" version="1416134737788" />
   <component name="PhpUnit" version="1415744634793" />
-  <component name="PhpWorkspaceProjectConfiguration" version="1416074877578" />
-  <component name="ProjectCodeStyleSettingsManager" version="1416074877588" />
-  <component name="ProjectFrameBounds" version="1416074877589" />
-  <component name="ProjectLevelVcsManager" version="1416074877589" />
-  <component name="ProjectModuleManager" version="1416074877590" />
-  <component name="ProjectReloadState" version="1416074877590" />
-  <component name="ProjectRootManager" version="1416074877590" />
-  <component name="ProjectView" version="1416074877592" />
-  <component name="PropertiesComponent" version="1416074877592" />
-  <component name="PublishConfigData" version="1416074877595" />
-  <component name="RunManager" version="1416074877597" />
-  <component name="ShelveChangesManager" version="1416074877597" />
-  <component name="SvnConfiguration" version="1416074877598" />
-  <component name="Symfony2PluginSettings" version="1416074877598" />
-  <component name="TaskManager" version="1416074877599" />
-  <component name="ToolWindowManager" version="1416074877601" />
+  <component name="PhpWorkspaceProjectConfiguration" version="1416134737789" />
+  <component name="ProjectCodeStyleSettingsManager" version="1416134720638" />
+  <component name="ProjectFrameBounds" version="1416134720639" />
+  <component name="ProjectLevelVcsManager" version="1416134720640" />
+  <component name="ProjectModuleManager" version="1416134720640" />
+  <component name="ProjectReloadState" version="1416134720640" />
+  <component name="ProjectRootManager" version="1416134720640" />
+  <component name="ProjectView" version="1416154139235" />
+  <component name="PropertiesComponent" version="1416151236079" />
+  <component name="PublishConfigData" version="1416134720651" />
+  <component name="RecentsManager" version="1416153601387" />
+  <component name="RunManager" version="1416134720653" />
+  <component name="ShelveChangesManager" version="1416134720653" />
+  <component name="SvnConfiguration" version="1416153601389" />
+  <component name="Symfony2PluginSettings" version="1416134720662" />
+  <component name="TaskManager" version="1416134720677" />
+  <component name="ToolWindowManager" version="1416155961058" />
   <component name="VagrantProjectSettings" version="1416074877601" />
-  <component name="Vcs.Log.UiProperties" version="1416074877601" />
-  <component name="VcsContentAnnotationSettings" version="1416074877601" />
-  <component name="VcsDirectoryMappings" version="1416074877601" />
-  <component name="VcsManagerConfiguration" version="1416074877601" />
-  <component name="XDebuggerManager" version="1416074877604" />
-  <component name="editorHistoryManager" version="1416074877606" />
+  <component name="Vcs.Log.UiProperties" version="1416134720679" />
+  <component name="VcsContentAnnotationSettings" version="1416134720679" />
+  <component name="VcsDirectoryMappings" version="1416134720680" />
+  <component name="VcsManagerConfiguration" version="1416134720680" />
+  <component name="XDebuggerManager" version="1416134720684" />
+  <component name="editorHistoryManager" version="1416155961062" />
 </versions>
 

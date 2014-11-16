@@ -3,14 +3,14 @@
   <component name="DimensionService">
     <location key="WELCOME_SCREEN.0.180.1440.900" x="2172" y="279" />
     <location key="FileChooserDialogImpl.1440.0.1920.1080" x="1955" y="183" />
-    <location key="com.intellij.ide.util.TipDialog.1440.0.1920.1080" x="431" y="444" />
+    <location key="com.intellij.ide.util.TipDialog.1440.0.1920.1080" x="2124" y="453" />
     <location key="OptionsEditor.1440.0.1920.1080" x="1783" y="102" />
     <location key="NewPhpClassDialog.1440.0.1920.1080" x="2211" y="345" />
     <location key="#com.intellij.ide.util.MemberChooser.1440.0.1920.1080" x="2208" y="246" />
     <location key="#Browse_Repositories.1440.0.1920.1080" x="1979" y="190" />
     <size key="FileChooserDialogImpl.1440.0.1920.1080" width="426" height="506" />
     <size key="OptionsEditor.1440.0.1920.1080" width="1226" height="874" />
-    <size key="NewPhpClassDialog.1440.0.1920.1080" width="370" height="397" />
+    <size key="NewPhpClassDialog.1440.0.1920.1080" width="370" height="394" />
     <size key="#com.intellij.ide.util.MemberChooser.1440.0.1920.1080" width="376" height="585" />
     <size key="#Browse_Repositories.1440.0.1920.1080" width="826" height="706" />
   </component>
@@ -39,6 +39,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="FileTemplates.CurrentTab" value="Includes" />
     <property name="FileTemplates.SelectedTemplate" value="Drupal Hook Implementation Doc Comment" />
+    <property name="FindSplitterProportion" value="0.25" />
   </component>
 </application>
 
