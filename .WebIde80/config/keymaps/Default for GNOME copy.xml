@@ -1,9 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <keymap version="1" name="Default for GNOME copy" parent="Default for GNOME">
   <action id="ActivateProjectToolWindow">
     <keyboard-shortcut first-keystroke="alt 1" />
     <keyboard-shortcut first-keystroke="alt AMPERSAND" />
   </action>
+  <action id="ActivateStructureToolWindow">
+    <keyboard-shortcut first-keystroke="alt 7" />
+    <keyboard-shortcut first-keystroke="alt UNDEFINED" />
+  </action>
+  <action id="Diff.SelectedChange" />
+  <action id="FileChooser.NewFolder">
+    <keyboard-shortcut first-keystroke="alt INSERT" />
+  </action>
+  <action id="GotoClass" />
   <action id="MoveLineDown">
     <keyboard-shortcut first-keystroke="shift control DOWN" />
   </action>
@@ -12,11 +20,27 @@
   </action>
   <action id="MoveStatementDown" />
   <action id="MoveStatementUp" />
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="alt INSERT" />
+    <keyboard-shortcut first-keystroke="control N" />
+  </action>
+  <action id="RecentChangedFiles" />
+  <action id="ReformatCode">
+    <keyboard-shortcut first-keystroke="control alt L" />
+    <keyboard-shortcut first-keystroke="control alt R" />
+  </action>
   <action id="ResizeToolWindowDown" />
   <action id="ResizeToolWindowUp" />
+  <action id="ShowNavBar">
+    <keyboard-shortcut first-keystroke="alt HOME" />
+    <keyboard-shortcut first-keystroke="alt N" />
+  </action>
   <action id="ShowSettings">
     <keyboard-shortcut first-keystroke="control alt S" />
     <keyboard-shortcut first-keystroke="altGraph S" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="shift control E" />
   </action>
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="shift alt ENTER" />
@@ -34,4 +58,3 @@
     <keyboard-shortcut first-keystroke="shift alt UP" />
   </action>
 </keymap>
-
