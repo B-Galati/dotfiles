@@ -908,6 +908,19 @@
         </option>
       </plugins>
     </entry>
+    <entry key="*.ltp">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.textmapper.idea" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
     <entry key="*.lua">
       <plugins>
         <option name="myPlugins">
@@ -1625,6 +1638,19 @@
           <set>
             <plugin>
               <option name="myPluginId" value="com.linkedin.intellij.dust" />
+              <option name="myPluginName" />
+              <option name="myBundled" value="false" />
+            </plugin>
+          </set>
+        </option>
+      </plugins>
+    </entry>
+    <entry key="*.tm">
+      <plugins>
+        <option name="myPlugins">
+          <set>
+            <plugin>
+              <option name="myPluginId" value="org.textmapper.idea" />
               <option name="myPluginName" />
               <option name="myBundled" value="false" />
             </plugin>
