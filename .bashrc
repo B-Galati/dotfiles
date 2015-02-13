@@ -3,6 +3,11 @@
 # for examples
 
 export EDITOR=vim # Editeur par défaut
+export GIT_PS1_SHOWDIRTYSTATE=1 # Montre si modif de la copie locale (*) ou (+) pour l'index
+export GIT_PS1_SHOWSTASHSTATE=1 # Montre si éléments stashés ($)
+export GIT_PS1_SHOWUNTRACKEDFILES=1 # Montre si fichiers non versionnés (%)
+export GIT_PS1_SHOWUPSTREAM=verbose # Avance/Retard par rapport à la branche distante (<) (>) (=)
+export GIT_PS1_DESCRIBE_STYLE=branch # Si detached HAED alors affiche des infos utiles
 
 # If not running interactively, don't do anything
 case $- in
