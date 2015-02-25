@@ -1,4 +1,3 @@
-alias sogevia='ssh sogevia@sogevia-dev'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -14,4 +13,3 @@ alias boot_log="sudo sed $'s/\^\[/\E/g;s/\[1G\[/\[27G\[/' /var/log/boot"
 alias du='du -h --max-depth=1'
 alias dusort='du -x --block-size=1048576 | sort -nr'
 alias df='df -h'
-
