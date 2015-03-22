@@ -16,3 +16,11 @@ Thumbs.db
 # PhpStorm
 .WebIde80/config/componentVersions/
 .WebIde80/config/tasks
+
+# Sublime Text
+Package Control.cache/
+Package Control.last-run
+Package Control.merged-ca-bundle
+Package Control.sublime-settings
+Package Control.user-ca-bundle
+

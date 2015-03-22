@@ -1,0 +1,16 @@
+{
+	"theme": "Phoenix Dark.sublime-theme",
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+
+	// Phoenix theme
+	"phoenix_color_blue": true,
+	"phoenix_solid_current_tab": true,
+	"phoenix_dirty_bottom_bar_red": true,
+	"phoenix_sidebar_tree_medium": true,
+	"phoenix_color_expanded_folder": true,
+	"phoenix_highlight_current_tab": true
+}
