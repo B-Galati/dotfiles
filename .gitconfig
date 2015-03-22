@@ -1,0 +1,18 @@
+[alias]
+	st = status
+	co = commit
+	com = commit -m
+	coma = commit -a -m
+	aa = add --all
+
+	# log section
+	lg = log --oneline --graph --abbrev-commit --decorate
+	lga = log --graph --oneline --abbrev-commit --decorate --all
+
+[color]
+    	ui = auto
+
+[push]
+    	default = simple
+[core]
+	excludesfile = /home/benoit/.gitignore_global
