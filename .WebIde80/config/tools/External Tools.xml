@@ -1,0 +1,37 @@
+<toolSet name="External Tools">
+  <tool name="atoum" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="bin/atoum" />
+      <option name="PARAMETERS" value="$FilePath$ --debug" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/workspace/emeraude-oav" />
+    </exec>
+  </tool>
+  <tool name="testGenerator" description="Généré un test atoum" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="bin/test-generator.php" />
+      <option name="PARAMETERS" value="$FilePath$" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/workspace/emeraude-oav" />
+    </exec>
+  </tool>
+  <tool name="phingTest" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="phing" />
+      <option name="PARAMETERS" value="test" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/workspace/emeraude-oav" />
+    </exec>
+  </tool>
+  <tool name="phingUnitTest" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="phing" />
+      <option name="PARAMETERS" value="unittest" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/workspace/emeraude-oav" />
+    </exec>
+  </tool>
+  <tool name="phingFunctionnalTest" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="phing" />
+      <option name="PARAMETERS" value="functionnaltest" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/workspace/emeraude-oav" />
+    </exec>
+  </tool>
+</toolSet>
