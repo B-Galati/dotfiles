@@ -1,12 +1,18 @@
 [global_config]
 [keybindings]
+  move_tab_right = <Primary><Shift>Right
   close_term = <Primary>w
+  move_tab_left = <Primary><Shift>Left
+  next_tab = <Alt>Right
+  prev_tab = <Alt>Left
 [profiles]
   [[default]]
-    background_darkness = 0.92
     background_image = None
-    background_type = transparent
+    background_darkness = 0.78
+    cursor_shape = ibeam
     foreground_color = "#ffffff"
+    scroll_on_output = False
+    background_type = transparent
 [layouts]
   [[default]]
     [[[child1]]]
