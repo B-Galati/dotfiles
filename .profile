@@ -13,7 +13,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-PATH="$PATH:/usr/sbin:/home/benoit/.gem/ruby/2.1.0/bin"
+PATH="$PATH:/usr/sbin"
+PATH="$PATH:~/.gem/ruby/2.1.0/bin"
+PATH="$PATH:~/npm-global/bin"
+PATH="$PATH:~/usr/bin"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
