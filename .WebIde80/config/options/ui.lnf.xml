@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <application>
   <component name="UISettings">
     <option name="ANIMATE_WINDOWS" value="false" />
     <option name="HIDE_TOOL_STRIPES" value="false" />
     <option name="WIDESCREEN_SUPPORT" value="true" />
-    <option name="MAX_LOOKUP_WIDTH2" value="502" />
+    <option name="SHOW_NAVIGATION_BAR" value="false" />
+    <option name="USE_SMALL_LABELS_ON_TABS" value="true" />
   </component>
 </application>
-

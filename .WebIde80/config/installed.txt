@@ -1,0 +1,10 @@
+com.intellij
+mobi.hsz.idea.gitignore
+GrepConsole
+PHPUnit code coverage
+awesome.console
+com.wix.eslint
+de.espend.idea.php.annotation
+com.karateca.jstoolbox
+net.nicoulaj.idea.markdown
+fr.adrienbrault.idea.symfony2plugin
