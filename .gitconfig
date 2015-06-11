@@ -14,5 +14,9 @@
 
 [push]
     	default = simple
+
 [core]
-	excludesfile = /home/benoit/.gitignore_global
+	excludesfile = ~/.gitignore_global
+
+[branch]
+	autosetuprebase = always
