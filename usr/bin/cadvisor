@@ -1,0 +1,25 @@
+#!/bin/bash
+
+CONTAINER_NAME="cadvisor"
+RUNNING=$(docker inspect --format="{{ .State.Running }}" $CONTAINER_NAME 2> /dev/null)
+
+if [ $? -eq 1 ]; then
+	echo "Already running..."
+	exit 1
+fi
+
+if [ "$RUNNING" == "false" ]; then
+	echo "Starting container..."
+	docker start $CONTAINER_NAME
+else
+	echo "Running container..."
+	docker run \
+	  --volume=/:/rootfs:ro \
+	  --volume=/var/run:/var/run:rw \
+	  --volume=/sys:/sys:ro \
+	  --volume=$HOME/docker/:/var/lib/docker:ro \
+	  --publish=8080:8080 \
+	  --detach=true \
+	  --name=$CONTAINER_NAME \
+	  google/cadvisor:latest
+fi
