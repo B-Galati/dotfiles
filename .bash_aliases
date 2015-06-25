@@ -15,3 +15,7 @@ alias dusort='du -x --block-size=1048576 | sort -nr'
 alias df='df -h'
 alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'
+alias rm='rm -I'
+
+# Docker aliases
+alias meteor='docker run -it --rm -v "$(pwd)":/app danieldent/meteor meteor'
