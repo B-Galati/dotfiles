@@ -1,7 +1,8 @@
 [global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
 [keybindings]
   move_tab_right = <Primary><Shift>Right
-  close_term = <Primary>w
+  close_term = <Primary>F4
   move_tab_left = <Primary><Shift>Left
   next_tab = <Alt>Right
   prev_tab = <Alt>Left

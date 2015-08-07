@@ -16,6 +16,7 @@ alias df='df -h'
 alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'
 alias rm='rm -I'
+alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
 
 # Docker aliases
 alias meteor='docker run -it --rm -v "$(pwd)":/app danieldent/meteor meteor'

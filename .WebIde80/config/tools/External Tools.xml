@@ -34,4 +34,11 @@
       <option name="WORKING_DIRECTORY" value="$USER_HOME$/workspace/capvita-oav" />
     </exec>
   </tool>
+  <tool name="phingTestDomain" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="phing" />
+      <option name="PARAMETERS" value="testdomain" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/workspace/capvita-oav" />
+    </exec>
+  </tool>
 </toolSet>

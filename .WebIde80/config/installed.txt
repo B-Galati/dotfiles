@@ -1,9 +1,12 @@
 com.intellij
+BashSupport
 mobi.hsz.idea.gitignore
 GrepConsole
 PHPUnit code coverage
 awesome.console
+com.dmarcotte.handlebars
 com.wix.eslint
+com.jetbrains.plugins.meteor
 de.espend.idea.php.annotation
 com.karateca.jstoolbox
 net.nicoulaj.idea.markdown

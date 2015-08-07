@@ -87,6 +87,9 @@
   <action id="Tool_External Tools_phingTest">
     <keyboard-shortcut first-keystroke="control NUMPAD4" />
   </action>
+  <action id="Tool_External Tools_phingTestDomain">
+    <keyboard-shortcut first-keystroke="control NUMPAD5" />
+  </action>
   <action id="Tool_External Tools_phingUnitTest">
     <keyboard-shortcut first-keystroke="control NUMPAD2" />
   </action>

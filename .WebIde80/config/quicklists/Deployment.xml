@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <list display="Deployment" description="Deployment actions" readonly="false">
   <action id="PublishGroup.Upload" />
   <action id="PublishGroup.UploadTo" />
@@ -13,4 +12,3 @@
   <action id="QuickList.$Separator$" />
   <action id="WebDeployment.Configuration" />
 </list>
-
