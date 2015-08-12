@@ -1,23 +1,40 @@
 <keymap version="1" name="Default for GNOME copy" parent="Default for GNOME">
   <action id="ActivateFindToolWindow">
     <keyboard-shortcut first-keystroke="alt 3" />
-    <keyboard-shortcut first-keystroke="alt QUOTEDBL" />
+    <keyboard-shortcut first-keystroke="alt UNDEFINED" />
   </action>
   <action id="ActivateProjectToolWindow">
     <keyboard-shortcut first-keystroke="alt 1" />
     <keyboard-shortcut first-keystroke="alt AMPERSAND" />
+    <keyboard-shortcut first-keystroke="alt QUOTEDBL" />
   </action>
   <action id="ActivateRunToolWindow">
     <keyboard-shortcut first-keystroke="alt 4" />
     <keyboard-shortcut first-keystroke="alt QUOTE" />
+    <keyboard-shortcut first-keystroke="alt LEFT_PARENTHESIS" />
   </action>
   <action id="ActivateStructureToolWindow">
     <keyboard-shortcut first-keystroke="alt 7" />
-    <keyboard-shortcut first-keystroke="alt UNDEFINED" />
+    <keyboard-shortcut first-keystroke="alt PLUS" />
   </action>
   <action id="Diff.SelectedChange" />
+  <action id="EditorDeleteLine">
+    <keyboard-shortcut first-keystroke="control Y" />
+    <keyboard-shortcut first-keystroke="control L" />
+  </action>
+  <action id="EditorToggleColumnMode">
+    <keyboard-shortcut first-keystroke="shift alt INSERT" />
+    <keyboard-shortcut first-keystroke="shift altGraph INSERT" />
+  </action>
   <action id="FileChooser.NewFolder">
     <keyboard-shortcut first-keystroke="alt INSERT" />
+  </action>
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="F3" />
+  </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="alt INSERT" />
+    <keyboard-shortcut first-keystroke="altGraph INSERT" />
   </action>
   <action id="GotoClass" />
   <action id="HideActiveWindow">
@@ -35,11 +52,13 @@
   <action id="NewElement">
     <keyboard-shortcut first-keystroke="alt INSERT" />
     <keyboard-shortcut first-keystroke="control N" />
+    <keyboard-shortcut first-keystroke="altGraph INSERT" />
   </action>
   <action id="RecentChangedFiles" />
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="control alt L" />
     <keyboard-shortcut first-keystroke="control alt R" />
+    <keyboard-shortcut first-keystroke="control alt QUOTE" />
   </action>
   <action id="RenameElement">
     <keyboard-shortcut first-keystroke="shift F6" />
