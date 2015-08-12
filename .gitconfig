@@ -4,6 +4,7 @@
 	com = commit -m
 	coma = commit -a -m
 	aa = add --all
+        fa = fetch --all -p -v
 
 	# log section
 	lg = log --oneline --graph --abbrev-commit --decorate

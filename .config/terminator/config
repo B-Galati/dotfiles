@@ -1,5 +1,6 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 0.93
 [keybindings]
   move_tab_right = <Primary><Shift>Right
   close_term = <Primary>F4
@@ -9,11 +10,12 @@
 [profiles]
   [[default]]
     background_image = None
-    background_darkness = 0.78
+    background_darkness = 0.9
     cursor_shape = ibeam
     foreground_color = "#ffffff"
     scroll_on_output = False
     background_type = transparent
+    font = Sans 10
 [layouts]
   [[default]]
     [[[child1]]]
