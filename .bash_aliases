@@ -11,7 +11,7 @@ alias mkdir='mkdir -p -v'
 alias service='sudo service --status-all'
 alias boot_log="sudo sed $'s/\^\[/\E/g;s/\[1G\[/\[27G\[/' /var/log/boot"
 alias du='du -h --max-depth=1'
-alias dusort='du -x --block-size=1048576 | sort -nr'
+alias dusort='du -ah | sort -hr'
 alias df='df -h'
 alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'

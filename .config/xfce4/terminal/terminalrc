@@ -22,5 +22,5 @@ ColorPalette=#000000;#cc0000;#4e9a06;#c4a000;#3465a4;#75507b;#06989a;#d3d7cf;#55
 ColorForeground=#ca52ca52ca52
 ColorCursor=#a052a052a052
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-ScrollingLines=2000
+ScrollingLines=5000
 

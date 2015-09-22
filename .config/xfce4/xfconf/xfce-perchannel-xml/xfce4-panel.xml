@@ -53,6 +53,7 @@
       <property name="show-tooltips" type="bool" value="true"/>
       <property name="show-button-title" type="bool" value="true"/>
       <property name="show-generic-names" type="bool" value="false"/>
+      <property name="button-icon" type="string" value="/home/alptis/url.png"/>
     </property>
     <property name="plugin-2" type="string" value="actions">
       <property name="appearance" type="uint" value="1"/>
