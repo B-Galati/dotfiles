@@ -18,10 +18,10 @@
     <property name="Antialias" type="empty"/>
     <property name="Hinting" type="empty"/>
     <property name="HintStyle" type="string" value="hintfull"/>
-    <property name="RGBA" type="empty"/>
+    <property name="RGBA" type="string" value="rgb"/>
   </property>
   <property name="Gtk" type="empty">
-    <property name="CanChangeAccels" type="empty"/>
+    <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
     <property name="FontName" type="empty"/>
     <property name="IconSizes" type="empty"/>

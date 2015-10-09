@@ -1,6 +1,6 @@
 [Main]
-Timeout=500
-Timeout_Seconds=1
+Timeout=250
+Timeout_Seconds=3
 Use_Timeout_Seconds=true
 Use_Click_Command=false
 Click_Command=xfce4-taskmanager
