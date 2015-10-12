@@ -12,6 +12,9 @@
 	lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
 	lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative --all
 
+	# branch management
+	bdelete = !git branch -D $(git branch | grep -v ^* | xargs)
+
 [color]
     	ui = auto
 
