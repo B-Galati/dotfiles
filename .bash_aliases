@@ -15,8 +15,10 @@ alias dusort='du -ah | sort -hr'
 alias df='df -h'
 alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'
+alias sfdockerclear='rm -rf app/cache/* && docker-compose run --rm web php app/console cache:warmup'
 alias rm='rm -I'
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
+alias composer='composer -vv'
 
 # Docker aliases
 alias meteor='docker run -it --rm -v "$(pwd)":/app danieldent/meteor meteor'
