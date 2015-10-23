@@ -10,12 +10,13 @@
 [profiles]
   [[default]]
     background_image = None
+    use_system_font = False
     background_darkness = 0.9
+    background_type = transparent
     cursor_shape = ibeam
     foreground_color = "#ffffff"
     scroll_on_output = False
-    background_type = transparent
-    font = Sans 10
+    font = Hack 10
 [layouts]
   [[default]]
     [[[child1]]]

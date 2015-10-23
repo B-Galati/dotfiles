@@ -4,7 +4,7 @@
 	com  = commit -m
 	coma = commit -a -m
 	aa   = add --all
-        fa   = fetch --all -p -v
+    fa   = fetch --all -p -v
 
 	# log section
 	l   = !git log | tig -FRSX
@@ -15,11 +15,31 @@
 	# branch management
 	bdelete = !git branch -D $(git branch | grep -v ^* | xargs)
 
+	# alias management
+	aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort"
+	
+	# diff
+	meld = difftool -t meld -d
+
 [color]
-    	ui = auto
+    ui   = true
+	diff = true
+
+[color "branch"]
+	current = blue
+	local   = yellow
+	remote  = green
+
+[color "status"]
+	added     = green
+	changed   = yellow
+	untracked = red
 
 [push]
     	default = simple
+
+[diff]
+	tool = meld
 
 [core]
 	excludesfile = ~/.gitignore_global
