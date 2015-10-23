@@ -63,29 +63,6 @@
         <option name="BACKGROUND" value="3a2323" />
       </value>
     </option>
-    <option name="COFFEESCRIPT.GLOBAL_VARIABLE">
-      <value>
-        <option name="FONT_TYPE" value="2" />
-        <option name="EFFECT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.JAVASCRIPT_CONTENT">
-      <value>
-        <option name="FOREGROUND" value="a9b7c6" />
-        <option name="EFFECT_TYPE" value="5" />
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.LOCAL_VARIABLE">
-      <value>
-        <option name="EFFECT_TYPE" value="-1" />
-      </value>
-    </option>
-    <option name="COFFEESCRIPT.PARAMETER">
-      <value>
-        <option name="EFFECT_COLOR" value="a9b7c6" />
-        <option name="EFFECT_TYPE" value="1" />
-      </value>
-    </option>
     <option name="CONSOLE_BLUE_BRIGHT_OUTPUT">
       <value>
         <option name="FOREGROUND" value="7eaef1" />
@@ -174,67 +151,6 @@
     <option name="CONSOLE_YELLOW_OUTPUT">
       <value>
         <option name="FOREGROUND" value="cdcd00" />
-      </value>
-    </option>
-    <option name="CSS.COLOR">
-      <value>
-        <option name="FOREGROUND" value="6897bb" />
-      </value>
-    </option>
-    <option name="CSS.COMMENT">
-      <value>
-        <option name="FOREGROUND" value="808080" />
-      </value>
-    </option>
-    <option name="CSS.FUNCTION">
-      <value>
-        <option name="FOREGROUND" value="ffc66d" />
-      </value>
-    </option>
-    <option name="CSS.IDENT">
-      <value>
-        <option name="FOREGROUND" value="ffc66d" />
-      </value>
-    </option>
-    <option name="CSS.IMPORTANT">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="CSS.KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-      </value>
-    </option>
-    <option name="CSS.NUMBER">
-      <value>
-        <option name="FOREGROUND" value="6897bb" />
-      </value>
-    </option>
-    <option name="CSS.PROPERTY_NAME">
-      <value>
-        <option name="FOREGROUND" value="9876aa" />
-      </value>
-    </option>
-    <option name="CSS.PROPERTY_VALUE">
-      <value>
-        <option name="FOREGROUND" value="a9b7c6" />
-      </value>
-    </option>
-    <option name="CSS.STRING">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-      </value>
-    </option>
-    <option name="CSS.TAG_NAME">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-      </value>
-    </option>
-    <option name="CSS.URL">
-      <value>
-        <option name="FOREGROUND" value="287bde" />
       </value>
     </option>
     <option name="CTRL_CLICKABLE">
@@ -482,49 +398,6 @@
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
-    <option name="HAML_CLASS">
-      <value>
-        <option name="FOREGROUND" value="e8bf6a" />
-      </value>
-    </option>
-    <option name="HAML_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="bc9458" />
-        <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
-    <option name="HAML_FILTER">
-      <value />
-    </option>
-    <option name="HAML_FILTER_CONTENT">
-      <value />
-    </option>
-    <option name="HAML_ID">
-      <value>
-        <option name="FOREGROUND" value="e8bf6a" />
-      </value>
-    </option>
-    <option name="HAML_RUBY_CODE">
-      <value>
-        <option name="BACKGROUND" value="232323" />
-      </value>
-    </option>
-    <option name="HAML_RUBY_START">
-      <value />
-    </option>
-    <option name="HAML_TAG">
-      <value>
-        <option name="FOREGROUND" value="e8bf6a" />
-      </value>
-    </option>
-    <option name="HAML_TEXT">
-      <value>
-        <option name="EFFECT_TYPE" value="2" />
-      </value>
-    </option>
-    <option name="HAML_XHTML">
-      <value />
-    </option>
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
         <option name="FOREGROUND" value="bababa" />
@@ -603,22 +476,6 @@
       <value>
         <option name="EFFECT_COLOR" value="a9b7c6" />
         <option name="EFFECT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="JSP_DIRECTIVE_NAME">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="JSP_SCRIPTING_BACKGROUND">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-      </value>
-    </option>
-    <option name="LESS_VARIABLE">
-      <value>
-        <option name="FOREGROUND" value="d0d0ff" />
       </value>
     </option>
     <option name="LINE_FULL_COVERAGE">
@@ -793,44 +650,6 @@
         <option name="EFFECT_TYPE" value="-1" />
       </value>
     </option>
-    <option name="REGEXP.CHAR_CLASS">
-      <value>
-        <option name="FOREGROUND" value="e8bf6a" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="REGEXP.ESC_CHARACTER">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="REGEXP.INVALID_STRING_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="4cd6a3" />
-        <option name="BACKGROUND" value="3d0909" />
-        <option name="EFFECT_COLOR" value="bc3f3c" />
-        <option name="EFFECT_TYPE" value="2" />
-      </value>
-    </option>
-    <option name="REGEXP.META">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="REGEXP.QUOTE_CHARACTER">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="REGEXP.REDUNDANT_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="9396c0" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
     <option name="REST.FIXED">
       <value>
         <option name="BACKGROUND" value="a3a08" />
@@ -846,31 +665,9 @@
         <option name="BACKGROUND" value="15463c" />
       </value>
     </option>
-    <option name="SASS_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="bc9455" />
-        <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
     <option name="SASS_MIXIN">
       <value>
         <option name="FOREGROUND" value="d0d0ff" />
-      </value>
-    </option>
-    <option name="SASS_NUMBER">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-        <option name="EFFECT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="SASS_STRING">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-      </value>
-    </option>
-    <option name="SASS_VARIABLE">
-      <value>
-        <option name="FOREGROUND" value="6d9cbe" />
       </value>
     </option>
     <option name="SEARCH_RESULT_ATTRIBUTES">
@@ -912,34 +709,6 @@
     <option name="SPY-JS.VALUE_HINT">
       <value>
         <option name="EFFECT_COLOR" value="a9b7c6" />
-      </value>
-    </option>
-    <option name="SQL_COLUMN">
-      <value>
-        <option name="FOREGROUND" value="d0d0ff" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="SQL_KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="SQL_NUMBER">
-      <value>
-        <option name="FOREGROUND" value="6897bb" />
-      </value>
-    </option>
-    <option name="SQL_STRING">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="SQL_SYNTHETIC_ENTITY">
-      <value>
-        <option name="FOREGROUND" value="ffc66d" />
       </value>
     </option>
     <option name="STATIC_FIELD_ATTRIBUTES">
@@ -1064,71 +833,6 @@
     <option name="XML_TAG_NAME">
       <value>
         <option name="FOREGROUND" value="e8bf6a" />
-      </value>
-    </option>
-    <option name="XPATH.KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="cc7832" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="XPATH.NUMBER">
-      <value>
-        <option name="FOREGROUND" value="6897bb" />
-      </value>
-    </option>
-    <option name="XPATH.STRING">
-      <value>
-        <option name="FOREGROUND" value="6a8759" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="XPATH.XPATH_NAME">
-      <value>
-        <option name="FOREGROUND" value="da4939" />
-      </value>
-    </option>
-    <option name="XPATH.XPATH_VARIABLE">
-      <value>
-        <option name="FOREGROUND" value="d0d0ff" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="YAML_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="bc9458" />
-        <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
-    <option name="YAML_SCALAR_DSTRING">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-      </value>
-    </option>
-    <option name="YAML_SCALAR_KEY">
-      <value>
-        <option name="FOREGROUND" value="e8bf6a" />
-      </value>
-    </option>
-    <option name="YAML_SCALAR_LIST">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-      </value>
-    </option>
-    <option name="YAML_SCALAR_STRING">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-      </value>
-    </option>
-    <option name="YAML_SCALAR_VALUE">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-      </value>
-    </option>
-    <option name="YAML_TEXT">
-      <value>
-        <option name="FOREGROUND" value="a5c261" />
-        <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
   </attributes>
