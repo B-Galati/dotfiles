@@ -74,7 +74,10 @@
     <option name="RENAME_SEARCH_IN_COMMENTS_FOR_METHOD" value="true" />
     <option name="RENAME_SEARCH_NON_CODE_FOR_METHOD" value="true" />
     <option name="EXTRACT_METHOD_DEFAULT_VISIBILITY" value="private" />
+    <option name="MOVE_CLASS_SEARCH_IN_COMMENTS_AND_STRINGS" value="true" />
     <option name="MOVE_CLASS_SEARCH_IN_TEXT_OCCURRENCES" value="true" />
+    <option name="MOVE_NAMESPACE_SEARCH_IN_COMMENTS_AND_STRINGS" value="true" />
+    <option name="MOVE_NAMESPACE_SEARCH_IN_TEXT_OCCURRENCES" value="true" />
   </component>
   <component name="XPathView.XPathViewPlugin">
     <option name="attributes">
