@@ -1,10 +1,10 @@
 [alias]
 	st   = status
-	co   = commit
+	co   = checkout
 	com  = commit -m
 	coma = commit -a -m
 	aa   = add --all
-    fa   = fetch --all -p -v
+        fa   = fetch --all -p -v
 
 	# log section
 	l   = !git log | tig -FRSX

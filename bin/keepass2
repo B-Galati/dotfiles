@@ -17,7 +17,7 @@ case "$1" in
                         echo "running container..."
 			docker run  -it  \
 				-v /tmp/.X11-unix:/tmp/.X11-unix \
-				-v $HOME/keepass:/home/keepass/keepass \
+				-v $HOME/keepass:/home/keepass \
 				-v $HOME/.config/KeePass/KeePass.config.xml:/home/keepass/.config/KeePass/KeePass.config.xml \
 				-e DISPLAY=unix$DISPLAY \
 				--name $CONTAINER_NAME \
