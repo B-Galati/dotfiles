@@ -1,0 +1,34 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"DocBlockr",
+		"EncodingHelper",
+		"Function Name Display",
+		"GitStatus",
+		"Package Control",
+		"PHP Companion",
+		"PHP-Twig",
+		"Phpcs",
+		"PhpDoc",
+		"SideBarEnhancements",
+		"SideBarGit",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-csslint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"SublimeLinter-php",
+		"Symfony2 Snippets",
+		"Theme - Phoenix",
+		"TrailingSpaces",
+		"VCS Gutter",
+		"Xdebug Client"
+	]
+}
