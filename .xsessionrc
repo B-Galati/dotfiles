@@ -1,2 +1,5 @@
 # Source .profile when xsession starts with lightdm
 . $HOME/.profile
+
+# Start smart-notifier
+smart-notifier&
