@@ -17,13 +17,6 @@ case $- in
       *) return;;
 esac
 
-# Load the shell dotfiles, and then some:
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{bash_aliases,exports,functions,extra}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
-
 HISTSIZE=5000 # Nombre de commande max dans l'historique
 HISTFILESIZE=2000 # Taille maxi du fichier d'historique
 HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
@@ -33,6 +26,12 @@ shopt -s cdspell # autocorrects cd misspellings
 shopt -s expand_aliases # clear enoush :)
 shopt -s cmdhist # save command long command in history
 
+# Load the shell dotfiles, and then some:
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{bash_aliases,exports,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
