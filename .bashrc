@@ -8,8 +8,8 @@ export GIT_PS1_SHOWSTASHSTATE=1 # Montre si éléments stashés ($)
 export GIT_PS1_SHOWUNTRACKEDFILES=1 # Montre si fichiers non versionnés (%)
 export GIT_PS1_SHOWUPSTREAM=verbose # Avance/Retard par rapport à la branche distante (<) (>) (=)
 export GIT_PS1_DESCRIBE_STYLE=branch # Si detached HAED alors affiche des infos utiles
-PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD/$HOME/\~}\007"' # Titre du terminal = workdir
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # Ajoute les nouvelles commandes dans le fichier d'historique
+export GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # Ajoute les nouvelles commandes dans le fichier d'historique 
 
 # If not running interactively, don't do anything
 case $- in
@@ -24,13 +24,15 @@ for file in ~/.{bash_aliases,exports,functions,extra}; do
 done;
 unset file;
 
-GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
 HISTSIZE=5000 # Nombre de commande max dans l'historique
 HISTFILESIZE=2000 # Taille maxi du fichier d'historique
 HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
 shopt -s histappend # append to the history file, don't overwrite it
-shopt -s checkwinsize # redimenssionne le terminal après l'exécution d'une commande
+shopt -s checkwinsize # redimensionne le terminal après l'exécution d'une commande
 shopt -s cdspell # autocorrects cd misspellings
+shopt -s expand_aliases # clear enoush :)
+shopt -s cmdhist # save command long command in history
+
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
