@@ -9,6 +9,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1 # Montre si fichiers non versionnés (%)
 export GIT_PS1_SHOWUPSTREAM=verbose # Avance/Retard par rapport à la branche distante (<) (>) (=)
 export GIT_PS1_DESCRIBE_STYLE=branch # Si detached HAED alors affiche des infos utiles
 export GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
+export PROMPT_COMMAND='echo -ne "\033];${USER}@${HOSTNAME}:${PWD/#$HOME/\~}\007";' # Terminal title set to current path
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # Ajoute les nouvelles commandes dans le fichier d'historique 
 
 # If not running interactively, don't do anything
