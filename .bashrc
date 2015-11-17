@@ -46,7 +46,7 @@ esac
 
 # PS1
 if [ "$color_prompt" = yes ]; then
-    PS1='[$(date +%T)] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\e[01;31m\]$(__git_ps1)\[\033[00m\]\n\$ '
+    PS1='\[\033[00m\][$(date +%T)] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\e[01;31m\]$(__git_ps1)\[\033[00m\]\n\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
