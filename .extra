@@ -1,3 +1,2 @@
-# Git credentials
-#git config --global user.name ""
-#git config --global user.email ""
+# Here you can add specific settings like private aliases
+#

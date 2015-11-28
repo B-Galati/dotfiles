@@ -55,4 +55,8 @@
 	autosetuprebase = never
 
 [rerere]
-	enabled = true
+    enabled = true
+
+[include]
+    path = .gitconfig_private
+    
