@@ -2,25 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export EDITOR=vim # Editeur par défaut
-export GIT_PS1_SHOWDIRTYSTATE=1 # Montre si modif de la copie locale (*) ou (+) pour l'index
-export GIT_PS1_SHOWSTASHSTATE=1 # Montre si éléments stashés ($)
-export GIT_PS1_SHOWUNTRACKEDFILES=1 # Montre si fichiers non versionnés (%)
-export GIT_PS1_SHOWUPSTREAM=verbose # Avance/Retard par rapport à la branche distante (<) (>) (=)
-export GIT_PS1_DESCRIBE_STYLE=branch # Si detached HAED alors affiche des infos utiles
-export GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
-export PROMPT_COMMAND='echo -ne "\033];${USER}@${HOSTNAME}:${PWD/#$HOME/\~}\007";' # Terminal title set to current path
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # Ajoute les nouvelles commandes dans le fichier d'historique 
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
 
-HISTSIZE=5000 # Nombre de commande max dans l'historique
-HISTFILESIZE=2000 # Taille maxi du fichier d'historique
-HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
 shopt -s histappend # append to the history file, don't overwrite it
 shopt -s checkwinsize # redimensionne le terminal après l'exécution d'une commande
 shopt -s cdspell # autocorrects cd misspellings

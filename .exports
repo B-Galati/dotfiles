@@ -1,6 +1,20 @@
+export EDITOR=vim # Editeur par défaut
 export TERM='xterm-color'
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s" # Coloration syntaxique LESS
 export LESS=' -R '
+
+export GIT_PS1_SHOWDIRTYSTATE=1 # Montre si modif de la copie locale (*) ou (+) pour l'indexa
+export GIT_PS1_SHOWSTASHSTATE=1 # Montre si éléments stashés ($)
+export GIT_PS1_SHOWUNTRACKEDFILES=1 # Montre si fichiers non versionnés (%)
+export GIT_PS1_SHOWUPSTREAM=verbose # Avance/Retard par rapport à la branche distante (<) (>) (=)
+export GIT_PS1_DESCRIBE_STYLE=branch # Si detached HAED alors affiche des infos utiles
+export GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
+export PROMPT_COMMAND='echo -ne "\033];${USER}@${HOSTNAME}:${PWD/#$HOME/\~}\007";' # Terminal title set to current path
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # Ajoute les nouvelles commandes dans le fichier d'historique 
+
+export HISTSIZE=5000 # Nombre de commande max dans l'historique
+export HISTFILESIZE=2000 # Taille maxi du fichier d'historique
+export HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
 
 # Configurer un proxy
 #export http_proxy='http://csproxy:80'
