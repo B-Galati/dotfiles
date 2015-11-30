@@ -5,7 +5,7 @@
 #
 
 info () {
-    printf "  [ \033[00;34m..\033[0m ] %s" "$1"
+    printf "  [ \033[00;34m..\033[0m ] %s\n" "$1"
 }
 
 success () {
@@ -32,6 +32,7 @@ doIt () {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
     	  --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
 
+    # Création des fichiers de config
     for file in \
         ".gitconfig" \
         ".bashrc" \
@@ -77,10 +78,14 @@ doIt () {
         linkFiles "$PWD/$file" "$HOME/$file"
     done
 
-    if [ ! -f "$HOME/.extra" ]; then
-        cp .extra "$HOME"
-        info "Create .extra in home"
-    fi
+    # Création des fichiers privés s'ils n'existent pas
+    for file in ".extra" ".gitconfig_private"
+    do
+        if [ ! -f "$HOME/$file" ]; then
+            cp $file $HOME
+            info "Create $file in home $HOME"
+        fi
+    done
 }
 
 cd "$(dirname "${BASH_SOURCE}")"
@@ -95,6 +100,5 @@ else
 	fi
 fi
 
-echo ''
 unset doIt
 
