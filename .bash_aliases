@@ -19,6 +19,7 @@ alias sfdockerclear='rm -rf app/cache/* && docker-compose run --rm web php app/c
 alias rm='rm -I'
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
 alias composer='composer -vv'
+alias phpunit="docker run --rm -ti -v $(pwd):/app phpunit/phpunit"
 
 # Docker aliases
 alias meteor='docker run -it --rm -v "$(pwd)":/app danieldent/meteor meteor'

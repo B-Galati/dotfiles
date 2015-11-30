@@ -22,6 +22,10 @@
   <action id="FindNext">
     <keyboard-shortcut first-keystroke="f3" />
   </action>
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="alt f7" />
+    <keyboard-shortcut first-keystroke="alt f" />
+  </action>
   <action id="Generate">
     <keyboard-shortcut first-keystroke="alt insert" />
     <keyboard-shortcut first-keystroke="altGraph insert" />
@@ -61,7 +65,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt r" />
   </action>
   <action id="SurroundWithEmmet">
-    <keyboard-shortcut first-keystroke="altGraph e" />
+    <keyboard-shortcut first-keystroke="alt e" />
   </action>
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="shift alt enter" />

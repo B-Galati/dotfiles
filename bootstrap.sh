@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Credits : 
 #   https://github.com/willdurand/dotfiles/blob/master/bin/install
+#   https://github.com/mathiasbynens/dotfiles
 #
 
 info () {
@@ -72,7 +73,7 @@ doIt () {
     linkFiles "$PWD/.fonts" "$HOME/.fonts"
     linkFiles "$PWD/.themes" "$HOME/.themes"
 
-    if [ ! -f "extra" ]; then
+    if [ ! -f "$HOME/.extra" ]; then
         cp .extra "$HOME"
         info "Create .extra in home"
     fi
