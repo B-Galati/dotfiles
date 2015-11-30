@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Credits : 
+# Credits :
 #   https://github.com/willdurand/dotfiles/blob/master/bin/install
 #   https://github.com/mathiasbynens/dotfiles
 #
@@ -31,47 +31,51 @@ linkFiles () {
 doIt () {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
     	  --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
-    
-    linkFiles "$PWD/.gitconfig" "$HOME/.gitconfig"
-    linkFiles "$PWD/.bashrc" "$HOME/.bashrc"
-    linkFiles "$PWD/.bash_aliases" "$HOME/.bash_aliases"
-    linkFiles "$PWD/.bash_logout" "$HOME/.bash_logout"
-    linkFiles "$PWD/.exports" "$HOME/.exports"
-    linkFiles "$PWD/.functions" "$HOME/.functions"
-    linkFiles "$PWD/.gitignore_global" "$HOME/.gitignore_global"
-    linkFiles "$PWD/.inputrc" "$HOME/.inputrc"
-    linkFiles "$PWD/.profile" "$HOME/.profile"
-    linkFiles "$PWD/.tmux.conf" "$HOME/.tmux.conf"
-    linkFiles "$PWD/.vimrc" "$HOME/.vimrc"
-    linkFiles "$PWD/.xsessionrc" "$HOME/.xsessionrc"
-    linkFiles "$PWD/.composer/config.json" "$HOME/.composer/config.json"
-    linkFiles "$PWD/.btsync/btsync.conf" "$HOME/.btsync/btsync.conf"
-    linkFiles "$PWD/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
-    linkFiles "$PWD/.config/gtk-3.0/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
-    linkFiles "$PWD/.config/htop/htoprc" "$HOME/.config/htop/htoprc"
-    linkFiles "$PWD/.config/nautilus/accels" "$HOME/.config/nautilus/accels"
-    linkFiles "$PWD/.config/xfce4/terminal/terminalrc" "$HOME/.config/xfce4/terminal/terminalrc"
-    linkFiles "$PWD/.config/xfce4/terminal/accels.scm" "$HOME/.config/xfce4/terminal/accels.scm"
-    linkFiles "$PWD/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml"
-    linkFiles "$PWD/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml"
-    linkFiles "$PWD/.config/xfce4/xfconf/xfce-perchannel-xml/thunar-volman.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar-volman.xml"
-    linkFiles "$PWD/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml"
-    linkFiles "$PWD/.config/xfce4/xfconf/xfce-perchannel-xml/keyboard-layout.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/keyboard-layout.xml"
-    linkFiles "$PWD/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
-    linkFiles "$PWD/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml"
-    linkFiles "$PWD/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap" "$HOME/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"
-    linkFiles "$PWD/.config/sublime-text-3/Packages/User/Evernote.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Evernote.sublime-settings"
-    linkFiles "$PWD/.config/sublime-text-3/Packages/User/Markdown.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Markdown.sublime-settings"
-    linkFiles "$PWD/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
-    linkFiles "$PWD/.config/sublime-text-3/Packages/User/Preferences.sublime-settings" "$HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
-    linkFiles "$PWD/.WebIde90/config/codestyles/Default _1_.xml" "$HOME/.WebIde90/config/codestyles/Default _1_.xml"
-    linkFiles "$PWD/.WebIde90/config/keymaps/Default copy.xml" "$HOME/.WebIde90/config/keymaps/Default copy.xml"
-    linkFiles "$PWD/.WebIde90/config/keymaps/Default for GNOME copy.xml" "$HOME/.WebIde90/config/keymaps/Default for GNOME copy.xml"
-    linkFiles "$PWD/.WebIde90/config/tools/External Tools.xml" "$HOME/.WebIde90/config/tools/External Tools.xml"
-    linkFiles "$PWD/supervisor.conf" "$HOME/supervisor.conf"
-    linkFiles "$PWD/bin" "$HOME/bin"
-    linkFiles "$PWD/.fonts" "$HOME/.fonts"
-    linkFiles "$PWD/.themes" "$HOME/.themes"
+
+    for file in \
+        ".gitconfig" \
+        ".bashrc" \
+        ".bash_aliases" \
+        ".bash_logout" \
+        ".exports" \
+        ".functions" \
+        ".gitignore_global" \
+        ".inputrc" \
+        ".profile" \
+        ".tmux.conf" \
+        ".vimrc" \
+        ".xsessionrc" \
+        ".composer/config.json" \
+        ".btsync/btsync.conf" \
+        ".config/gtk-3.0/settings.ini" \
+        ".config/gtk-3.0/gtk.css" \
+        ".config/htop/htoprc" \
+        ".config/nautilus/accels" \
+        ".config/xfce4/terminal/terminalrc" \
+        ".config/xfce4/terminal/accels.scm" \
+        ".config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml" \
+        ".config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml" \
+        ".config/xfce4/xfconf/xfce-perchannel-xml/thunar-volman.xml" \
+        ".config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml" \
+        ".config/xfce4/xfconf/xfce-perchannel-xml/keyboard-layout.xml" \
+        ".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml" \
+        ".config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml" \
+        ".config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap" \
+        ".config/sublime-text-3/Packages/User/Evernote.sublime-settings" \
+        ".config/sublime-text-3/Packages/User/Markdown.sublime-settings" \
+        ".config/sublime-text-3/Packages/User/Package Control.sublime-settings" \
+        ".config/sublime-text-3/Packages/User/Preferences.sublime-settings" \
+        ".WebIde90/config/codestyles/Default _1_.xml" \
+        ".WebIde90/config/keymaps/Default copy.xml" \
+        ".WebIde90/config/keymaps/Default for GNOME copy.xml" \
+        ".WebIde90/config/tools/External Tools.xml" \
+        "supervisor.conf" \
+        "bin" \
+        ".fonts" \
+        ".themes"
+    do
+        linkFiles "$PWD/$file" "$HOME/$file"
+    done
 
     if [ ! -f "$HOME/.extra" ]; then
         cp .extra "$HOME"
