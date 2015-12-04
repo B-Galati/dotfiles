@@ -29,8 +29,8 @@ linkFiles () {
 }
 
 doIt () {
-#	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
- #   	  --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
+	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+  	      --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
 
     # Création des fichiers de config
     for file in \
