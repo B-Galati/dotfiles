@@ -29,8 +29,8 @@ linkFiles () {
 }
 
 doIt () {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-    	  --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
+#	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+ #   	  --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
 
     # Création des fichiers de config
     for file in \
@@ -66,10 +66,26 @@ doIt () {
         ".config/sublime-text-3/Packages/User/Markdown.sublime-settings" \
         ".config/sublime-text-3/Packages/User/Package Control.sublime-settings" \
         ".config/sublime-text-3/Packages/User/Preferences.sublime-settings" \
-        ".WebIde90/config/codestyles/Default _1_.xml" \
-        ".WebIde90/config/keymaps/Default copy.xml" \
-        ".WebIde90/config/keymaps/Default for GNOME copy.xml" \
-        ".WebIde90/config/tools/External Tools.xml" \
+        ".WebIde100/config/codestyles/Default _1_.xml" \
+        ".WebIde100/config/keymaps/Azerty.xml" \
+        ".WebIde100/config/keymaps/Bepo.xml" \
+        ".WebIde100/config/templates/PHP.xml" \
+        ".WebIde100/config/templates/Twig.xml" \
+        ".WebIde100/config/tools/External Tools.xml" \
+        ".WebIde100/config/options/appComponentVersions.xml" \
+        ".WebIde100/config/options/baseRefactoring.xml" \
+        ".WebIde100/config/options/cachedDictionary.xml" \
+        ".WebIde100/config/options/code.style.schemes.xml" \
+        ".WebIde100/config/options/colors.scheme.xml" \
+        ".WebIde100/config/options/editor.codeinsight.xml" \
+        ".WebIde100/config/options/editor.xml" \
+        ".WebIde100/config/options/GrepConsole.xml" \
+        ".WebIde100/config/options/ignore.xml" \
+        ".WebIde100/config/options/keymap.xml" \
+        ".WebIde100/config/options/markdown.xml" \
+        ".WebIde100/config/options/remote-servers.xml" \
+        ".WebIde100/config/options/ui.lnf.xml" \
+        ".WebIde100/config/options/usageView.xml" \
         "supervisor.conf" \
         "bin" \
         ".fonts" \

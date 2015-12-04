@@ -1,0 +1,15 @@
+<application>
+  <component name="UISettings">
+    <option name="ANIMATE_WINDOWS" value="false" />
+    <option name="HIDE_TOOL_STRIPES" value="false" />
+    <option name="WIDESCREEN_SUPPORT" value="true" />
+    <option name="SHOW_MEMORY_INDICATOR" value="true" />
+    <option name="SHOW_MAIN_TOOLBAR" value="true" />
+    <option name="SHOW_NAVIGATION_BAR" value="false" />
+    <option name="SCROLL_TAB_LAYOUT_IN_EDITOR" value="false" />
+    <option name="DISABLE_MNEMONICS" value="true" />
+    <option name="DISABLE_MNEMONICS_IN_CONTROLS" value="true" />
+    <option name="USE_SMALL_LABELS_ON_TABS" value="true" />
+    <option name="MAX_LOOKUP_LIST_HEIGHT" value="14" />
+  </component>
+</application>
