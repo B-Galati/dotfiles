@@ -30,7 +30,7 @@ linkFiles () {
 
 doIt () {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-  	      --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
+    	  --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
 
     # Création des fichiers de config
     for file in \
@@ -66,6 +66,7 @@ doIt () {
         ".config/sublime-text-3/Packages/User/Markdown.sublime-settings" \
         ".config/sublime-text-3/Packages/User/Package Control.sublime-settings" \
         ".config/sublime-text-3/Packages/User/Preferences.sublime-settings" \
+        ".WebIde100/config/installed.txt" \
         ".WebIde100/config/codestyles/Default _1_.xml" \
         ".WebIde100/config/keymaps/Azerty.xml" \
         ".WebIde100/config/keymaps/Bepo.xml" \
