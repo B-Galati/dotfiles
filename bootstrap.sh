@@ -29,8 +29,8 @@ linkFiles () {
 }
 
 doIt () {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-    	  --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
+#	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+ #   	  --exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude ".extra" -avh --no-perms . ~;
 
     # Création des fichiers de config
     for file in \
@@ -94,6 +94,13 @@ doIt () {
     do
         linkFiles "$PWD/$file" "$HOME/$file"
     done
+
+    # btsync ne suit pas les symlinks...
+    if ln -f "$PWD/.btsync/btsync.conf" "$HOME/.btsync/btsync.conf"; then
+        success "Hardlink pour btsync"
+    else
+        fail "Hardlink pour btsync"
+    fi
 
     # Création des fichiers privés s'ils n'existent pas
     for file in ".extra" ".gitconfig_private"
