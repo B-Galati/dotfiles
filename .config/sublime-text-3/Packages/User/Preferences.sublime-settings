@@ -1,21 +1,17 @@
 {
-	"theme": "Phoenix Dark.sublime-theme",
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
-
 	"font_size": 10,
-	"show_encoding": true,
-
 	"ignored_packages":
 	[
 		"Markdown",
 		"Vintage"
 	],
-
-	// Phoenix theme
 	"phoenix_color_blue": true,
 	"phoenix_color_expanded_folder": true,
 	"phoenix_dirty_bottom_bar_red": true,
 	"phoenix_highlight_current_tab": true,
 	"phoenix_sidebar_tree_medium": true,
-	"phoenix_solid_current_tab": true
+	"phoenix_solid_current_tab": true,
+	"show_encoding": true,
+	"theme": "Phoenix Dark.sublime-theme"
 }
