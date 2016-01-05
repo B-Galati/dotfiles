@@ -20,6 +20,8 @@ alias rm='rm -I'
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
 alias composer='composer -vv'
 alias phpunit="docker run --rm -ti -v $(pwd):/app phpunit/phpunit"
+alias npm-exec='PATH=$(npm bin):$PATH'
+alias atoum='vendor/atoum/atoum/bin/atoum'
 
 # Docker aliases
 alias meteor='docker run -it --rm -v "$(pwd)":/app danieldent/meteor meteor'

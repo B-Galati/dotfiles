@@ -17,9 +17,13 @@ export HISTFILESIZE=2000 # Taille maxi du fichier d'historique
 export HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
 
 # Configurer un proxy
-#export http_proxy='http://csproxy:80'
-#export https_proxy=$http_proxy
-#export ftp_proxy=$http_proxy
-#export rsync_proxy=$http_proxy
-#export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+# export http_proxy='http://squid:8080/'
+# export HTTP_PROXY=$http_proxy
+# export https_proxy=$http_proxy
+# export HTTPS_PROXY=$http_proxy
+# export HTTP_PROXY_REQUEST_FULLURI=true
+# export HTTPS_PROXY_REQUEST_FULLURI=true
+# export ftp_proxy=$http_proxy
+# export rsync_proxy=$http_proxy
+# export no_proxy="localhost,127.0.0.1"
 

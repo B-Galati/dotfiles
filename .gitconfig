@@ -1,6 +1,7 @@
 [alias]
 	st   = status
-	co   = checkout
+    co   = checkout
+    c    = commit
 	com  = commit -m
 	coma = commit -a -m
 	aa   = add --all
@@ -36,7 +37,7 @@
 	untracked = red
 
 [push]
-    default = simple
+    default = upstream
 
 [diff]
 	tool = meld
@@ -58,5 +59,8 @@
     enabled = true
 
 [include]
-    path = .gitconfig_private
+    path = ~/.gitconfig_private
     
+[user]
+	name = Benoit Galati
+	email = b.galati-prestataire@alptis.fr

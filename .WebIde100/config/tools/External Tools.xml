@@ -1,9 +1,9 @@
 <toolSet name="External Tools">
   <tool name="atoum" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
     <exec>
-      <option name="COMMAND" value="bin/atoum" />
+      <option name="COMMAND" value="vendor/atoum/atoum/bin/atoum" />
       <option name="PARAMETERS" value="$FilePath$ --debug" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/workspace/capvita-oav" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
     </exec>
   </tool>
   <tool name="testGenerator" description="Généré un test atoum" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
