@@ -37,7 +37,7 @@
 	untracked = red
 
 [push]
-    default = upstream
+    default = simple
 
 [diff]
 	tool = meld

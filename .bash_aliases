@@ -17,11 +17,13 @@ alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'
 alias sfdockerclear='rm -rf app/cache/* && docker-compose run --rm web php app/console cache:warmup'
 alias rm='rm -I'
-alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
 alias composer='composer -vv'
+alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
 alias phpunit="docker run --rm -ti -v $(pwd):/app phpunit/phpunit"
 alias npm-exec='PATH=$(npm bin):$PATH'
 alias atoum='vendor/atoum/atoum/bin/atoum'
+alias php='php -dzend_extension=xdebug.so'
 
 # Docker aliases
 alias meteor='docker run -it --rm -v "$(pwd)":/app danieldent/meteor meteor'
+#alias composer='docker run -it --rm -v $(pwd):/app -v $HOME/.composer:/root/composer -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK composer/composer -vv && chown -Rf $USER:$USER vendor/'
