@@ -9,9 +9,9 @@
 
 	# log section
 	l   = !git log | tig -FRSX
-	ll  = log --date=short --pretty=format:'%Cred%h%Creset%x09%Cgreen%cr%Creset%x09%C(cyan)%an%Creset %s%x09%C(yellow)%d%Creset'
-	lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
-	lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative --all
+    ll  = log --color --all --format='%C(yellow)%h%Creset %cr %C(blue)%cn%Creset -%C(auto)%d%Creset %s'
+    lg  = log --graph --oneline --abbrev-commit --color --decorate
+    lga = log --graph --oneline --abbrev-commit --color --decorate --all
 
 	# branch management
 	bdelete = !git branch -D $(git branch | grep -v ^* | xargs)

@@ -9,7 +9,6 @@ alias vi='vim'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
 alias service='sudo service --status-all'
-alias boot_log="sudo sed $'s/\^\[/\E/g;s/\[1G\[/\[27G\[/' /var/log/boot"
 alias du='du -h --max-depth=1'
 alias dusort='du -ah | sort -hr'
 alias df='df -h'
@@ -21,7 +20,7 @@ alias composer='composer -vv'
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
 alias phpunit="docker run --rm -ti -v $(pwd):/app phpunit/phpunit"
 alias npm-exec='PATH=$(npm bin):$PATH'
-alias atoum='vendor/atoum/atoum/bin/atoum'
+alias atoum='php vendor/bin/atoum'
 alias php='php -dzend_extension=xdebug.so'
 
 # Docker aliases

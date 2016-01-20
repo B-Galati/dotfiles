@@ -1,2 +1,3 @@
 .idea/
 .atoum.php
+bin/test-generator.php

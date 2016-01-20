@@ -34,10 +34,16 @@
     <keyboard-shortcut first-keystroke="alt insert" />
     <keyboard-shortcut first-keystroke="altGraph insert" />
   </action>
+  <action id="GotoImplementation">
+    <mouse-shortcut keystroke="control alt button1" />
+    <keyboard-shortcut first-keystroke="alt i" />
+  </action>
+  <action id="GotoTest" />
   <action id="HideActiveWindow">
     <keyboard-shortcut first-keystroke="shift escape" />
     <keyboard-shortcut first-keystroke="ctrl numpad0" />
   </action>
+  <action id="Images.ShowThumbnails" />
   <action id="MoveLineDown">
     <keyboard-shortcut first-keystroke="shift ctrl down" />
   </action>
@@ -54,6 +60,7 @@
     <keyboard-shortcut first-keystroke="ctrl alt insert" />
     <keyboard-shortcut first-keystroke="ctrl altGraph insert" />
   </action>
+  <action id="PopupHector" />
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="ctrl alt l" />
     <keyboard-shortcut first-keystroke="ctrl alt r" />
@@ -61,6 +68,9 @@
   <action id="RenameElement">
     <keyboard-shortcut first-keystroke="shift f6" />
     <keyboard-shortcut first-keystroke="shift alt f2" />
+  </action>
+  <action id="ReopenClosedTab">
+    <keyboard-shortcut first-keystroke="shift ctrl t" />
   </action>
   <action id="ResizeToolWindowDown" />
   <action id="ResizeToolWindowUp" />
@@ -89,6 +99,9 @@
   <action id="Tool_External Tools_atoum">
     <keyboard-shortcut first-keystroke="ctrl numpad1" />
   </action>
+  <action id="Tool_External Tools_atoum test method">
+    <keyboard-shortcut first-keystroke="ctrl numpad6" />
+  </action>
   <action id="Tool_External Tools_phingFunctionnalTest">
     <keyboard-shortcut first-keystroke="ctrl numpad3" />
   </action>
@@ -103,5 +116,8 @@
   </action>
   <action id="Tool_External Tools_testGenerator">
     <keyboard-shortcut first-keystroke="ctrl numpad9" />
+  </action>
+  <action id="Vcs.ShowTabbedFileHistory">
+    <keyboard-shortcut first-keystroke="shift ctrl alt h" />
   </action>
 </keymap>
