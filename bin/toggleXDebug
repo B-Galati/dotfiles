@@ -2,9 +2,9 @@
 
 if php -m | grep xdebug; then
     echo ";zend_extension=xdebug.so" > /etc/php5/mods-available/xdebug.ini
-    printf "\r\033[2K  [ \033[00;32mActivé\033[0m ] %s\n"
+    printf "\r\033[2K  [\033[0;31mDésactivé\033[0m] %s\n"
 else
     echo "zend_extension=xdebug.so" > /etc/php5/mods-available/xdebug.ini
-    printf "\r\033[2K  [\033[0;31mDésactivé\033[0m] %s\n"
+    printf "\r\033[2K  [ \033[00;32mActivé\033[0m ] %s\n"
 fi
 
