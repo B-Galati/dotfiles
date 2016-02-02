@@ -48,6 +48,7 @@ doIt () {
         ".xsessionrc" \
         ".composer/config.json" \
         ".btsync/btsync.conf" \
+        ".config/redshift.conf" \
         ".config/gtk-3.0/settings.ini" \
         ".config/gtk-3.0/gtk.css" \
         ".config/htop/htoprc" \
