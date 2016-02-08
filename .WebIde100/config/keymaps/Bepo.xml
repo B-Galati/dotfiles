@@ -19,6 +19,10 @@
     <keyboard-shortcut first-keystroke="alt 6" />
     <keyboard-shortcut first-keystroke="alt right_parenthesis" />
   </action>
+  <action id="AtoumSwitchContext">
+    <keyboard-shortcut first-keystroke="shift alt k" />
+    <keyboard-shortcut first-keystroke="shift alt t" />
+  </action>
   <action id="EditorDeleteLine">
     <keyboard-shortcut first-keystroke="ctrl y" />
     <keyboard-shortcut first-keystroke="ctrl l" />
@@ -124,4 +128,6 @@
   <action id="Vcs.ShowTabbedFileHistory">
     <keyboard-shortcut first-keystroke="shift ctrl alt h" />
   </action>
+  <action id="tasks.switch" />
+  <action id="tasks.switch.toolbar" />
 </keymap>

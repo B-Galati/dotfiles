@@ -1,14 +1,18 @@
-com.intellij
 Docker
-mobi.hsz.idea.gitignore
 GrepConsole
 PHPUnit code coverage
-BashSupport
+PlantUML integration
+String Manipulation
 awesome.console
-com.dmarcotte.handlebars
-com.wix.eslint
-com.jetbrains.plugins.meteor
-de.espend.idea.php.annotation
 com.karateca.jstoolbox
+mobi.hsz.idea.gitignore
 net.nicoulaj.idea.markdown
+BashSupport
+NodeJS
+com.dmarcotte.handlebars
+com.atoum.phpstormplugin
+de.espend.idea.php.toolbox
+de.espend.idea.php.annotation
+com.wix.eslint
 fr.adrienbrault.idea.symfony2plugin
+sk.sorien.silex.plugin.id
