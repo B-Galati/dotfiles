@@ -1,0 +1,9 @@
+[submodule ".themes/Numix"]
+	path = .themes/Numix
+	url = https://github.com/shimmerproject/Numix
+[submodule ".themes/Xfce-darkness"]
+	path = .themes/Xfce-darkness
+	url = https://github.com/vkuzel/Xfce-darkness
+[submodule ".themes/Numix-Holo"]
+	path = .themes/Numix-Holo
+	url = https://github.com/dar5hak/Numix-Holo
