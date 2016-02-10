@@ -25,7 +25,7 @@ alias atoum='php vendor/bin/atoum'
 
 # Docker aliases
 alias meteor='docker run -it --rm -v "$(pwd)":/app danieldent/meteor meteor'
-#alias composer='docker run -it --rm -v $(pwd):/app -v $HOME/.composer:/root/composer -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK composer/composer -vv && chown -Rf $USER:$USER vendor/'
+alias composer='docker run  -it --rm -v $HOME/.composer:/home/composer/composer -v $(pwd):/app -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK -e HTTP_PROXY=$HTTP_PROXY -e HTTPS_PROXY=$HTTPS_PROXY --name composer benoitg/composer -vv'
 alias sfdockerclear='rm -rf app/cache/* && docker-compose run --rm web php app/console cache:warmup'
 alias phpunit='docker run --rm -it -v $(pwd):/app phpunit/phpunit'
 alias atoumdocker='docker run --rm -it -v $(pwd):/src atoum/atoum'
