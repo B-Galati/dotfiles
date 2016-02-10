@@ -1,3 +1,4 @@
 .idea/
 .atoum.php
 bin/test-generator.php
+pimple.json
