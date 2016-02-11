@@ -58,6 +58,7 @@ export PATH="/home/alptis/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
+source ~/.extra
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
