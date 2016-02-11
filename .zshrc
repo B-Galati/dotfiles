@@ -57,7 +57,7 @@ export PATH="/home/alptis/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bash_aliases
+source ~/.aliases
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
