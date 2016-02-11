@@ -20,7 +20,7 @@ alias sfclear='rm -rf app/cache/* && sf cache:warmup'
 alias composer='composer -vv'
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
 alias npm-exec='PATH=$(npm bin):$PATH'
-alias atoum='php vendor/bin/atoum'
+alias atoum='vendor/atoum/atoum/bin/atoum'
 #alias php='php -dzend_extension=xdebug.so'
 
 # Docker aliases
