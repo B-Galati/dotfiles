@@ -1,5 +1,8 @@
 # Source .profile when xsession starts with lightdm
 . $HOME/.profile
 
+# run local xhost
+xhost local:root
+
 # Start smart-notifier
 smart-notifier&
