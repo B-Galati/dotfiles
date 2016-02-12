@@ -1,11 +1,12 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/alptis/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
+DEFAULT_USER=benoit
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -30,7 +31,7 @@ ZSH_THEME="agnoster"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -43,13 +44,13 @@ ZSH_THEME="agnoster"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git symfony2 docker docker-compose bower colored-man-pages composer debian extract git-prompt grunt gulp man phing rsync sudo sytemd git-remote-branch)
+plugins=(git symfony2 docker docker-compose colored-man-pages composer debian extract git-prompt colored-man-pages phing supervisor colorize sudo sytemd git-remote-branch)
 
 # User configuration
 
@@ -57,8 +58,8 @@ export PATH="/home/alptis/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source ~/.aliases
-source ~/.extra
+source $HOME/.aliases
+source $HOME/.extra
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -85,7 +86,13 @@ source ~/.extra
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Bind up and down keys to search in history by the already entered characters
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
+# Bind End and Home keys
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
+
 screenfetch
+
