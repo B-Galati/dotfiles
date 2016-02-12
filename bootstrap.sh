@@ -17,25 +17,26 @@ fail () {
 }
 
 linkFiles () {
-    if [ -d "$2" ] ; then
-        if [ -L "$2" ]; then
-            info "SKIP folder '$1' -> symlink already exists in '$2'"
-        else
-            fail "SKIP folder '$1' -> already exists in '$2'"
-        fi
-        return 0
+    if [ -L "$2" ] && [ ! -f "$2" ]; then
+        info "SKIP folder '$1' -> symlink already exists in '$2'"
+        return 0;
     fi
 
-    # proposer un autosync du genre
-    # rsync -ah $2 $1
-    # rm -rf $2
-    # puis le symlink
+    if [ -d "$2" ] ; then
+        read -p "Directory '$2' already exists. Do you want to sync it and create symlink ?(y/n) " -n 1;
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            rsync -ah "$2" "$(dirname $1)"
+            rm -rf $2
+        else
+            return 0;
+        fi
+    fi
 
-    # if ln -snf "$1" "$2"; then
-    #     success "linked $1 to $2"
-    # else
-    #     fail "linked $1 to $2"
-    # fi
+    if ln -snf "$1" "$2"; then
+        success "linked $1 to $2"
+    else
+        fail "linked $1 to $2"
+    fi
 }
 
 doIt () {
@@ -52,7 +53,7 @@ doIt () {
         -not -path "*.gitmodules*" \
         -not -path "*.git/*")
     do
-        linkFiles $file "$HOME/$(basename $file)"
+        linkFiles "$PWD/$(basename $file)" "$HOME/$(basename $file)"
     done
 
     # btsync ne suit pas les symlinks...
