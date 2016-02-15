@@ -17,12 +17,12 @@ fail () {
 }
 
 linkFiles () {
-    if [ -L "$2" ] && [ ! -f "$2" ]; then
-        info "SKIP folder '$1' -> symlink already exists in '$2'"
+    if [ -L "$2" ]; then
+        info "SKIP '$1' -> symlink already exists in '$2'"
         return 0;
     fi
 
-    if [ -d "$2" ] ; then
+    if [ -d "$2" ] && [ ! -L "$2" ]; then
         read -p "Directory '$2' already exists. Do you want to sync it and create symlink ?(y/n) " -n 1;
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             rsync -ah "$2" "$(dirname $1)"

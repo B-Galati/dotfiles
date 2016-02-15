@@ -60,7 +60,3 @@
 
 [include]
     path = ~/.gitconfig_private
-    
-[user]
-	name = Benoit Galati
-	email = b.galati-prestataire@alptis.fr
