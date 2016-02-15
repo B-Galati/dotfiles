@@ -49,7 +49,6 @@ doIt () {
         -not -name ".gitconfig_private" \
         -not -name ".git" \
         -not -name "*.swp" \
-        -not -path "*.oh-my-zsh*" \
         -not -path "*.gitmodules*" \
         -not -path "*.git/*")
     do
