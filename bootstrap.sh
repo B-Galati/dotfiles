@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Credits :
-#   https://github.com/willdurand/dotfiles/blob/master/bin/install
-#   https://github.com/mathiasbynens/dotfiles
 #
 
 info () {
@@ -17,13 +14,14 @@ fail () {
 }
 
 linkFiles () {
-    if [ -L "$2" ]; then
+    if [[ -L "$2" ]]; then
         info "SKIP '$1' -> symlink already exists in '$2'"
         return 0;
     fi
 
-    if [ -d "$2" ] && [ ! -L "$2" ]; then
+    if [[ -d "$2"  && ! -L "$2" ]]; then
         read -p "Directory '$2' already exists. Do you want to sync it and create symlink ?(y/n) " -n 1;
+        echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
             rsync -ah "$2" "$(dirname $1)"
             rm -rf $2
@@ -55,18 +53,17 @@ doIt () {
         linkFiles "$PWD/$(basename $file)" "$HOME/$(basename $file)"
     done
 
-    # btsync ne suit pas les symlinks...
-    # en principe on va directement aller chercher le répertoire de btsync
+    # btsync does not follow symlink :-)
     # if ln -f "$PWD/.btsync/btsync.conf" "$HOME/.btsync/btsync.conf"; then
     #     success "Hardlink for btsync"
     # else
     #     fail "Hardlink for btsync"
     # fi
 
-    # Création des fichiers privés s'ils n'existent pas
+    # Create private files if does not exist
     for file in ".extra" ".gitconfig_private"
     do
-        if [ ! -f "$HOME/$file" ]; then
+        if [[ ! -f "$HOME/$file" ]]; then
             cp $file $HOME
             success "Create $file in home $HOME"
         else
@@ -77,10 +74,10 @@ doIt () {
 
 cd "$(dirname "${BASH_SOURCE}")"
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+if [[ "$1" == "--force" || "$1" == "-f" ]]; then
 	doIt
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+    read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt
