@@ -1,6 +1,7 @@
 {
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"font_size": 10,
+	"draw_white_space": "all",
 	"ignored_packages":
 	[
 		"Markdown",
