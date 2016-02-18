@@ -1,4 +1,0 @@
-test:
-    override:
-        - ./bootstrap.sh
-
