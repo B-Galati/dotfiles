@@ -1,6 +1,7 @@
 [alias]
 	st   = status
     co   = checkout
+    cob  = checkout --no-track -b 
     c    = commit
 	com  = commit -m
 	coma = commit -a -m
