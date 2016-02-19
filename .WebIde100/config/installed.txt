@@ -11,6 +11,7 @@ BashSupport
 NodeJS
 com.dmarcotte.handlebars
 com.atoum.phpstormplugin
+com.kalessil.phpStorm.phpInspectionsEA
 de.espend.idea.php.toolbox
 de.espend.idea.php.annotation
 com.wix.eslint
