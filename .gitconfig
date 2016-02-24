@@ -2,6 +2,8 @@
 	st   = status
     co   = checkout
     cob  = checkout --no-track -b 
+    cp   = cherry-pick
+    rb   = rebase
     c    = commit
 	com  = commit -m
 	coma = commit -a -m
