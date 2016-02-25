@@ -56,7 +56,7 @@ Package Control.user-ca-bundle
 !.config/htop/*
 !.config/nautilus/*
 !.config/sublime-text-3/*
-!.config/xfce4/**
+!.config/xfce4/*
 
 # Others
 bin/phing
