@@ -1,8 +1,0 @@
-[Desktop Entry]
-Comment=
-Terminal=false
-Name=Eclipse
-Exec=/opt/eclipse/eclipse
-Type=Application
-Icon=/opt/eclipse/icon.xpm
-X-XFCE-Source=file:///home/benoit/.local/share/applications/alacarte-made-1.desktop

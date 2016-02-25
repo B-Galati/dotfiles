@@ -10,7 +10,7 @@ plugins=(symfony2 docker docker-compose composer debian extract colored-man-page
 
 # User configuration
 
-export PATH="/home/alptis/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/sbin:~/.gem/ruby/2.1.0/bin:~/npm-global/bin"
+export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/sbin:~/.gem/ruby/2.1.0/bin:~/npm-global/bin"
 export EDITOR='vim'
 export HISTSIZE=20000
 export SAVEHIST=$HISTSIZE
@@ -26,8 +26,10 @@ bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
 # Bind End and Home keys
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
+bindkey "^[OH" beginning-of-line
+bindkey "^[OF" end-of-line
+#bindkey "${terminfo[khome]}" beginning-of-line
+#bindkey "${terminfo[kend]}" end-of-line
 
 screenfetch
 

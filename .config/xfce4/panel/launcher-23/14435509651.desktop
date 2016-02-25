@@ -1,8 +1,0 @@
-[Desktop Entry]
-Comment=
-Terminal=false
-Name=PhpStorm 8
-Exec=/opt/phpstorm/bin/phpstorm.sh
-Type=Application
-Icon=/opt/phpstorm/bin/webide.png
-X-XFCE-Source=file:///home/benoit/.local/share/applications/alacarte-made-4.desktop
