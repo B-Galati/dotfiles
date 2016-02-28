@@ -9,7 +9,9 @@ unzip gtk-redshift geoclue hddtemp light-locker kodi \
 ntfs-3g apt-listbugs apt-listchanges alacarte zenity openjdk-8-jre \
 ttf-mscorefonts-installer msttcorefonts network-manager-openvpn-gnome \
 filezilla apt-transport-https ca-certificates curl python-pip vim-nox \
-meld ntp youtube-dl
+meld ntp youtube-dl htop gvfs-backends p7zip cryptkeeper homebank \
+smartmontools msmtp mailutils smart-notifier gsmartcontrol handbrake transmission \
+apt-file
 
 sudo apt-get remove --purge xscreensaver
 ```
