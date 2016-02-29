@@ -26,7 +26,7 @@ git submodule update --init --recursive
 ./bootstrap
 ```
 
-## icons themes
+## Icon themes
 
 - [numix](https://github.com/numixproject/)
 - [numix-colmaris](https://labo.olivierdelort.net/colmaris/numix-colmaris.git)
