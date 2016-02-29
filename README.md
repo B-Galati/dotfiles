@@ -2,6 +2,8 @@
 
 ## Debian requirements
 
+[Powerline](https://powerline.readthedocs.org/en/latest/installation.html) fonts are required
+
 ```bash
 apt install git sudo rsync numlockx screenfetch zsh vim \
 arandr gtk2-engines-murrine murrine-themes dmz-cursor-theme \
