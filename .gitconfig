@@ -10,6 +10,9 @@
 	aa   = add --all
     fa   = fetch --all -p -v
 
+    # push
+    pushoh = push -u origin HEAD # like first push
+
 	# log section
 	l   = !git log | tig -FRSX
     ll  = log --color --all --format='%C(yellow)%h%Creset %cr %C(blue)%cn%Creset -%C(auto)%d%Creset %s'
