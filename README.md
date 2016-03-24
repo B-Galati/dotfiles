@@ -13,7 +13,8 @@ ttf-mscorefonts-installer msttcorefonts network-manager-openvpn-gnome \
 filezilla apt-transport-https ca-certificates curl python-pip vim-nox \
 meld ntp youtube-dl htop gvfs-backends p7zip cryptkeeper homebank \
 smartmontools msmtp mailutils smart-notifier gsmartcontrol handbrake transmission \
-apt-file hardinfo psensor catfish xarchiver zip simple-scan
+apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
+shutter phatch gparted
 
 sudo apt-get remove --purge xscreensaver
 ```
