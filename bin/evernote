@@ -13,16 +13,16 @@ case "$1" in
                 if [ "$RUNNING" == "false" ]; then
                         echo "starting container..."
                         docker start $CONTAINER_NAME
-			docker exec -it $CONTAINER_NAME wine .wine/drive_c/Program\ Files/Evernote/Evernote/Evernote.exe
+                        docker exec -it $CONTAINER_NAME wine .wine/drive_c/Program\ Files/Evernote/Evernote/Evernote.exe
                 else
                         echo "running container..."
-			docker run  -it  \
-				-v /tmp/.X11-unix:/tmp/.X11-unix \
-				-v $HOME/evernote_backup:/root/evernote \
-				-e DISPLAY=unix$DISPLAY \
-				--cpuset-cpus 0
-				--name $CONTAINER_NAME \
-				benoitg/evernote
+                        docker run  -it  \
+                                -v /tmp/.X11-unix:/tmp/.X11-unix \
+                                -v $HOME/evernote_backup:/root/evernote \
+                                -e DISPLAY=unix$DISPLAY \
+                                --cpuset-cpus 0 \
+                                --name $CONTAINER_NAME \
+                                benoitg/evernote
                 fi
         ;;
 
