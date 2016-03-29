@@ -1,65 +1,68 @@
 [alias]
-	st   = status
+    st   = status
     co   = checkout
-    cob  = checkout --no-track -b 
+    cob  = checkout --no-track -b
     cp   = cherry-pick
     rb   = rebase
     c    = commit
-	com  = commit -m
-	coma = commit -a -m
-	aa   = add --all
+    com  = commit -m
+    coma = commit -a -m
+    aa   = add --all
     fa   = fetch --all -p -v
 
     # push
     pushoh = push -u origin HEAD # like first push
 
-	# log section
-	l   = !git log | tig -FRSX
+    # log section
+    l   = !git log | tig -FRSX
     ll  = log --color --all --format='%C(yellow)%h%Creset %cr %C(blue)%cn%Creset -%C(auto)%d%Creset %s'
     lg  = log --graph --oneline --abbrev-commit --color --decorate
     lga = log --graph --oneline --abbrev-commit --color --decorate --all
 
-	# branch management
-	bdelete = !git branch -D $(git branch | grep -v ^* | xargs)
+    # branch management
+    bdelete = !git branch -D $(git branch | grep -v ^* | xargs)
 
-	# alias management
-	aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort"
-	
-	# diff
-	da = difftool --cached -d
+    # alias management
+    aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort"
+
+    # diff
+    da = difftool --cached -d
+
+[user]
+    useconfigonly = true
 
 [color]
     ui   = true
-	diff = true
+    diff = true
 
 [color "branch"]
-	current = blue
-	local   = yellow
-	remote  = green
+    current = blue
+    local   = yellow
+    remote  = green
 
 [color "status"]
-	added     = green
-	changed   = yellow
-	untracked = red
+    added     = green
+    changed   = yellow
+    untracked = red
 
 [push]
     default = simple
 
 [diff]
-	tool = meld
-	guitool = meld
+    tool = meld
+    guitool = meld
 
 [merge]
-	tool = meld
+    tool = meld
 
 [core]
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
 
 [pull]
     rebase = preserve
 
 [branch]
-	autosetuprebase = never
+    autosetuprebase = never
 
 [rerere]
     enabled = true
