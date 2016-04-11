@@ -14,32 +14,32 @@ Thumbs.db
 .Trashes
 
 # PhpStorm
-.WebIde100/system/
-.WebIde100/config/componentVersions/
-.WebIde100/config/tasks/
-.WebIde100/config/plugins/
-.WebIde100/config/options/IntelliLang.xml
-.WebIde100/config/phpstorm100.key
-.WebIde100/config/port.lock
-.WebIde100/config/disabled_update.txt
-.WebIde100/config/options/databaseSettings.xml
-.WebIde100/config/options/debugger.xml
-.WebIde100/config/options/diff.xml
-.WebIde100/config/options/dimensions.xml
-.WebIde100/config/options/extensionsRootType.xml
-.WebIde100/config/options/feature.usage.statistics.xml
-.WebIde100/config/options/file.template.settings.xml
-.WebIde100/config/options/git.xml
-.WebIde100/config/options/notifications.xml
-.WebIde100/config/options/options.xml
-.WebIde100/config/options/project.default.xml
-.WebIde100/config/options/recentProjectDirectories.xml
-.WebIde100/config/options/statistics.application.usages.xml
-.WebIde100/config/options/stubIndex.xml
-.WebIde100/config/options/updates.xml
-.WebIde100/config/options/usage.statistics.xml
-.WebIde100/config/options/web-browsers.xml
-.WebIde100/config/options/window.manager.xml
+.PhpStorm2016.1/system/
+.PhpStorm2016.1/config/componentVersions/
+.PhpStorm2016.1/config/tasks/
+.PhpStorm2016.1/config/plugins/
+.PhpStorm2016.1/config/options/IntelliLang.xml
+.PhpStorm2016.1/config/phpstorm100.key
+.PhpStorm2016.1/config/port.lock
+.PhpStorm2016.1/config/disabled_update.txt
+.PhpStorm2016.1/config/options/databaseSettings.xml
+.PhpStorm2016.1/config/options/debugger.xml
+.PhpStorm2016.1/config/options/diff.xml
+.PhpStorm2016.1/config/options/dimensions.xml
+.PhpStorm2016.1/config/options/extensionsRootType.xml
+.PhpStorm2016.1/config/options/feature.usage.statistics.xml
+.PhpStorm2016.1/config/options/file.template.settings.xml
+.PhpStorm2016.1/config/options/git.xml
+.PhpStorm2016.1/config/options/notifications.xml
+.PhpStorm2016.1/config/options/options.xml
+.PhpStorm2016.1/config/options/project.default.xml
+.PhpStorm2016.1/config/options/recentProjectDirectories.xml
+.PhpStorm2016.1/config/options/statistics.application.usages.xml
+.PhpStorm2016.1/config/options/stubIndex.xml
+.PhpStorm2016.1/config/options/updates.xml
+.PhpStorm2016.1/config/options/usage.statistics.xml
+.PhpStorm2016.1/config/options/web-browsers.xml
+.PhpStorm2016.1/config/options/window.manager.xml
 
 # Sublime Text
 Package Control.cache/

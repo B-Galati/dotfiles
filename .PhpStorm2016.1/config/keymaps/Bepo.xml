@@ -19,6 +19,10 @@
     <keyboard-shortcut first-keystroke="alt 6" />
     <keyboard-shortcut first-keystroke="alt right_parenthesis" />
   </action>
+  <action id="ActivateVersionControlToolWindow">
+    <keyboard-shortcut first-keystroke="alt 9" />
+    <keyboard-shortcut first-keystroke="alt slash" />
+  </action>
   <action id="AtoumSwitchContext">
     <keyboard-shortcut first-keystroke="shift alt k" />
     <keyboard-shortcut first-keystroke="shift alt t" />
@@ -51,6 +55,7 @@
     <keyboard-shortcut first-keystroke="shift escape" />
     <keyboard-shortcut first-keystroke="ctrl numpad0" />
   </action>
+  <action id="HippieCompletion" />
   <action id="Images.ShowThumbnails" />
   <action id="MoveLineDown">
     <keyboard-shortcut first-keystroke="shift ctrl down" />
