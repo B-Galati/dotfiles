@@ -28,6 +28,9 @@
     # diff
     da = difftool --cached -d
 
+    # tags
+    tdelete = fetch --prune origin +refs/tags/*:refs/tags/* 
+
 [user]
     useconfigonly = true
 
