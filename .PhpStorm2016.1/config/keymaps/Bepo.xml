@@ -27,6 +27,7 @@
     <keyboard-shortcut first-keystroke="shift alt k" />
     <keyboard-shortcut first-keystroke="shift alt t" />
   </action>
+  <action id="Console.TableResult.EditFilterCriteria" />
   <action id="EditorDeleteLine">
     <keyboard-shortcut first-keystroke="ctrl y" />
     <keyboard-shortcut first-keystroke="ctrl l" />
@@ -77,6 +78,7 @@
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="ctrl alt l" />
     <keyboard-shortcut first-keystroke="ctrl alt r" />
+    <keyboard-shortcut first-keystroke="alt r" />
   </action>
   <action id="RenameElement">
     <keyboard-shortcut first-keystroke="shift f6" />
@@ -126,6 +128,10 @@
   </action>
   <action id="Tool_External Tools_phingUnitTest">
     <keyboard-shortcut first-keystroke="ctrl numpad2" />
+  </action>
+  <action id="Tool_External Tools_php-cs-fixer">
+    <keyboard-shortcut first-keystroke="ctrl numpad8" />
+    <keyboard-shortcut first-keystroke="shift ctrl alt f" />
   </action>
   <action id="Tool_External Tools_testGenerator">
     <keyboard-shortcut first-keystroke="ctrl numpad9" />

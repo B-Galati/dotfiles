@@ -1,10 +1,15 @@
 <application>
   <component name="CodeFoldingSettings">
     <option name="COLLAPSE_IMPORTS" value="false" />
+    <option name="COLLAPSE_FILE_HEADER" value="false" />
   </component>
   <component name="CodeInsightSettings">
+    <option name="COMPLETION_CASE_SENSITIVE" value="2" />
     <option name="SURROUND_SELECTION_ON_QUOTE_TYPED" value="true" />
     <option name="REFORMAT_BLOCK_ON_RBRACE" value="false" />
+  </component>
+  <component name="CssFoldingSettings">
+    <option name="collapseDataUri" value="false" />
   </component>
   <component name="JSCodeFoldingSettings">
     <option name="collapseJSImports" value="false" />
@@ -14,5 +19,9 @@
   </component>
   <component name="PhpCodeFoldingSettings">
     <option name="COLLAPSE_IMPORTS" value="false" />
+  </component>
+  <component name="XmlFoldingSettings">
+    <option name="collapseHtmlStyleAttribute" value="false" />
+    <option name="COLLAPSE_HTML_STYLE_ATTRIBUTE" value="false" />
   </component>
 </application>
