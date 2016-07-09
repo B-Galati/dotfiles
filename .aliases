@@ -30,3 +30,4 @@ alias docker_composer='docker run  -it --rm -v $HOME/.composer:/home/composer/co
 alias docker_sfclear='rm -rf app/cache/* && docker-compose run --rm web php app/console cache:warmup'
 alias docker_phpunit='docker run --rm -it -v $(pwd):/app phpunit/phpunit'
 alias docker_atoum='docker run --rm -it -v $(pwd):/src atoum/atoum'
+alias docker_ng='docker run --rm -it -v $(pwd):/usr/src/app --name node-tools benoitg/node-tools ng'
