@@ -10,12 +10,12 @@
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$PATH:$HOME/bin"
 fi
 
 PATH="$PATH:/usr/sbin"
-PATH="$PATH:~/.gem/ruby/2.1.0/bin"
-PATH="$PATH:~/npm-global/bin"
+PATH="$PATH:./bin"
+PATH="$PATH:./vendor/bin"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
