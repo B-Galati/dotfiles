@@ -14,7 +14,8 @@ filezilla apt-transport-https ca-certificates curl python-pip vim-nox \
 meld ntp youtube-dl htop gvfs-backends p7zip cryptkeeper homebank \
 smartmontools msmtp mailutils smart-notifier gsmartcontrol handbrake transmission \
 apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
-shutter phatch gparted
+shutter phatch gparted gtk3-engines-xfce gtk3-engines-xfce httpie php5 \
+gdm3 gnome-screen-saver
 
 sudo apt-get remove --purge xscreensaver
 ```
@@ -26,6 +27,7 @@ git clone
 git submodule update --init --recursive
 ./bootstrap
 ```
+You can try to intall gtk3-engines-unico
 
 ## Icon themes
 
