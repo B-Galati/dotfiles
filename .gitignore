@@ -40,6 +40,12 @@ Thumbs.db
 .PhpStorm2016.1/config/options/usage.statistics.xml
 .PhpStorm2016.1/config/options/web-browsers.xml
 .PhpStorm2016.1/config/options/window.manager.xml
+.PhpStorm2016.1/config/options/ignore.xml
+.PhpStorm2016.1/config/options/images.support.xml
+.PhpStorm2016.1/config/options/keyboard.xml
+.PhpStorm2016.1/config/options/other.xml
+.PhpStorm2016.1/config/phpstorm110.key
+.PhpStorm2016.1/config/port
 
 # Sublime Text
 Package Control.cache/
