@@ -9,8 +9,7 @@ COMPLETION_WAITING_DOTS="true" # Uncomment the following line to display red dot
 plugins=(symfony2 docker docker-compose composer debian extract colored-man-pages phing supervisor colorize sudo sytemd git-remote-branch git-extras )
 
 # User configuration
-
-export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/sbin:~/.gem/ruby/2.1.0/bin:~/npm-global/bin"
+export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:usr/sbin:/bin:./bin:/usr/local/games:usr/games:~/npm-global/bin"
 export EDITOR='vim'
 export HISTSIZE=20000
 export SAVEHIST=$HISTSIZE
