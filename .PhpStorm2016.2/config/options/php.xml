@@ -10,4 +10,7 @@
       <PhpCSConfiguration />
     </phpcs_settings>
   </component>
+  <component name="PhpSmartKeysConfiguration">
+    <option name="smartFunctionParametersCompletion" value="true" />
+  </component>
 </application>
