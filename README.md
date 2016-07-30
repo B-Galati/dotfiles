@@ -15,7 +15,7 @@ meld ntp youtube-dl htop gvfs-backends p7zip cryptkeeper homebank \
 smartmontools msmtp mailutils smart-notifier gsmartcontrol handbrake transmission \
 apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
 shutter phatch gparted gtk3-engines-xfce gtk3-engines-xfce httpie php5 \
-gdm3 gnome-screen-saver
+gdm3 gnome-screen-saver libnss3-tools
 
 sudo apt-get remove --purge xscreensaver
 ```
