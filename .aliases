@@ -31,3 +31,5 @@ alias docker_sfclear='rm -rf app/cache/* && docker-compose run --rm web php app/
 alias docker_phpunit='docker run --rm -it -v $(pwd):/app phpunit/phpunit'
 alias docker_atoum='docker run --rm -it -v $(pwd):/src atoum/atoum'
 alias docker_ng='docker run --rm -it -v $(pwd):/usr/src/app --name node-tools benoitg/node-tools ng'
+alias docker_tslint='docker run --rm -it -v $(pwd):/usr/src/app -v $HOME/tslint.json:/home/node/tslint.json --name node-tools benoitg/node-tools tslint'
+
