@@ -1,0 +1,4 @@
+PlantUML integration
+com.dmarcotte.handlebars
+org.asciidoctor.intellij.asciidoc
+sk.sorien.silex.plugin.id
