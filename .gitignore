@@ -50,6 +50,9 @@ Thumbs.db
 .PhpStorm2016.2/config/options/multimarkdown.shared.xml
 .PhpStorm2016.2/config/options/webServers.xml
 .PhpStorm2016.2/config/options/proxy.settings.pwd
+.PhpStorm2016.2/config/options/applicationLibraries.xml
+.PhpStorm2016.2/config/options/nodeJsRemoteInterpreters.xml
+.PhpStorm2016.2/config/javascript/extLibs/
 .PhpStorm2016.2/config/phpstorm1620.key
 .PhpStorm2016.2/config/phpstorm110.key
 .PhpStorm2016.2/config/port
