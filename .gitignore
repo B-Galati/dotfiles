@@ -56,6 +56,7 @@ Thumbs.db
 .PhpStorm2016.2/config/phpstorm1620.key
 .PhpStorm2016.2/config/phpstorm110.key
 .PhpStorm2016.2/config/port
+.PhpStorm2016.2/config/options/window.state.xml
 
 # Sublime Text
 Package Control.cache/
@@ -78,3 +79,13 @@ Package Control.user-ca-bundle
 bin/phing
 .btsync/
 !.btsync/btsync.conf
+
+# Atom
+.atom/.apm/
+!.atom/.apm/.apmrc
+.atom/blob-store/
+.atom/compile-cache/
+.atom/packages/
+.atom/.node-gyp/
+.atom/recovery/
+.atom/storage/
