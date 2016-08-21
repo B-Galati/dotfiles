@@ -3,10 +3,12 @@
         "unshifted": 42
     },
     "52": {
-        "unshifted": 40
+        "unshifted": 40,
+        "alted": 91
     },
     "53": {
-        "unshifted": 41
+        "unshifted": 41,
+        "alted": 93
     },
     "54": {
         "unshifted": 64
@@ -15,7 +17,8 @@
         "unshifted": 187
     },
     "84": {
-        "unshifted": 232
+        "unshifted": 232,
+        "alted": 96
     },
     "90": {
         "unshifted": 224

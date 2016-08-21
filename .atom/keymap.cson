@@ -36,7 +36,7 @@
     'alt-"': 'tree-view:toggle'
     'ctrl-shift-n': 'fuzzy-finder:toggle-file-finder'
     'alt-j': 'find-and-replace:select-next'
-    'alt-shift-j': 'find-and-replace:select-all'
+    'alt-ctrl-shift-j': 'find-and-replace:select-all'
 
 'atom-workspace atom-text-editor:not([mini])':
     'ctrl-shift-up': 'editor:move-line-up'

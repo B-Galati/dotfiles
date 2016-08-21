@@ -1,5 +1,8 @@
 "*":
   core:
+    disabledPackages: [
+      "markdown-preview"
+    ]
     projectHome: "/home/benoit/workspace"
   editor:
     fontSize: 12
@@ -11,6 +14,9 @@
   "keyboard-localization":
     useKeyboardLayout: "fr_FR-bepo"
     useKeyboardLayoutFromPath: "/home/benoit/.atom/keybind-custom.json"
+  "markdown-preview":
+    useGitHubStyle: true
+  "markdown-preview-plus": {}
   "project-manager":
     sortBy: "last modified"
   welcome:
