@@ -1,0 +1,7 @@
+"home-works":
+  title: "home-works"
+  paths: [
+    "/home/benoit/workspace/dockerfiles"
+    "/home/benoit/docs"
+    "/home/benoit/dotfiles"
+  ]

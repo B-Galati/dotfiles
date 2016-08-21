@@ -1,0 +1,20 @@
+"*":
+  core:
+    projectHome: "/home/benoit/workspace"
+  editor:
+    fontSize: 12
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "1160abbc-6604-41e3-689e-6fc604423c22"
+  "keyboard-localization":
+    useKeyboardLayout: "fr_FR-bepo"
+    useKeyboardLayoutFromPath: "/home/benoit/.atom/keybind-custom.json"
+  "project-manager":
+    sortBy: "last modified"
+  welcome:
+    showOnStartup: false
+".gitignore.source":
+  editor:
+    tabLength: 4
