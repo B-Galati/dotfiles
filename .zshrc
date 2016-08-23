@@ -13,6 +13,8 @@ export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:usr/sbin:/bin:./bin:/usr/l
 export EDITOR='vim'
 export HISTSIZE=20000
 export SAVEHIST=$HISTSIZE
+export DOCKER_UID=$(id -u)
+export DOCKER_GID=$(id -g)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
@@ -31,4 +33,3 @@ bindkey "^[OF" end-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
 screenfetch
-
