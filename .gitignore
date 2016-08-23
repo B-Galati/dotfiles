@@ -1,3 +1,7 @@
+# NPM
+nohup.out
+npm-debug.log
+
 # Compiled Python files
 *.pyc
 

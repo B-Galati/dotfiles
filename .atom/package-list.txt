@@ -1,0 +1,7 @@
+keyboard-localization@1.4.18
+language-gitignore@0.2.0
+markdown-preview-plus@2.4.0
+markdown-toc@0.4.1
+project-manager@2.9.7
+
+

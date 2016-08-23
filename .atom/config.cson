@@ -5,7 +5,7 @@
     ]
     projectHome: "/home/benoit/workspace"
   editor:
-    fontSize: 12
+    fontSize: 13
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
