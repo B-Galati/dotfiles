@@ -1,32 +1,51 @@
 # Dotfiles
 
-## Debian requirements
+## How to install on Debian Jessie
 
-[Powerline](https://powerline.readthedocs.org/en/latest/installation.html) fonts are required
+Edit your `/apt/apt/sources.list` with :
+
+```
+deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free
+deb-src http://ftp.fr.debian.org/debian/ jessie main contrib non-free
+
+deb http://security.debian.org/ jessie/updates main contrib non-free
+deb-src http://security.debian.org/ jessie/updates main contrib non-free
+
+# jessie-updates, previously known as 'volatile'
+deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
+deb-src http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
+
+deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
+deb-src http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
+```
+
+Install those packages
 
 ```bash
-apt install git sudo rsync numlockx screenfetch zsh vim \
+sudo apt install git sudo rsync numlockx screenfetch zsh vim \
 arandr gtk2-engines-murrine murrine-themes dmz-cursor-theme \
-unzip gtk-redshift geoclue hddtemp light-locker kodi \
+unzip gtk-redshift geoclue hddtemp kodi \
 ntfs-3g apt-listbugs apt-listchanges alacarte zenity openjdk-8-jre \
-ttf-mscorefonts-installer msttcorefonts network-manager-openvpn-gnome \
+ttf-mscorefonts-installer network-manager-openvpn-gnome \
 filezilla apt-transport-https ca-certificates curl python-pip vim-nox \
 meld ntp youtube-dl htop gvfs-backends p7zip cryptkeeper homebank \
 smartmontools msmtp mailutils smart-notifier gsmartcontrol handbrake transmission \
 apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
-shutter phatch gparted gtk3-engines-xfce gtk3-engines-xfce httpie php5 \
-gdm3 gnome-screen-saver libnss3-tools
+shutter phatch gparted gtk3-engines-xfce httpie php5 \
+gdm3 gnome-screensaver libnss3-tools tmux
 
 sudo apt-get remove --purge xscreensaver
+sudo apt-get install -t jessie-backports powerline
 ```
 
-## How to install:
+Prepare and install dotfiles :
 
 ```bash
-git clone
+git clone # This repository
 git submodule update --init --recursive
 ./bootstrap
 ```
+
 You can try to intall gtk3-engines-unico
 
 ## Icon themes
