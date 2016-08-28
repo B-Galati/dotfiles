@@ -37,8 +37,12 @@
     'ctrl-shift-n': 'fuzzy-finder:toggle-file-finder'
     'alt-j': 'find-and-replace:select-next'
     'alt-ctrl-shift-j': 'find-and-replace:select-all'
+    '': 'editor:move-to-previous-subword-boundary'
+    '': 'editor:move-to-next-subword-boundary'
 
 'atom-workspace atom-text-editor:not([mini])':
     'ctrl-shift-up': 'editor:move-line-up'
     'ctrl-shift-down': 'editor:move-line-down'
     'ctrl-l': 'editor:delete-line'
+    'alt-right': 'pane:show-next-item'
+    'alt-left': 'pane:show-previous-item'
