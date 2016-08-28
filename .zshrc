@@ -6,7 +6,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 COMPLETION_WAITING_DOTS="true" # Uncomment the following line to display red dots whilst waiting for completion.
 
-plugins=(symfony2 docker docker-compose composer debian extract colored-man-pages phing supervisor colorize sudo sytemd git-remote-branch git-extras )
+plugins=(symfony2 docker docker-compose composer debian extract colored-man-pages phing supervisor colorize sudo sytemd git-remote-branch git-extras tmux)
 
 # User configuration
 export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:usr/sbin:/bin:./bin:/usr/local/games:usr/games:~/npm-global/bin"
