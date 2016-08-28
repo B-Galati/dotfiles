@@ -19,6 +19,7 @@ export DOCKER_GID=$(id -g)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 source $HOME/.extra
+source /usr/share/powerline/bindings/zsh/powerline.zsh
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status symfony2_version time)
 
