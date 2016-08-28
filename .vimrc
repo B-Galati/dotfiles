@@ -19,3 +19,11 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
+" Display some invisibles characters
+set listchars=tab:>-,trail:~,extends:>,precedes:<,nbsp:-
+set list
+
+" Keymap in insert mode
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
