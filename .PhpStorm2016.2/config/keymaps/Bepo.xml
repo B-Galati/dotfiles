@@ -93,6 +93,12 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt l" />
     <keyboard-shortcut first-keystroke="shift ctrl alt r" />
   </action>
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="ctrl t" second-keystroke="minus" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="ctrl t" second-keystroke="altGraph b" />
+  </action>
   <action id="SurroundWithEmmet">
     <keyboard-shortcut first-keystroke="alt e" />
   </action>
@@ -139,6 +145,7 @@
   <action id="Vcs.ShowTabbedFileHistory">
     <keyboard-shortcut first-keystroke="shift ctrl alt h" />
   </action>
+  <action id="Vcs.UpdateProject" />
   <action id="tasks.switch" />
   <action id="tasks.switch.toolbar" />
 </keymap>

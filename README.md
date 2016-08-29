@@ -24,7 +24,7 @@ Install those packages
 ```bash
 sudo apt install git sudo rsync numlockx screenfetch zsh vim \
 arandr gtk2-engines-murrine murrine-themes dmz-cursor-theme \
-unzip gtk-redshift geoclue hddtemp kodi \
+unzip gtk-redshift geoclue hddtemp \
 ntfs-3g apt-listbugs apt-listchanges alacarte zenity openjdk-8-jre \
 ttf-mscorefonts-installer network-manager-openvpn-gnome \
 filezilla apt-transport-https ca-certificates curl python-pip vim-nox \
@@ -35,7 +35,7 @@ shutter phatch gparted gtk3-engines-xfce httpie php5 \
 gdm3 gnome-screensaver libnss3-tools tmux
 
 sudo apt-get remove --purge xscreensaver
-sudo apt-get install -t jessie-backports powerline
+sudo apt-get install -t jessie-backports powerline kodi
 ```
 
 Prepare and install dotfiles :

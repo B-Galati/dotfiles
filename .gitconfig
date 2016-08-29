@@ -5,6 +5,7 @@
     cp   = cherry-pick
     rb   = rebase
     c    = commit
+    ca   = commit --amend
     com  = commit -m
     coma = commit -a -m
     aa   = add --all
