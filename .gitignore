@@ -26,6 +26,7 @@ Thumbs.db
 .PhpStorm2016.2/config/phpstorm100.key
 .PhpStorm2016.2/config/port.lock
 .PhpStorm2016.2/config/disabled_update.txt
+.PhpStorm2016.2/config/extensions/
 .PhpStorm2016.2/config/options/databaseSettings.xml
 .PhpStorm2016.2/config/options/debugger.xml
 .PhpStorm2016.2/config/options/diff.xml
@@ -33,9 +34,12 @@ Thumbs.db
 .PhpStorm2016.2/config/options/extensionsRootType.xml
 .PhpStorm2016.2/config/options/feature.usage.statistics.xml
 .PhpStorm2016.2/config/options/file.template.settings.xml
+.PhpStorm2016.2/config/options/remote-server-client-libraries.xml
 .PhpStorm2016.2/config/options/git.xml
 .PhpStorm2016.2/config/options/notifications.xml
 .PhpStorm2016.2/config/options/options.xml
+.PhpStorm2016.2/config/options/find.xml
+.PhpStorm2016.2/config/options/security.xml
 .PhpStorm2016.2/config/options/project.default.xml
 .PhpStorm2016.2/config/options/recentProjectDirectories.xml
 .PhpStorm2016.2/config/options/statistics.application.usages.xml
@@ -59,8 +63,10 @@ Thumbs.db
 .PhpStorm2016.2/config/javascript/extLibs/
 .PhpStorm2016.2/config/phpstorm1620.key
 .PhpStorm2016.2/config/phpstorm110.key
+.PhpStorm2016.2/config/phpstorm.key
 .PhpStorm2016.2/config/port
 .PhpStorm2016.2/config/options/window.state.xml
+.PhpStorm2016.2/config/eval
 
 # Sublime Text
 Package Control.cache/
@@ -93,3 +99,8 @@ bin/phing
 .atom/.node-gyp/
 .atom/recovery/
 .atom/storage/
+
+# Local share
+.local/
+!.local/share/applications/*
+
