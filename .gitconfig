@@ -10,6 +10,7 @@
     coma = commit -a -m
     aa   = add --all
     fa   = fetch --all -p -v
+    r1   = reset HEAD~1
 
     # push
     pushoh = push -u origin HEAD # like first push
