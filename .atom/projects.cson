@@ -1,7 +1,12 @@
-"home-works":
-  title: "home-works"
+"home":
+  title: "home"
   paths: [
     "/home/benoit/workspace/dockerfiles"
     "/home/benoit/docs"
     "/home/benoit/dotfiles"
+  ]
+"b-galati.github.io":
+  title: "b-galati.github.io"
+  paths: [
+    "/home/benoit/workspace/b-galati.github.io"
   ]
