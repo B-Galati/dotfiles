@@ -6,17 +6,9 @@ Edit your `/apt/apt/sources.list` with :
 
 ```
 deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free
-deb-src http://ftp.fr.debian.org/debian/ jessie main contrib non-free
-
 deb http://security.debian.org/ jessie/updates main contrib non-free
-deb-src http://security.debian.org/ jessie/updates main contrib non-free
-
-# jessie-updates, previously known as 'volatile'
 deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
-deb-src http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
-
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
-deb-src http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
 ```
 
 Install those packages
