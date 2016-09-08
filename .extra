@@ -1,2 +1,4 @@
 # Here you can add specific settings like private aliases
 #
+
+# export PLEX_MEDIA_FOLDERS='/path/1;/path/2'

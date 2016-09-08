@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z $PLEX_MEDIA_FOLDERS ]; then
+    echo "Need to set PLEX_MEDIA_FOLDERS environment variable"
+    exit 3
+fi
+
 CONTAINER_NAME="plex"
 RUNNING=$(docker inspect --format="{{ .State.Running }}" $CONTAINER_NAME 2> /dev/null)
 
@@ -14,14 +19,20 @@ case "$1" in
             echo "starting container..."
             docker start $CONTAINER_NAME
         else
+            volumesArgs=''
+            IFS=';'
+            for path in $PLEX_MEDIA_FOLDERS; do
+                volumesArgs+="-v $path:/data/$(basename $path) "
+            done
+            unset IFS
+
             echo "running container..."
-            docker run -it --name plex \
-                -h plex-benoit \
-                -v $HOME/.config/plex:/config \
-                -v /media/benoit/Documents/Films/:/data/Films \
-                -v /media/benoit/Documents/Séries:/data/Séries \
-                -p 32400:32400 \
-                timhaak/plex
+            eval "docker run -it --name plex \\
+                -h plex-benoit \\
+                -v $HOME/.config/plex:/config \\
+                $volumesArgs \\
+                -p 32400:32400 \\
+                timhaak/plex"
         fi
     ;;
 
