@@ -14,13 +14,14 @@ alias dusort='du -ah | sort -hr'
 alias df='df -h'
 alias rm='rm -I'
 alias meteo='curl -4 wttr.in/lyon'
+alias refresh_clock='sudo systemctl stop ntp && sudo ntpd -q && sudo systemctl start ntp'
 
 # Dev aliases
 alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'
 alias composer='composer -vv'
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
-alias npm-exec='PATH=$(npm bin):$PATH'
+alias npm_exec='PATH=$(npm bin):$PATH'
 alias atoum='vendor/atoum/atoum/bin/atoum'
 #alias php='php -dzend_extension=xdebug.so'
 

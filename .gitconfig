@@ -4,6 +4,7 @@
     cob  = checkout --no-track -b
     cp   = cherry-pick
     rb   = rebase
+    rbom = rebase -i origin/master
     c    = commit
     ca   = commit --amend
     com  = commit -m
