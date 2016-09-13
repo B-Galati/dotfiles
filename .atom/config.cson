@@ -9,6 +9,7 @@
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
+    tabType: "soft"
   "exception-reporting":
     userId: "1160abbc-6604-41e3-689e-6fc604423c22"
   "keyboard-localization":
