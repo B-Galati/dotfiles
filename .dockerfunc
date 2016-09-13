@@ -1,0 +1,212 @@
+#!/bin/bash
+# Based on https://github.com/jfrazelle/dotfiles/blob/master/.dockerfunc
+
+docker_cleanup(){
+	docker rm -v $(docker ps -aq 2>/dev/null) 2>/dev/null
+	docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+	docker volume rm $(docker volume ls -qf dangling=true 2>/dev/null) 2>/dev/null
+}
+
+docker_del_stopped(){
+	local name=$1
+	local state=$(docker inspect --format "{{.State.Running}}" $name 2>/dev/null)
+
+	if [[ "$state" == "false" ]]; then
+		docker rm $name
+	fi
+}
+
+docker_relies_on(){
+	local containers=$@
+
+	for container in $containers; do
+		local state=$(docker inspect --format "{{.State.Running}}" $container 2>/dev/null)
+
+		if [[ "$state" == "false" ]] || [[ "$state" == "" ]]; then
+			echo "$container is not running, starting it for you."
+			$container
+		fi
+	done
+}
+
+docker_service() {
+	local containerName=$1
+	local RUNNING=$(docker inspect --format="{{ .State.Running }}" $containerName 2> /dev/null)
+
+	case "$3" in
+	    stop)
+	        echo "Stoping container..."
+	        docker stop $containerName
+	    ;;
+
+	    rm)
+	        echo "Deleting container..."
+	        docker rm -v $containerName
+	    ;;
+
+		--help)
+	        echo "Usage: $containerName {start|stop|rm}"
+	        return 1
+	    ;;
+
+		*)
+	        if [[ "$RUNNING" == "true" ]]; then
+	            echo "already running..."
+	            return 2
+	        fi
+
+	        if [[ "$RUNNING" == "false" ]]; then
+	            echo "starting container..."
+	            docker start $containerName
+	        else
+	            echo "running container..."
+	            eval "$2"
+	        fi
+	    ;;
+	esac
+}
+
+plex() {
+	if [ -z $PLEX_MEDIA_FOLDERS ]; then
+		echo "Need to set PLEX_MEDIA_FOLDERS environment variable"
+		return 3
+	fi
+
+	# Compatible bash/zsh
+	# http://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimiter-in-bash
+	volumesArgs=''
+	var=$PLEX_MEDIA_FOLDERS
+	while [ "$var" ] ;do
+	    iter=${var%%;*}
+	    volumesArgs+="-v $iter:/data/$(basename $iter) "
+	    [ "$var" = "$iter" ] && \
+	        var='' || \
+	        var="${var#*;}"
+	done
+
+	docker_service "$0" "docker run -it -d \\
+		-h plex-benoit \\
+		-v $HOME/.config/plex:/config \\
+		$volumesArgs \\
+		-p 32400:32400 \\
+		--name "$0" \\
+		timhaak/plex" $@
+}
+
+steam() {
+	docker_service "$0" "docker run --name steam \\
+		-v /etc/localtime:/etc/localtime:ro \\
+		-v /etc/machine-id:/etc/machine-id:ro \\
+		-v /tmp/.X11-unix:/tmp/.X11-unix \\
+		-v $XDG_RUNTIME_DIR/pulse:/run/user/1000/pulse \\
+		-v /dev/shm:/dev/shm \\
+		-v $HOME/.steam:/home/steam \\
+		-e DISPLAY \\
+		-e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \\
+		--device /dev/snd \\
+		--device /dev/dri \\
+		--group-add audio \\
+		--group-add video \\
+		--name steam \\
+		tianon/steam" $@
+}
+
+redis-commander() {
+	docker run -it --rm \
+		-p 8081:8081 \
+		--name redis-commander \
+		tenstartups/redis-commander \
+		--redis-host $@
+}
+
+keepass2() {
+	docker_service "$0" "docker run -it \\
+		-v /tmp/.X11-unix:/tmp/.X11-unix \\
+		-v $HOME/keepass:/home/keepass \\
+		-v $HOME/.config/KeePass/KeePass.config.xml:/home/keepass/.config/KeePass/KeePass.config.xml \\
+		-e DISPLAY \\
+		--name $0 \\
+		benoitg/keepass2" $@
+}
+
+evernote() {
+	docker_service "$0" "docker run  -it  \\
+		-v /tmp/.X11-unix:/tmp/.X11-unix \\
+		-v $HOME/evernote_backup:/root/evernote \\
+		-e DISPLAY=unix$DISPLAY \\
+		--cpuset-cpus 0 \\
+		--name $0 \\
+		benoitg/evernote" $@
+}
+
+cadvisor() {
+	docker_service "$0" "docker run \\
+		--volume=/:/rootfs:ro \\
+		--volume=/var/run:/var/run:rw \\
+		--volume=/sys:/sys:ro \\
+		--volume=/var/lib/docker:/var/lib/docker:ro \\
+		--publish=8080:8080 \\
+		--detach=true \\
+		--name=$0 \\
+		google/cadvisor:latest" $@
+}
+
+d_meteor() {
+	docker run -it --rm \
+		-v "$(pwd)":/app \
+		--name meteor \
+		danieldent/meteor \
+		meteor $@
+}
+
+d_composer() {
+	docker run  -it --rm \
+		-u="$UID:$GID" \
+		-v $HOME/.composer:/home/composer/composer \
+		-v $(pwd):/app \
+		-v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+		-e SSH_AUTH_SOCK \
+		-e HTTP_PROXY \
+		-e HTTPS_PROXY \
+		--name composer \
+		benoitg/composer -vv $@
+}
+
+d_phpunit() {
+	docker run --rm -it \
+		-v $(pwd):/app \
+		--name phpunit \
+		phpunit/phpunit $@
+}
+
+d_atoum() {
+	docker run --rm -it \
+		-v $(pwd):/src \
+		--name atoum \
+		atoum/atoum $@
+}
+
+d_ng() {
+	docker run --rm -it \
+		-v $(pwd):/usr/src/app \
+		--name node-tools \
+		benoitg/node-tools \
+		ng $@
+}
+
+d_npm() {
+	docker run --rm -it \
+		-v $(pwd):/usr/src/app \
+		--name node-tools \
+		benoitg/node-tools \
+		npm $@
+}
+
+d_tslint() {
+	docker run --rm -it \
+		-v $(pwd):/usr/src/app \
+		-v $HOME/tslint.json:/home/node/tslint.json \
+		--name node-tools \
+		benoitg/node-tools \
+		tslint $@
+}

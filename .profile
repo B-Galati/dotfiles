@@ -8,14 +8,11 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$PATH:$HOME/bin"
-fi
-
-PATH="$PATH:/usr/sbin"
-PATH="$PATH:./bin"
+PATH="$PATH:$HOME/npm-global/bin"
 PATH="$PATH:./vendor/bin"
+PATH="$PATH:./bin"
+PATH="$PATH:usr/games"
+PATH="$PATH:/usr/local/games"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -27,4 +24,3 @@ fi
 
 # cf. bug https://bugzilla.redhat.com/show_bug.cgi?id=889690
 export NO_AT_BRIDGE=1
-

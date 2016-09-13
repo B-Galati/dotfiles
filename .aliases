@@ -20,18 +20,5 @@ alias refresh_clock='sudo systemctl stop ntp && sudo ntpd -q && sudo systemctl s
 alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'
 alias composer='composer -vv'
-alias puli='set -f;puli';puli(){ command puli "$@";set +f;}	
-alias npm_exec='PATH=$(npm bin):$PATH'
-alias atoum='vendor/atoum/atoum/bin/atoum'
-#alias php='php -dzend_extension=xdebug.so'
-
-# Docker aliases
-alias docker_meteor='docker run -it --rm -v "$(pwd)":/app danieldent/meteor meteor'
-alias docker_composer='docker run  -it --rm -v $HOME/.composer:/home/composer/composer -v $(pwd):/app -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) -e SSH_AUTH_SOCK -e HTTP_PROXY -e HTTPS_PROXY --name composer benoitg/composer -vv'
-alias docker_sfclear='rm -rf app/cache/* && docker-compose run --rm web php app/console cache:warmup'
-alias docker_phpunit='docker run --rm -it -v $(pwd):/app phpunit/phpunit'
-alias docker_atoum='docker run --rm -it -v $(pwd):/src atoum/atoum'
-alias docker_ng='docker run --rm -it -v $(pwd):/usr/src/app --name node-tools benoitg/node-tools ng'
-alias docker_npm='docker run --rm -it -v $(pwd):/usr/src/app --name node-tools benoitg/node-tools npm'
-alias docker_tslint='docker run --rm -it -v $(pwd):/usr/src/app -v $HOME/tslint.json:/home/node/tslint.json --name node-tools benoitg/node-tools tslint'
-
+alias puli='set -f;puli';puli(){ command puli "$@";set +f;}
+alias phpxdebug='php -dzend_extension=xdebug.so'

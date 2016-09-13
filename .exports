@@ -1,5 +1,5 @@
 export EDITOR=vim # Editeur par défaut
-export TERM='xterm-color'
+export TERM="xterm-256color"
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s" # Coloration syntaxique LESS
 export LESS=' -R '
 
@@ -10,14 +10,11 @@ export GIT_PS1_SHOWUPSTREAM=verbose # Avance/Retard par rapport à la branche di
 export GIT_PS1_DESCRIBE_STYLE=branch # Si detached HAED alors affiche des infos utiles
 export GIT_PS1_SHOWCOlORHINTS=true # Active les couleurs fournis par .git-prompt.sh
 export PROMPT_COMMAND='echo -ne "\033];${USER}@${HOSTNAME}:${PWD/#$HOME/\~}\007";' # Terminal title set to current path
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # Ajoute les nouvelles commandes dans le fichier d'historique 
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # Ajoute les nouvelles commandes dans le fichier d'historique
 
-export HISTSIZE=5000 # Nombre de commande max dans l'historique
-export HISTFILESIZE=2000 # Taille maxi du fichier d'historique
+export HISTSIZE=20000 # Nombre de commande max dans l'historique
+export HISTFILESIZE=$HISTSIZE # Taille maxi du fichier d'historique
 export HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
-
-export DOCKER_UID=$(id -u)
-export DOCKER_GID=$(id -g)
 
 # Configurer un proxy
 # export http_proxy='http://squid:8080/'
@@ -29,4 +26,3 @@ export DOCKER_GID=$(id -g)
 # export ftp_proxy=$http_proxy
 # export rsync_proxy=$http_proxy
 # export no_proxy="localhost,127.0.0.1"
-

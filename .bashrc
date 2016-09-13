@@ -16,7 +16,7 @@ shopt -s cmdhist # save command long command in history
 
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{aliases,exports,functions,extra}; do
+for file in ~/.{aliases,exports,functions,extra,dockerfunc}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -29,6 +29,7 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
+    xterm-256color) color_prompt=yes;;
 esac
 
 # PS1
@@ -59,7 +60,7 @@ fi
 complete -cf sudo
 complete -cf man
 
-# ls indicators meaning : 
+# ls indicators meaning :
 # / is a directory
 # @ is a symlink
 # | is a named pipe (fifo)
