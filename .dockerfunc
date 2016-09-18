@@ -57,7 +57,7 @@ docker_service() {
 
             if [[ "$RUNNING" == "false" ]]; then
                 echo "starting container..."
-                docker start $containerName
+                docker start -ai $containerName
             else
                 echo "running container..."
                 eval "$2"
@@ -130,10 +130,10 @@ keepass2() {
 }
 
 evernote() {
-    docker_service "$0" "docker run  -it  \\
+    docker_service "$0" "docker run -it  \\
         -v /tmp/.X11-unix:/tmp/.X11-unix \\
         -v $HOME/evernote_backup:/root/evernote \\
-        -e DISPLAY=unix$DISPLAY \\
+        -e DISPLAY \\
         --cpuset-cpus 0 \\
         --name \"$0\" \\
         benoitg/evernote" $@
@@ -218,4 +218,18 @@ phpsa() {
         --name "$0" \
         benoitg/phpsa \
         check $@
+}
+
+skype() {
+    docker_service "$0" "docker run \\
+        -v /tmp/.X11-unix:/tmp/.X11-unix \\
+    	-v $HOME/.skypeforlinux:/root/.config/skypeforlinux \
+    	-e DISPLAY \\
+        --device /dev/video0 \\
+        --device /dev/snd \\
+        --device /dev/dri \\
+        --group-add audio \\
+        --group-add video \\
+    	--name \"$0\" \\
+    	benoitg/skype" $@
 }
