@@ -234,3 +234,18 @@ skype() {
     	--name \"$0\" \\
     	benoitg/skype" $@
 }
+
+spotify() {
+    docker_service "$0" "docker run -d \
+		-v /etc/localtime:/etc/localtime:ro \
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-e DISPLAY \
+		-e QT_DEVICE_PIXEL_RATIO=2 \
+		--security-opt seccomp:unconfined \
+		--device /dev/snd \
+		--device /dev/dri \
+		--group-add audio \
+		--group-add video \
+		--name \"$0\" \
+		jess/spotify" $@
+}
