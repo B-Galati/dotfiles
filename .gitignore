@@ -61,6 +61,13 @@ Thumbs.db
 .PhpStorm2016.2/config/options/proxy.settings.pwd
 .PhpStorm2016.2/config/options/applicationLibraries.xml
 .PhpStorm2016.2/config/options/nodeJsRemoteInterpreters.xml
+.PhpStorm2016.2/config/options/databaseDrivers.xml
+.PhpStorm2016.2/config/options/markdown.xml
+.PhpStorm2016.2/config/options/filetypes.xml
+.PhpStorm2016.2/config/options/runner.layout.xml
+.PhpStorm2016.2/config/options/scratches.xml
+.PhpStorm2016.2/config/options/fileEditorProviderManager.xml
+.PhpStorm2016.2/config/scratches/
 .PhpStorm2016.2/config/javascript/extLibs/
 .PhpStorm2016.2/config/phpstorm1620.key
 .PhpStorm2016.2/config/phpstorm110.key
@@ -68,6 +75,9 @@ Thumbs.db
 .PhpStorm2016.2/config/port
 .PhpStorm2016.2/config/options/window.state.xml
 .PhpStorm2016.2/config/eval
+.PhpStorm2016.2/config/consoles/
+.PhpStorm2016.2/config/jdbc-drivers/
+
 
 # Sublime Text
 Package Control.cache/
