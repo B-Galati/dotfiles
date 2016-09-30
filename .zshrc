@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export USER=''
+export TERM='xterm-256color'
 ZSH_THEME='powerlevel9k/powerlevel9k'
 ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 COMPLETION_WAITING_DOTS='true' # Uncomment the following line to display red dots whilst waiting for completion.
