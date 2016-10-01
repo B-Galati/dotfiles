@@ -1,4 +1,6 @@
+file-watcher@0.4.0
 keyboard-localization@1.4.18
+language-docker@1.1.7
 language-gitignore@0.2.0
 markdown-preview-plus@2.4.0
 markdown-toc@0.4.1
