@@ -28,4 +28,7 @@ bindkey "^[OF" end-of-line
 #bindkey "${terminfo[khome]}" beginning-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
+# Prevent ZSH to print an error when no match can be found. (http://superuser.com/questions/584249/using-wildcards-in-commands-with-zsh)
+unsetopt nomatch
+
 screenfetch

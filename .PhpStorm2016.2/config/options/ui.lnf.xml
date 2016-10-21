@@ -10,6 +10,7 @@
     <option name="HIDE_TABS_IF_NEED" value="false" />
     <option name="CLOSE_NON_MODIFIED_FILES_FIRST" value="true" />
     <option name="USE_SMALL_LABELS_ON_TABS" value="true" />
+    <option name="MAX_LOOKUP_WIDTH2" value="863" />
     <option name="MARK_MODIFIED_TABS_WITH_ASTERISK" value="true" />
   </component>
 </application>
