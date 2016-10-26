@@ -227,3 +227,13 @@ spotify() {
 		--name \"$0\" \
 		jess/spotify" $@
 }
+
+redis-desktop-manager() {
+    docker run  -it --rm \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        -e DISPLAY \
+        --device /dev/dri \
+        -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+        --name "$0" \
+        benoitg/redis-desktop-manager $@
+}
