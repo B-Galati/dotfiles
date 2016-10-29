@@ -41,12 +41,29 @@ git submodule update --init --recursive
 
 You can try to intall gtk3-engines-unico
 
+Install [Powerline patched fonts](https://github.com/powerline/fonts).
+[Unicode table](http://unicode-table.com/)
+
+## Powerline
+
+[Segments list](http://powerline.readthedocs.io/en/master/configuration/segments.html#segments)
+
+```bash
+powerline-lint # Vérification des fichiers de configuration
+powerline-daemon --replace # Force le rechargement de la config
+```
+
+## GTK themes
+
+- [Arc](https://github.com/horst3180/arc-theme)
+- [Numix Frost](https://github.com/Antergos/Numix-Frost)
+
 ## Icon themes
 
 - [numix](https://github.com/numixproject/)
 - [numix-colmaris](https://labo.olivierdelort.net/colmaris/numix-colmaris.git)
 
-## Credits :
+## Credits
 
 - [olivierdelort](https://blog.olivierdelort.net/?p=1790)
 - [mathiasbynens](https://github.com/mathiasbynens/dotfiles)

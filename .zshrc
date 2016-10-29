@@ -1,11 +1,16 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export USER=''
 export TERM='xterm-256color'
 ZSH_THEME='powerlevel9k/powerlevel9k'
 ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 COMPLETION_WAITING_DOTS='true' # Uncomment the following line to display red dots whilst waiting for completion.
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status symfony2_version time)
+
+# Theme customization
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs_joined time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs symfony2_version)
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
 plugins=(symfony2 docker docker-compose composer debian extract colored-man-pages \
     phing supervisor colorize sudo sytemd git-remote-branch git-extras tmux)
