@@ -1,5 +1,6 @@
 "*":
   core:
+    autoHideMenuBar: true
     disabledPackages: [
       "markdown-preview"
     ]
