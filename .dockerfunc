@@ -237,3 +237,13 @@ redis-desktop-manager() {
         --name "$0" \
         benoitg/redis-desktop-manager $@
 }
+
+teamviewer() {
+    docker_service "$0" "docker run -d \
+        -e DISPLAY \
+        -e XAUTHORITY \
+        -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+        --name \"$0\" \
+        hurricane/teamviewer \
+        teamviewer" $@
+}
