@@ -20,6 +20,7 @@
     l   = !git log | tig -FRSX
     ll  = log --color --all --format='%C(yellow)%h%Creset %cr %C(blue)%cn%Creset -%C(auto)%d%Creset %s'
     lg  = log --graph --oneline --abbrev-commit --color --decorate
+    lgt = log --graph --oneline --abbrev-commit --color --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
     lga = log --graph --oneline --abbrev-commit --color --decorate --all
 
     # branch management

@@ -104,6 +104,7 @@ bin/phing
 # Atom
 .atom/.apm/
 !.atom/.apm/.apmrc
+.atom/projects.cson
 .atom/blob-store/
 .atom/compile-cache/
 .atom/packages/

@@ -13,6 +13,8 @@
     tabType: "soft"
   "exception-reporting":
     userId: "1160abbc-6604-41e3-689e-6fc604423c22"
+  "git-diff":
+    showIconsInEditorGutter: true
   "keyboard-localization":
     useKeyboardLayout: "fr_FR-bepo"
     useKeyboardLayoutFromPath: "/home/benoit/.atom/keybind-custom.json"
