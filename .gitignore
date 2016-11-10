@@ -26,6 +26,8 @@ Thumbs.db
 .PhpStorm2016.2/config/phpstorm100.key
 .PhpStorm2016.2/config/port.lock
 .PhpStorm2016.2/config/disabled_update.txt
+.PhpStorm2016.2/config/disabled_plugins.txt
+.PhpStorm2016.2/config/fileTemplates/
 .PhpStorm2016.2/config/extensions/
 .PhpStorm2016.2/config/options/databaseSettings.xml
 .PhpStorm2016.2/config/options/debugger.xml
@@ -34,7 +36,6 @@ Thumbs.db
 .PhpStorm2016.2/config/options/extensionsRootType.xml
 .PhpStorm2016.2/config/options/feature.usage.statistics.xml
 .PhpStorm2016.2/config/options/file.template.settings.xml
-.PhpStorm2016.2/config/fileTemplates/
 .PhpStorm2016.2/config/options/remote-server-client-libraries.xml
 .PhpStorm2016.2/config/options/git.xml
 .PhpStorm2016.2/config/options/notifications.xml
