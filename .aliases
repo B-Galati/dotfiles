@@ -16,6 +16,7 @@ alias df='df -h'
 alias rm='rm -I'
 alias meteo='curl -4 wttr.in/lyon'
 alias refresh_clock='sudo systemctl stop ntp && sudo ntpd -q && sudo systemctl start ntp'
+alias ssh-agent-start='eval $(ssh-agent)'
 
 # Dev aliases
 alias sf='php app/console'

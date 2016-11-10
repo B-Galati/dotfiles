@@ -7,6 +7,7 @@
     <option name="COMPLETION_CASE_SENSITIVE" value="2" />
     <option name="SURROUND_SELECTION_ON_QUOTE_TYPED" value="true" />
     <option name="REFORMAT_BLOCK_ON_RBRACE" value="false" />
+    <option name="HIGHLIGHT_SCOPE" value="true" />
   </component>
   <component name="CssFoldingSettings">
     <option name="collapseDataUri" value="false" />

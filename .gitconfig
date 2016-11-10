@@ -11,6 +11,7 @@
     coma = commit -a -m
     aa   = add --all
     fa   = fetch --all -p -v
+    f    = fetch --all -p
     r1   = reset HEAD~1
 
     # push
@@ -61,6 +62,7 @@
 
 [merge]
     tool = meld
+	ff = false
 
 [core]
     excludesfile = ~/.gitignore_global
