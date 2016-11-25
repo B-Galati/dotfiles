@@ -1,0 +1,16 @@
+BashSupport
+Docker
+PHPUnit code coverage
+PlantUML integration
+String Manipulation
+com.dmarcotte.handlebars
+com.kalessil.phpStorm.phpInspectionsEA
+com.karateca.jstoolbox
+com.wix.eslint
+de.espend.idea.php.annotation
+de.espend.idea.php.toolbox
+fr.adrienbrault.idea.symfony2plugin
+mobi.hsz.idea.gitignore
+org.asciidoctor.intellij.asciidoc
+org.editorconfig.editorconfigjetbrains
+sk.sorien.silex.plugin.id
