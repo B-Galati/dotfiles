@@ -16,6 +16,7 @@
 
     # push
     pushoh = push -u origin HEAD # like first push
+    pushf = push --force-with-lease
 
     # log section
     l   = !git log | tig -FRSX
@@ -26,6 +27,7 @@
 
     # branch management
     bdelete = !git branch -D $(git branch | grep -v ^* | xargs)
+    bm = branch -m
 
     # alias management
     aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort"
