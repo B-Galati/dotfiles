@@ -256,3 +256,10 @@ portainer() {
         --name \"$0\" \
         portainer/portainer" $@
 }
+
+redis-cli() {
+    docker run -it --rm \
+        --name "$0" \
+        redis:latest \
+        redis-cli $@
+}
