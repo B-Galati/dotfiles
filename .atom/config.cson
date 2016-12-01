@@ -18,13 +18,22 @@
   "keyboard-localization":
     useKeyboardLayout: "fr_FR-bepo"
     useKeyboardLayoutFromPath: "/home/benoit/.atom/keybind-custom.json"
+  linter:
+    showErrorPanel: false
+  "linter-ansible-linting":
+    ansibleLintExecutablePath: "/home/benoit/.local/bin/ansible-lint"
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-plus": {}
   "project-manager":
     sortBy: "last modified"
+  "tree-view":
+    hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
+".editorconfig.source":
+  editor:
+    tabLength: 4
 ".gitignore.source":
   editor:
     tabLength: 4

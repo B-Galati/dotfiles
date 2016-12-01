@@ -11,7 +11,7 @@ deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
 ```
 
-Install those packages
+Packages I use
 
 ```bash
 sudo apt install git sudo rsync numlockx screenfetch zsh vim \
@@ -26,10 +26,12 @@ apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
 shutter phatch gparted gtk3-engines-xfce httpie php5 \
 gdm3 gnome-screensaver libnss3-tools multitail tig dos2unix gnome-calculator \
 colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
-automake autoconf
+automake autoconf sshpass
 
 sudo apt-get remove --purge xscreensaver
 sudo apt-get install -t jessie-backports powerline kodi tmux
+
+pip install --user ansible-lint passlib # -> ~/.local/bin/
 ```
 
 Prepare and install dotfiles :

@@ -8,12 +8,12 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
-PATH="$PATH:$HOME/npm-global/bin"
+PATH="$PATH:/sbin"
+PATH="$PATH:/usr/sbin"
+PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:./vendor/bin"
 PATH="$PATH:./bin"
-PATH="$PATH:usr/games"
-PATH="$PATH:/usr/local/games"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -25,4 +25,3 @@ fi
 
 # cf. bug https://bugzilla.redhat.com/show_bug.cgi?id=889690
 export NO_AT_BRIDGE=1
-
