@@ -25,18 +25,18 @@
     <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="VARIABLE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
-      <option name="PHP" value="true" />
-      <option name="PHP Comment" value="false" />
       <option name="PHP String Literal" value="false" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP" value="true" />
     </context>
   </template>
   <template name="atif" value="-&gt;if($IF$)&#10;-&gt;then&#10;    -&gt;$THEN$" description="atoum if" toReformat="false" toShortenFQNames="true">
     <variable name="IF" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="THEN" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
-      <option name="PHP" value="true" />
-      <option name="PHP Comment" value="false" />
       <option name="PHP String Literal" value="false" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP" value="true" />
     </context>
   </template>
   <template name="atex" value="-&gt;exception(function() $USE${$MAIN$})&#10;    -&gt;isInstanceOf($INSTANCE$)&#10;    -&gt;hasMessage($MSG$)" description="atoum exception" toReformat="false" toShortenFQNames="true">
@@ -45,9 +45,9 @@
     <variable name="INSTANCE" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="MSG" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
-      <option name="PHP" value="true" />
-      <option name="PHP Comment" value="false" />
       <option name="PHP String Literal" value="false" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP" value="true" />
     </context>
   </template>
   <template name="d" value="dump($VAR$);" description="dump" toReformat="false" toShortenFQNames="true">
@@ -68,9 +68,9 @@
   </template>
   <template name="atbtm" value="public function beforeTestMethod($testMethod)&#10;{&#10;    $END$&#10;}" description="atoum beforeTestMethod" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="PHP" value="true" />
-      <option name="PHP Comment" value="false" />
       <option name="PHP String Literal" value="false" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP" value="true" />
     </context>
   </template>
   <template name="pr_surround_live" value="print_r($SELECTION$);" description="print_r" toReformat="true" toShortenFQNames="true">
