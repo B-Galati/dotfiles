@@ -26,7 +26,7 @@ apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
 shutter phatch gparted gtk3-engines-xfce httpie php5 \
 gdm3 gnome-screensaver libnss3-tools multitail tig dos2unix gnome-calculator \
 colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
-automake autoconf sshpass
+automake autoconf sshpass strace
 
 sudo apt-get remove --purge xscreensaver
 sudo apt-get install -t jessie-backports powerline kodi tmux

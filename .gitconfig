@@ -64,7 +64,7 @@
 
 [merge]
     tool = meld
-	ff = false
+    ff = false
 
 [core]
     excludesfile = ~/.gitignore_global
@@ -84,3 +84,8 @@
 [init]
     templatedir = ~/.git-templates
 
+[url "git@github.com:"]
+    insteadOf = gh:
+
+[diff "exif"]
+    textconv = exiftool
