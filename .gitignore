@@ -70,6 +70,9 @@ Thumbs.db
 .PhpStorm2016.3/config/options/runner.layout.xml
 .PhpStorm2016.3/config/options/scratches.xml
 .PhpStorm2016.3/config/options/fileEditorProviderManager.xml
+.PhpStorm2016.3/config/options/dataSources.local.xml
+.PhpStorm2016.3/config/options/dataSources.xml
+.PhpStorm2016.3/config/options/dataSources/
 .PhpStorm2016.3/config/scratches/
 .PhpStorm2016.3/config/javascript/extLibs/
 .PhpStorm2016.3/config/phpstorm1620.key

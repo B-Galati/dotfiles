@@ -12,4 +12,9 @@
       <option name="Twig" value="true" />
     </context>
   </template>
+  <template name="else" value="{% else %}" description="else" toReformat="true" toShortenFQNames="false">
+    <context>
+      <option name="Twig" value="true" />
+    </context>
+  </template>
 </templateSet>
