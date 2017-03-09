@@ -21,6 +21,5 @@ alias ssh-agent-start='eval $(ssh-agent)'
 # Dev aliases
 alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'
-alias composer='composer -vv'
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}
 alias phpxdebug='php -dzend_extension=xdebug.so'

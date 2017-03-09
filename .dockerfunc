@@ -131,43 +131,44 @@ cadvisor() {
 
 d_meteor() {
     docker run -it --rm \
-        -v "$(pwd)":/app \
+        -v "$PWD":/app \
         --name "$0" \
         danieldent/meteor \
         meteor $@
 }
 
-d_composer() {
-    docker run  -it --rm \
-        -u="$UID:$GID" \
-        -v $HOME/.composer:/home/composer/composer \
-        -v $(pwd):/app \
-        -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
-        -e SSH_AUTH_SOCK \
+composer() {
+    docker run --rm -it \
+        -v $PWD:/app \
+        -v $SSH_AUTH_SOCK:/ssh-auth.sock \
+        -v /etc/passwd:/etc/passwd:ro \
+        -v /etc/group:/etc/group:ro \
+        -u $(id -u):$(id -g) \
+        -e SSH_AUTH_SOCK=/ssh-auth.sock \
         -e HTTP_PROXY \
         -e HTTPS_PROXY \
         --name "$0" \
-        benoitg/composer -vv $@
+        composer $@
 }
 
-d_phpunit() {
+phpunit() {
     docker run --rm -it \
-        -u "$UID:$GID" \
-        -v $(pwd):/app \
+        -u $(id -u):$(id -g) \
+        -v $PWD:/app \
         --name "$0" \
         phpunit/phpunit $@
 }
 
 d_atoum() {
     docker run --rm -it \
-        -v $(pwd):/src \
+        -v $PWD:/src \
         --name "$0" \
         atoum/atoum $@
 }
 
 d_ng() {
     docker run --rm -it \
-        -v $(pwd):/usr/src/app \
+        -v $PWD:/usr/src/app \
         --name "$0" \
         benoitg/node-tools \
         ng $@
@@ -175,7 +176,7 @@ d_ng() {
 
 d_npm() {
     docker run --rm -it \
-        -v $(pwd):/usr/src/app \
+        -v $PWD:/usr/src/app \
         --name "$0" \
         benoitg/node-tools \
         npm $@
@@ -183,7 +184,7 @@ d_npm() {
 
 d_tslint() {
     docker run --rm -it \
-        -v $(pwd):/usr/src/app \
+        -v $PWD:/usr/src/app \
         -v $HOME/tslint.json:/home/node/tslint.json \
         --name "$0" \
         benoitg/node-tools \
@@ -192,11 +193,20 @@ d_tslint() {
 
 phpsa() {
     docker run -it --rm \
-        -u="$UID:$GID" \
-        -v $(pwd):/app \
+        -u $(id -u):$(id -g) \
+        -v $PWD:/app \
         --name "$0" \
-        benoitg/phpsa \
-        check $@
+        benoitg/php-tools \
+        phpsa $@
+}
+
+phan() {
+    docker run -it --rm \
+        -u $(id -u):$(id -g) \
+        -v $PWD:/app \
+        --name "$0" \
+        benoitg/php-tools \
+        phan $@
 }
 
 skype() {
@@ -234,7 +244,7 @@ redis-desktop-manager() {
         -v $HOME/.rdm:/root/.rdm \
         -e DISPLAY \
         -e SSH_AUTH_SOCK \
-        -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
+        -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
         --name "$0" \
         benoitg/redis-desktop-manager $@
 }
