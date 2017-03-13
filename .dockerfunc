@@ -164,6 +164,7 @@ symfony() {
         -e HTTP_PROXY \
         -e HTTPS_PROXY \
         --name "$0" \
+        benoitg/php-tools \
         symfony $@
 }
 
