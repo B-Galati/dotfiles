@@ -143,12 +143,28 @@ composer() {
         -v $SSH_AUTH_SOCK:/ssh-auth.sock \
         -v /etc/passwd:/etc/passwd:ro \
         -v /etc/group:/etc/group:ro \
+        -v $HOME/.composer:/composer \
         -u $(id -u):$(id -g) \
         -e SSH_AUTH_SOCK=/ssh-auth.sock \
         -e HTTP_PROXY \
         -e HTTPS_PROXY \
         --name "$0" \
         composer $@
+}
+
+symfony() {
+    docker run --rm -it \
+        -v $PWD:/app \
+        -v $SSH_AUTH_SOCK:/ssh-auth.sock \
+        -v /etc/passwd:/etc/passwd:ro \
+        -v /etc/group:/etc/group:ro \
+        -v $HOME/.composer:/composer \
+        -u $(id -u):$(id -g) \
+        -e SSH_AUTH_SOCK=/ssh-auth.sock \
+        -e HTTP_PROXY \
+        -e HTTPS_PROXY \
+        --name "$0" \
+        symfony $@
 }
 
 phpunit() {
@@ -261,7 +277,8 @@ teamviewer() {
 
 portainer() {
     docker_service "$0" "docker run -d \
-        -p 9000:9000 \
+        --restart=unless-stopped \
+        -p 9010:9000 \
         -v /var/run/docker.sock:/var/run/docker.sock \
         --name \"$0\" \
         portainer/portainer" $@
