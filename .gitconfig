@@ -4,6 +4,7 @@
     cob  = checkout --no-track -b
     cp   = cherry-pick
     rb   = rebase
+    rbi  = rebase -i
     rbom = rebase -i origin/master
     c    = commit
     ca   = commit --amend
@@ -15,8 +16,9 @@
     r1   = reset HEAD~1
 
     # push
-    pushoh = push -u origin HEAD # like first push
-    pushf = push --force-with-lease
+    p   = push
+    poh = push -u origin HEAD # like first push
+    pf  = push --force-with-lease
 
     # log section
     l   = !git log | tig -FRSX
@@ -33,10 +35,17 @@
     aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort"
 
     # diff
-    da = difftool --cached -d
+    d    = diff
+    dc   = diff --cached
+    dw   = diff -w
+    dwc  = diff -w --cached
+    da   = difftool -d
+    daw  = difftool -d -w
+    dac  = difftool -d --cached
+    dawc = difftool -d --cached -w
 
     # tags
-    tdelete = fetch --prune origin +refs/tags/*:refs/tags/* 
+    tdelete = fetch --prune origin +refs/tags/*:refs/tags/*
 
 [user]
     useconfigonly = true

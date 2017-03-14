@@ -129,7 +129,7 @@ cadvisor() {
         google/cadvisor:latest" $@
 }
 
-d_meteor() {
+meteor() {
     docker run -it --rm \
         -v "$PWD":/app \
         --name "$0" \
@@ -155,12 +155,12 @@ composer() {
 symfony() {
     docker run --rm -it \
         -v $PWD:/app \
-        -v $SSH_AUTH_SOCK:/ssh-auth.sock \
+        -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
         -v /etc/passwd:/etc/passwd:ro \
         -v /etc/group:/etc/group:ro \
         -v $HOME/.composer:/composer \
         -u $(id -u):$(id -g) \
-        -e SSH_AUTH_SOCK=/ssh-auth.sock \
+        -e SSH_AUTH_SOCK \
         -e HTTP_PROXY \
         -e HTTPS_PROXY \
         --name "$0" \
@@ -176,33 +176,54 @@ phpunit() {
         phpunit/phpunit $@
 }
 
-d_atoum() {
+atoum() {
     docker run --rm -it \
         -v $PWD:/src \
         --name "$0" \
         atoum/atoum $@
 }
 
-d_ng() {
+ng() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
+        -u $(id -u):$(id -g) \
         --name "$0" \
         benoitg/node-tools \
         ng $@
 }
 
-d_npm() {
+npm() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
+        -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
+        -u $(id -u):$(id -g) \
+        -e SSH_AUTH_SOCK \
+        -e HTTP_PROXY \
+        -e HTTPS_PROXY \
         --name "$0" \
         benoitg/node-tools \
         npm $@
 }
 
-d_tslint() {
+
+yarn() {
+    docker run --rm -it \
+        -v $PWD:/usr/src/app \
+        -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
+        -u $(id -u):$(id -g) \
+        -e SSH_AUTH_SOCK \
+        -e HTTP_PROXY \
+        -e HTTPS_PROXY \
+        --name "$0" \
+        benoitg/node-tools \
+        yarn $@
+}
+
+tslint() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -v $HOME/tslint.json:/home/node/tslint.json \
+        -u $(id -u):$(id -g) \
         --name "$0" \
         benoitg/node-tools \
         tslint $@

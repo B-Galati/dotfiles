@@ -3,4 +3,7 @@
 bin/test-generator.php
 pimple.json
 .phing_targets
+.phpstorm.meta.php/
+docker-compose.override.yml
+.gitmessage
 
