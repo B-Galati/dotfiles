@@ -262,6 +262,7 @@ redis-desktop-manager() {
         -e DISPLAY \
         -e SSH_AUTH_SOCK \
         -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
+        --device /dev/dri \
         --name "$0" \
         benoitg/redis-desktop-manager $@
 }
