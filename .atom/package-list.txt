@@ -1,7 +1,12 @@
+editorconfig@2.0.4
 file-watcher@0.4.0
 keyboard-localization@1.4.18
+language-ansible@0.1.11
 language-docker@1.1.7
 language-gitignore@0.2.0
+linter@1.11.18
+linter-ansible-linting@1.2.1
+linter-shellcheck@1.4.4
 markdown-preview-plus@2.4.0
 markdown-toc@0.4.1
 project-manager@2.9.7

@@ -11,7 +11,7 @@ deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
 deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
 ```
 
-Packages I use
+Packages used :
 
 ```bash
 sudo apt install git sudo rsync numlockx screenfetch zsh vim \
