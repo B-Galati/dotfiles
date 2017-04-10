@@ -14,23 +14,23 @@ fail () {
 }
 
 linkFiles () {
-    if [[ -L $2 ]]; then
+    if [[ -L "$2" ]]; then
         info "SKIP '$1' -> symlink already exists in '$2'"
         return 0;
     fi
 
-    if [[ -d $2  && ! -L $2 ]]; then
+    if [[ -d "$2"  && ! -L "$2" ]]; then
         read -p "Directory '$2' already exists. Do you want to sync it and create symlink ?(y/n) " -n 1;
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            rsync -ah $2 $(dirname $1)
-            rm -rf $2
+            rsync -ah "$2" "$(dirname $1)"
+            rm -rf "$2"
         else
             return 0;
         fi
     fi
 
-    if ln -snf $1 $2; then
+    if ln -snf "$1" "$2"; then
         success "linked $1 to $2"
     else
         fail "linked $1 to $2"
@@ -51,7 +51,7 @@ doIt () {
         -not -path "*.gitmodules*" \
         -not -path "*.git/*")
     do
-        linkFiles $file "$HOME/$(basename $file)"
+        linkFiles "$file" "$HOME/$(basename $file)"
     done
 
     # btsync does not follow symlink :-)
@@ -66,7 +66,7 @@ doIt () {
     for file in $(find $PWD/etc -type f -not -name ".*.swp")
     do
         f=$(echo $file | sed -e "s|$PWD||")
-        if sudo ln -f $file $f; then
+        if sudo ln -f "$file" "$f"; then
             success "Hardlink for $file to $f"
         else
             fail "Hardlink for $file to $f"
@@ -95,7 +95,7 @@ doIt () {
     for file in ".extra" ".gitconfig_private"
     do
         if [[ ! -f "$HOME/$file" ]]; then
-            cp $file $HOME
+            cp "$file" "$HOME"
             success "Create $file in home $HOME"
         else
             info "SKIP private file '$file' -> already exists"
@@ -103,7 +103,7 @@ doIt () {
     done
 }
 
-cd "$(dirname "${BASH_SOURCE}")"
+cd "$(dirname "${BASH_SOURCE}")" || exit
 
 if [[ "$1" == "--force" || "$1" == "-f" ]]; then
     doIt
@@ -116,4 +116,3 @@ else
 fi
 
 unset doIt
-
