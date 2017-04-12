@@ -1,19 +1,21 @@
 [alias]
-    st   = status
-    co   = checkout
-    cob  = checkout --no-track -b
-    cp   = cherry-pick
-    rb   = rebase
-    rbi  = rebase -i
-    rbom = rebase -i origin/master
-    c    = commit
-    ca   = commit --amend
-    com  = commit -m
-    coma = commit -a -m
-    aa   = add --all
-    fa   = fetch --all -p -v
-    f    = fetch --all -p
-    r1   = reset HEAD~1
+    st    = status
+    co    = checkout
+    cob   = checkout --no-track -b
+    cp    = cherry-pick
+    rb    = rebase
+    rbom  = rebase origin/master
+    rbi   = rebase -i
+    rbiom = rebase -i origin/master
+    c     = commit
+    ca    = commit --amend
+    can   = commit --amend --no-edit
+    com   = commit -m
+    coma  = commit -a -m
+    aa    = add --all
+    fa    = fetch --all -p -v
+    f     = fetch --all -p
+    r1    = reset HEAD~1
 
     # push
     p   = push
