@@ -16,4 +16,3 @@
 -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine
 -Dsun.java2d.xrender=true
 -Dawt.java2d.opengl=true
-

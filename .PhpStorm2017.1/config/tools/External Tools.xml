@@ -23,7 +23,7 @@
   <tool name="php-cs-fixer" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="true" synchronizeAfterRun="true">
     <exec>
       <option name="COMMAND" value="$ProjectFileDir$/vendor/bin/php-cs-fixer" />
-      <option name="PARAMETERS" value="--verbose fix &quot;$FilePath$&quot; --fixers=-phpdoc_inline_tag " />
+      <option name="PARAMETERS" value="--verbose fix &quot;$FilePath$&quot; " />
       <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
     </exec>
   </tool>

@@ -1,16 +1,16 @@
 BashSupport
-Docker
 PHPUnit code coverage
 PlantUML integration
 String Manipulation
-com.dmarcotte.handlebars
 com.kalessil.phpStorm.phpInspectionsEA
 com.karateca.jstoolbox
-com.wix.eslint
+com.phpuaca
+com.thanosp.phpstorm.inheritdoc
 de.espend.idea.php.annotation
 de.espend.idea.php.toolbox
 fr.adrienbrault.idea.symfony2plugin
 mobi.hsz.idea.gitignore
-org.asciidoctor.intellij.asciidoc
+name.kropp.intellij.makefile
+net.king2500.plugins.PhpAdvancedAutoComplete
 org.editorconfig.editorconfigjetbrains
-sk.sorien.silex.plugin.id
+org.psliwa.idea.composer

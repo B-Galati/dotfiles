@@ -1,9 +1,9 @@
 <templateSet group="Twig">
-  <template name="d" value="{{ dump($VAR$) }}" toReformat="true" toShortenFQNames="true">
+  <template name="d" value="{{ dump($VAR$) }}" description="" toReformat="true" toShortenFQNames="true">
     <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
-      <option name="Twig" value="true" />
       <option name="HTML" value="true" />
+      <option name="Twig" value="true" />
     </context>
   </template>
   <template name="ift" value="{% if $CONDITION$ %}&#10;    $SELECTION$&#10;{% endif %}" description="if...endif" toReformat="false" toShortenFQNames="false">
