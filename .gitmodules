@@ -13,3 +13,6 @@
 [submodule ".custom-oh-my-zsh/themes/powerlevel9k"]
 	path = .custom-oh-my-zsh/themes/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule "git-standup"]
+	path = git-standup
+	url = https://github.com/kamranahmedse/git-standup

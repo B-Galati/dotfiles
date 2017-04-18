@@ -103,7 +103,7 @@ doIt () {
     done
 }
 
-cd "$(dirname "${BASH_SOURCE}")" || exit
+cd "$(dirname ${BASH_SOURCE})" || exit
 
 if [[ "$1" == "--force" || "$1" == "-f" ]]; then
     doIt
