@@ -77,14 +77,14 @@ doIt () {
     sudo sysctl --system
 
     # add aliases for things in bin
-    for file in $(find $PWD/bin -type f -not -name ".*.swp")
+    for file in $(find "$PWD/bin" -xtype f -not -name ".*.swp")
     do
         f="/usr/local/bin/$(basename $file)"
         if [[ -L $f ]]; then
             info "SKIP '$file' -> symlink already exists in '$f'"
             continue
         fi
-        if sudo ln -snf $file $f; then
+        if sudo ln -snf "$file" "$f"; then
             success "linked $file to $f"
         else
             fail "linked $file to $f"
