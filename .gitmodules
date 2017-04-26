@@ -16,3 +16,6 @@
 [submodule "git-standup"]
 	path = git-standup
 	url = https://github.com/kamranahmedse/git-standup
+[submodule ".custom-oh-my-zsh/plugins/zsh-autosuggestions"]
+	path = .custom-oh-my-zsh/plugins/zsh-autosuggestions
+	url = git://github.com/zsh-users/zsh-autosuggestions

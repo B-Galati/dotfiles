@@ -4,6 +4,7 @@ export TERM='xterm-256color'
 ZSH_THEME='powerlevel9k/powerlevel9k'
 ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 COMPLETION_WAITING_DOTS='true' # Uncomment the following line to display red dots whilst waiting for completion.
+ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
 
 # Theme customization
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -13,7 +14,7 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
 plugins=(symfony2 docker docker-compose debian extract colored-man-pages \
-    phing supervisor colorize sudo sytemd git-remote-branch git-extras tmux)
+    phing supervisor colorize sudo sytemd git-remote-branch git-extras tmux zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/powerline/bindings/zsh/powerline.zsh
