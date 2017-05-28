@@ -46,7 +46,6 @@ doIt () {
         -not -name ".extra" \
         -not -name ".gitconfig_private" \
         -not -name ".git" \
-        -not -name ".btsync" \
         -not -name "*.swp" \
         -not -path "*.gitmodules*" \
         -not -path "*.git/*")
@@ -54,25 +53,26 @@ doIt () {
         linkFiles "$file" "$HOME/$(basename $file)"
     done
 
-    # btsync does not follow symlink :-)
-    if [[ ! -d "$HOME/.btsync" ]]; then mkdir "$HOME/.btsync"; fi
-    if ln -f "$PWD/.btsync/btsync.conf" "$HOME/.btsync/btsync.conf"; then
-        success "Hardlink for btsync"
-    else
-        fail "Hardlink for btsync"
-    fi
-
     # Add config files in /etc/
     for file in $(find $PWD/etc -type f -not -name ".*.swp")
     do
         f=$(echo $file | sed -e "s|$PWD||")
+        d=$(dirname $f)
+
+        if [[ ! -d "$d" ]]; then
+            if sudo mkdir -p "$d"; then
+                success "Folder $d created"
+            else
+                fail "Folder $d cannot be created"
+            fi
+        fi
+
         if sudo ln -f "$file" "$f"; then
             success "Hardlink for $file to $f"
         else
             fail "Hardlink for $file to $f"
         fi
     done
-    systemctl --user daemon-reload
     sudo systemctl daemon-reload
     sudo sysctl --system
 

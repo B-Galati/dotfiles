@@ -109,8 +109,8 @@ Package Control.user-ca-bundle
 
 # Others
 bin/phing
-.btsync/
-!.btsync/btsync.conf
+.sync/
+!.sync/btsync.json
 
 # Atom
 .atom/.apm/

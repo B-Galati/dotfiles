@@ -37,8 +37,7 @@ pip install --user ansible-lint passlib # -> ~/.local/bin/
 Prepare and install dotfiles :
 
 ```bash
-git clone # This repository
-git submodule update --init --recursive
+git clone --recursive
 ./bootstrap
 ```
 
@@ -52,8 +51,15 @@ Install [Powerline patched fonts](https://github.com/powerline/fonts).
 [Segments list](http://powerline.readthedocs.io/en/master/configuration/segments.html#segments)
 
 ```bash
-powerline-lint # Vérification des fichiers de configuration
-powerline-daemon --replace # Force le rechargement de la config
+powerline-lint # Verifying settings
+powerline-daemon --replace # Force config reloading
+```
+
+## BTSync
+
+```bash
+sudo systemctl enable btsync@benoit
+sudo systemctl start btsync@benoit
 ```
 
 ## GTK themes

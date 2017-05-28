@@ -1,0 +1,17 @@
+{
+  "device_name": "debian-desktop",
+  "storage_path" : "/home/benoit/dotfiles/.sync",
+  "pid_file" : "/home/benoit/dotfiles/.sync/btsync.pid",
+  "listening_port" : 0,
+  "check_for_updates" : true,
+  "use_upnp" : true,
+  "download_limit" : 0,
+  "upload_limit" : 0,
+  "webui" :
+  {
+    "listen" : "127.0.0.1:8888"
+    ,"login" : "benoit"
+    ,"password" : ""
+    ,"allow_empty_password" : true
+  }
+}

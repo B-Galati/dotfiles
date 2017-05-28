@@ -1,0 +1,12 @@
+[Unit]
+Description=BTSync for user %I
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=%I
+ExecStart=/usr/local/bin/btsync --config /home/%u/dotfiles/.sync/btsync.json --nodaemon
+
+[Install]
+WantedBy=multi-user.target
