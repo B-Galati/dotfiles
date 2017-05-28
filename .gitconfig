@@ -96,7 +96,7 @@
     path = ~/.gitconfig_private
 
 [init]
-    templatedir = ~/.git-templates
+    templatedir = ~/.git-templates/template
 
 [url "git@github.com:"]
     insteadOf = gh:
@@ -111,3 +111,7 @@
     # https://git-scm.com/docs/git-config#git-config-transferfsckObjects
     # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
     # via https://gist.github.com/scottnonnenberg/fefa3f65fdb3715d25882f3023b31c29
+[hooks]
+	enabled-plugins = junkchecker
+[hooks "junkchecker"]
+    phrasesfile = .git-hooks-config/junk-phrases
