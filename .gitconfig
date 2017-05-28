@@ -31,7 +31,8 @@
 
     # branch management
     bdelete = !git branch -D $(git branch | grep -v ^* | xargs)
-    bm = branch -m
+    bm      = branch -m
+    recent  = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 
     # alias management
     aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort"
