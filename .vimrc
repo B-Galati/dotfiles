@@ -2,9 +2,9 @@ syntax on
 colorscheme default
 
 " powerline config cf. /usr/share/doc/powerline/README.Debian pour les instructions
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 set laststatus=2 " Always show statusline
 set t_Co=256 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 

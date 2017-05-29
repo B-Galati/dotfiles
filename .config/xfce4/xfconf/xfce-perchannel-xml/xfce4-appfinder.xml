@@ -42,7 +42,7 @@
     <property name="window-height" type="int" value="671"/>
     <property name="window-width" type="int" value="754"/>
     <property name="pane-position" type="int" value="180"/>
-    <property name="category" type="string" value="Toutes les applications"/>
+    <property name="category" type="string" value="All Applications"/>
   </property>
   <property name="always-center" type="bool" value="true"/>
   <property name="item-icon-size" type="uint" value="1"/>

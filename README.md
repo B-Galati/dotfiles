@@ -1,15 +1,6 @@
 # Dotfiles
 
-## How to install on Debian Jessie
-
-Edit your `/apt/apt/sources.list` with :
-
-```
-deb http://ftp.fr.debian.org/debian/ jessie main contrib non-free
-deb http://security.debian.org/ jessie/updates main contrib non-free
-deb http://ftp.fr.debian.org/debian/ jessie-updates main contrib non-free
-deb http://ftp.fr.debian.org/debian/ jessie-backports main contrib non-free
-```
+## How to install on Debian Stretch
 
 Packages used :
 
@@ -26,10 +17,9 @@ apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
 shutter phatch gparted gtk3-engines-xfce httpie php5 \
 gdm3 gnome-screensaver libnss3-tools multitail tig dos2unix gnome-calculator \
 colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
-automake autoconf sshpass strace
+automake autoconf sshpass strace powerline kodi tmux
 
 sudo apt-get remove --purge xscreensaver
-sudo apt-get install -t jessie-backports powerline kodi tmux
 
 pip install --user ansible-lint passlib # -> ~/.local/bin/
 ```
