@@ -7,21 +7,25 @@ Packages used :
 ```bash
 sudo apt install git sudo rsync numlockx screenfetch zsh vim \
 arandr gtk2-engines-murrine murrine-themes dmz-cursor-theme \
-unzip gtk-redshift geoclue hddtemp \
+unzip gtk-redshift geoclue hddtemp gimp \
 ntfs-3g apt-listbugs apt-listchanges alacarte zenity openjdk-8-jre \
 ttf-mscorefonts-installer network-manager-openvpn-gnome \
 filezilla apt-transport-https ca-certificates curl python-pip vim-nox \
 meld ntp youtube-dl htop gvfs-backends p7zip cryptkeeper homebank \
 smartmontools msmtp mailutils smart-notifier gsmartcontrol handbrake transmission \
 apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
-shutter phatch gparted gtk3-engines-xfce httpie php5 \
-gdm3 gnome-screensaver libnss3-tools multitail tig dos2unix gnome-calculator \
+shutter phatch gparted gtk3-engines-xfce httpie gnome-screensaver libnss3-tools \
+multitail tig dos2unix gnome-calculator evince \
 colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
-automake autoconf sshpass strace powerline kodi tmux
+automake autoconf sshpass strace powerline kodi tmux \
+ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation \
+gnome-disk-utility ibreoffice-writer libreoffice-calc libreoffice-impress
 
-sudo apt-get remove --purge xscreensaver
+sudo apt-get remove --purge xscreensaver light-locker
 
 pip install --user ansible-lint passlib # -> ~/.local/bin/
+
+sudo apt install <intel-microcode|amd64-microcode>
 ```
 
 Prepare and install dotfiles :
@@ -30,8 +34,6 @@ Prepare and install dotfiles :
 git clone --recursive
 ./bootstrap
 ```
-
-You can try to intall gtk3-engines-unico
 
 Install [Powerline patched fonts](https://github.com/powerline/fonts).
 [Unicode table](http://unicode-table.com/)
@@ -64,7 +66,7 @@ sudo systemctl start btsync@benoit
 
 ## Credits
 
-- [olivierdelort](https://blog.olivierdelort.net/?p=1790)
+- [olivierdelort](https://blog.delort.email/embellir-sa-debian-et-xfce/)
 - [mathiasbynens](https://github.com/mathiasbynens/dotfiles)
 - [jfrazelle](https://github.com/jfrazelle/dotfiles)
 - [jubianchi](https://github.com/jubianchi/dotfiles)
