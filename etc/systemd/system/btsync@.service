@@ -6,7 +6,7 @@ After=network.target
 [Service]
 Type=simple
 User=%I
-ExecStart=/usr/local/bin/btsync --config /home/%u/dotfiles/.sync/btsync.json --nodaemon
+ExecStart=/usr/local/bin/btsync --config /home/%I/.sync/btsync.json --nodaemon
 
 [Install]
 WantedBy=multi-user.target
