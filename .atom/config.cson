@@ -3,8 +3,10 @@
     autoHideMenuBar: true
     disabledPackages: [
       "markdown-preview"
+      "keyboard-localization"
     ]
     projectHome: "/home/benoit/workspace"
+    telemetryConsent: "limited"
   editor:
     fontSize: 13
     showIndentGuide: true
@@ -18,8 +20,7 @@
   "keyboard-localization":
     useKeyboardLayout: "fr_FR-bepo"
     useKeyboardLayoutFromPath: "/home/benoit/.atom/keybind-custom.json"
-  linter:
-    showErrorPanel: false
+  linter: {}
   "linter-ansible-linting":
     ansibleLintExecutablePath: "/home/benoit/.local/bin/ansible-lint"
   "markdown-preview":

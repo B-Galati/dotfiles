@@ -114,4 +114,4 @@
 [hooks]
 	enabled-plugins = junkchecker
 [hooks "junkchecker"]
-    phrasesfile = .git-hooks-config/junk-phrases
+    phrasesfile = $HOME/.git-hooks-config/junk-phrases

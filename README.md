@@ -7,7 +7,7 @@ Packages used :
 ```bash
 sudo apt install git sudo rsync numlockx screenfetch zsh vim \
 arandr gtk2-engines-murrine murrine-themes dmz-cursor-theme \
-unzip gtk-redshift geoclue hddtemp gimp \
+unzip gtk-redshift geoclue-2.0 hddtemp gimp \
 ntfs-3g apt-listbugs apt-listchanges alacarte zenity openjdk-8-jre \
 ttf-mscorefonts-installer network-manager-openvpn-gnome \
 filezilla apt-transport-https ca-certificates curl python-pip vim-nox \
@@ -19,7 +19,7 @@ multitail tig dos2unix gnome-calculator evince \
 colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
 automake autoconf sshpass strace powerline kodi tmux \
 ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation \
-gnome-disk-utility ibreoffice-writer libreoffice-calc libreoffice-impress
+gnome-disk-utility libreoffice-writer libreoffice-calc libreoffice-impress gnome-shell-pomodoro
 
 sudo apt-get remove --purge xscreensaver light-locker
 
