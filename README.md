@@ -19,7 +19,8 @@ multitail tig dos2unix gnome-calculator evince \
 colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
 automake autoconf sshpass strace powerline kodi tmux \
 ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation \
-gnome-disk-utility libreoffice-writer libreoffice-calc libreoffice-impress gnome-shell-pomodoro
+gnome-disk-utility libreoffice-writer libreoffice-calc libreoffice-impress gnome-shell-pomodoro \
+xdotool wmctrl
 
 sudo apt-get remove --purge xscreensaver light-locker
 
@@ -53,6 +54,19 @@ powerline-daemon --replace # Force config reloading
 sudo systemctl enable btsync@benoit
 sudo systemctl start btsync@benoit
 ```
+
+## Gnome Pomodoro
+
+Actions to add :
+
+```
+# On pomodoro start (close pomodoro window)
+bash -c "xdotool search --sync --name 'Pomodoro Timer' | xargs -I{} -n 1 wmctrl -i -c {}"
+
+# On break complete (display pomodoro window)
+gnome-pomodoro
+```
+
 
 ## GTK themes
 
