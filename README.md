@@ -60,7 +60,7 @@ sudo systemctl start btsync@benoit
 Actions to add :
 
 ```
-# On pomodoro start (close pomodoro window)
+# On resume and enable (close pomodoro window)
 bash -c "xdotool search --sync --name 'Pomodoro Timer' | xargs -I{} -n 1 wmctrl -i -c {}"
 
 # On break complete (display pomodoro window)
