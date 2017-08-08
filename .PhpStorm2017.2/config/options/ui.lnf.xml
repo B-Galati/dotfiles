@@ -2,6 +2,7 @@
   <component name="UISettings">
     <option name="CLOSE_NON_MODIFIED_FILES_FIRST" value="true" />
     <option name="EDITOR_TAB_LIMIT" value="20" />
+    <option name="FONT_FACE" value="Roboto Regular" />
     <option name="HIDE_TABS_IF_NEED" value="false" />
     <option name="HIDE_TOOL_STRIPES" value="false" />
     <option name="MARK_MODIFIED_TABS_WITH_ASTERISK" value="true" />

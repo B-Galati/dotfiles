@@ -149,7 +149,7 @@ composer() {
         -e HTTP_PROXY \
         -e HTTPS_PROXY \
         --name "$0" \
-        composer $@
+        benoitg/php-tools composer $@
 }
 
 symfony() {

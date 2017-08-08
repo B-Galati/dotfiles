@@ -79,6 +79,7 @@ Thumbs.db
 .PhpStorm2017.2/config/options/dataSources/
 .PhpStorm2017.2/config/options/php-test-framework.xml
 .PhpStorm2017.2/config/options/php.xml
+.PhpStorm2017.2/config/options/statistics*.xml
 .PhpStorm2017.2/config/scratches/
 .PhpStorm2017.2/config/javascript/extLibs/
 .PhpStorm2017.2/config/phpstorm1620.key

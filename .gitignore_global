@@ -1,4 +1,6 @@
 .idea/
+.composer/
+.php_cs
 .atoum.php
 bin/test-generator.php
 pimple.json
