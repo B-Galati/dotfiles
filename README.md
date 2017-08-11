@@ -20,7 +20,7 @@ colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
 automake autoconf sshpass strace powerline kodi tmux \
 ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation \
 gnome-disk-utility libreoffice-writer libreoffice-calc libreoffice-impress gnome-shell-pomodoro \
-xdotool wmctrl
+xdotool wmctrl arc-theme shell-check
 
 sudo apt-get remove --purge xscreensaver light-locker
 
@@ -38,6 +38,7 @@ git clone --recursive
 
 Install [Powerline patched fonts](https://github.com/powerline/fonts).
 [Unicode table](http://unicode-table.com/)
+L2TP https://github.com/nm-l2tp/network-manager-l2tp/wiki/Prebuilt-Packages#ubuntu  
 
 ## Powerline
 
@@ -49,6 +50,8 @@ powerline-daemon --replace # Force config reloading
 ```
 
 ## BTSync
+
+Install btsync here `/usr/local/bin/btsync`
 
 ```bash
 sudo systemctl enable btsync@benoit
@@ -66,6 +69,33 @@ bash -c "xdotool search --sync --name 'Pomodoro Timer' | xargs -I{} -n 1 wmctrl 
 # On break complete (display pomodoro window)
 gnome-pomodoro
 ```
+
+## Atom
+
+```bash
+ # Save
+apm list --installed --bare > package-list.txt
+
+ # Restore
+apm install --packages-file package-list.txt
+```
+
+## Bépo keyboard
+
+[source](https://bepo.fr/wiki/Console_GNU/Linux#Configuration_avanc.C3.A9e)
+
+Update file `/etc/default/keyboard` :
+
+```
+XKBMODEL="tm2030USB"
+XKBLAYOUT="fr,fr"
+XKBVARIANT="bepo,"
+XKBOPTIONS="grp:alt_caps_toggle,grp_led:scroll"
+```
+
+## HiDPI
+
+https://wiki.archlinux.org/index.php/HiDPI
 
 
 ## GTK themes
