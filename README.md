@@ -20,7 +20,7 @@ colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
 automake autoconf sshpass strace powerline kodi tmux \
 ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation \
 gnome-disk-utility libreoffice-writer libreoffice-calc libreoffice-impress gnome-shell-pomodoro \
-xdotool wmctrl arc-theme shell-check
+xdotool wmctrl arc-theme shellcheck ansible 
 
 sudo apt-get remove --purge xscreensaver light-locker
 
