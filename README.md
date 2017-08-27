@@ -36,9 +36,10 @@ git clone --recursive
 ./bootstrap
 ```
 
-Install [Powerline patched fonts](https://github.com/powerline/fonts).
-[Unicode table](http://unicode-table.com/)
-L2TP https://github.com/nm-l2tp/network-manager-l2tp/wiki/Prebuilt-Packages#ubuntu  
+- If needed, install [Powerline patched fonts](https://github.com/powerline/fonts).
+    - see [Unicode table](http://unicode-table.com/)
+- L2TP https://github.com/nm-l2tp/network-manager-l2tp/wiki/Prebuilt-Packages#ubuntu
+- See [this article](http://ajclarkson.co.uk/blog/auto-mount-webdav-raspberry-pi/) to mount a webdav folder locally
 
 ## Powerline
 
@@ -97,6 +98,10 @@ XKBOPTIONS="grp:alt_caps_toggle,grp_led:scroll"
 
 https://wiki.archlinux.org/index.php/HiDPI
 
+
+## Dropbox
+
+Tray icon is not showing [fixed](https://askubuntu.com/questions/732967/dropbox-icon-is-not-working-xubuntu-14-04-lts-64) by runnig `DBUS_SESSION_BUS_ADDRESS="" dropbox start`.
 
 ## GTK themes
 
