@@ -20,7 +20,7 @@ colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
 automake autoconf sshpass strace powerline kodi tmux \
 ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation \
 gnome-disk-utility libreoffice-writer libreoffice-calc libreoffice-impress gnome-shell-pomodoro \
-xdotool wmctrl arc-theme shellcheck ansible 
+xdotool wmctrl arc-theme shellcheck ansible davfs2
 
 sudo apt-get remove --purge xscreensaver light-locker
 
@@ -101,7 +101,7 @@ https://wiki.archlinux.org/index.php/HiDPI
 
 ## Dropbox
 
-Tray icon is not showing [fixed](https://askubuntu.com/questions/732967/dropbox-icon-is-not-working-xubuntu-14-04-lts-64) by runnig `DBUS_SESSION_BUS_ADDRESS="" dropbox start`.
+Tray icon is not showing [fixed](https://askubuntu.com/questions/732967/dropbox-icon-is-not-working-xubuntu-14-04-lts-64) by runnig `dropbox stop && dbus-launch dropbox start -i`.
 
 ## GTK themes
 
