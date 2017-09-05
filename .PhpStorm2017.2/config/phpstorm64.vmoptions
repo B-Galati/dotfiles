@@ -10,9 +10,9 @@
 -Djava.net.preferIPv4Stack=true
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:-OmitStackTraceInFastThrow
--Dawt.useSystemAAFontSettings=on
--Dswing.aatext=true
--Dhidpi=true
+-Dawt.useSystemAAFontSettings=lcd
 -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine
--Dsun.java2d.xrender=true
--Dawt.java2d.opengl=true
+#-Dsun.java2d.xrender=true
+#-Dawt.java2d.opengl=true
+#-Dswing.aatext=true
+#-Dhidpi=true
