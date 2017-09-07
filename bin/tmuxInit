@@ -8,6 +8,11 @@ then
     tmux send-keys -t dev:0.0 'dmesg -HTw' C-m
     tmux send-keys -t dev:0.1 'journalctl -p 0..4 -fxn' C-m
 
+    tmux new-window -n "docs/dotfiles" -t dev
+    tmux split-window -h -t dev:1
+    tmux send-keys -t dev:1.0 'cd dotfiles' C-m
+    tmux send-keys -t dev:1.1 'cd docs' C-m
+
     tmux new-window -t dev
 
     tmux select-window -t dev:1
