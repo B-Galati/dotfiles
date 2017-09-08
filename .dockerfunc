@@ -192,6 +192,15 @@ ng() {
         ng $@
 }
 
+uglifyjs() {
+    docker run --rm -it \
+        -v $PWD:/usr/src/app \
+        -u $(id -u):$(id -g) \
+        --name "$0" \
+        benoitg/node-tools \
+        uglifyjs $@
+}
+
 npm() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
