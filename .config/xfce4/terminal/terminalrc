@@ -1,5 +1,5 @@
 [Configuration]
-FontName=Hack 10
+FontName=Hack 9
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
@@ -17,7 +17,7 @@ MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0.900000
+BackgroundDarkness=0,900000
 ScrollingLines=5000
 ShortcutsNoMenukey=TRUE
 TitleMode=TERMINAL_TITLE_HIDE

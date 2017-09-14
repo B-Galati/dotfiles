@@ -8,7 +8,7 @@
     projectHome: "/home/benoit/workspace"
     telemetryConsent: "limited"
   editor:
-    fontSize: 13
+    fontSize: 12
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
