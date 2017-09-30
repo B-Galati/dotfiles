@@ -143,7 +143,7 @@ composer() {
         -v $SSH_AUTH_SOCK:/ssh-auth.sock \
         -v /etc/passwd:/etc/passwd:ro \
         -v /etc/group:/etc/group:ro \
-        -v $HOME/.composer:/composer \
+        -v $HOME/.composer/cache:/tmp/cache \
         -u $(id -u):$(id -g) \
         -e SSH_AUTH_SOCK=/ssh-auth.sock \
         -e HTTP_PROXY \

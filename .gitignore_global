@@ -8,4 +8,4 @@ pimple.json
 .phpstorm.meta.php/
 docker-compose.override.yml
 .gitmessage
-
+php-cs-fixer.phar
