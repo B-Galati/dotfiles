@@ -81,17 +81,31 @@ apm list --installed --bare > package-list.txt
 apm install --packages-file package-list.txt
 ```
 
-## Bépo keyboard
+## Bépo and keyboard configuration
 
 [source](https://bepo.fr/wiki/Console_GNU/Linux#Configuration_avanc.C3.A9e)
+[Keyboard Wiki Debian](https://wiki.debian.org/fr/Keyboard)
+[ArchLinux Wiki](https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg)
+
+Switch keyboard manually
+
+```bash
+setxkbmap fr bepo
+```
+
+To re-configure the keyboard :
+
+```bash
+sudo dpkg-reconfigure keyboard-configuration
+```
 
 Update file `/etc/default/keyboard` :
 
 ```
-XKBMODEL="tm2030USB"
+XKBMODEL="tm2030USB-102"
 XKBLAYOUT="fr,fr"
 XKBVARIANT="bepo,"
-XKBOPTIONS="grp:alt_caps_toggle,grp_led:scroll"
+XKBOPTIONS="grp:alt_caps_toggle"
 ```
 
 ## HiDPI

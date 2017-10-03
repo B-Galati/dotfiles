@@ -1,7 +1,7 @@
 export EDITOR=vim # Editeur par défaut
 export TERM="xterm-256color"
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s" # Coloration syntaxique LESS
-export LESS=' -R '
+export LESS=' -RXI'
 
 export GIT_PS1_SHOWDIRTYSTATE=1 # Montre si modif de la copie locale (*) ou (+) pour l'indexa
 export GIT_PS1_SHOWSTASHSTATE=1 # Montre si éléments stashés ($)
