@@ -309,11 +309,20 @@ teamviewer() {
 
 portainer() {
     docker_service "$0" "docker run -d \
-        --restart=unless-stopped \
+        --restart=always \
         -p 9010:9000 \
         -v /var/run/docker.sock:/var/run/docker.sock \
         --name \"$0\" \
         portainer/portainer" $@
+}
+
+dns-gen() {
+    docker_service "$0" "docker run -d \
+      --restart=always \
+      -p 54:53/udp \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      --name \"$0\" \
+      jderusse/dns-gen -R" $@
 }
 
 redis-cli() {
