@@ -1,12 +1,6 @@
 #!/bin/bash
 # Based on https://github.com/jfrazelle/dotfiles/blob/master/.dockerfunc
 
-docker_cleanup(){
-    docker rm -v $(docker ps -aq 2>/dev/null) 2>/dev/null
-    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
-    docker volume rm $(docker volume ls -qf dangling=true 2>/dev/null) 2>/dev/null
-}
-
 docker_service() {
     local containerName=$1
     local RUNNING=$(docker inspect --format="{{ .State.Running }}" $containerName 2> /dev/null)
@@ -19,7 +13,7 @@ docker_service() {
 
         rm)
             echo "Deleting container..."
-            docker rm -v $containerName
+            docker rm -fv $containerName
         ;;
 
         --help)
@@ -35,7 +29,7 @@ docker_service() {
 
             if [[ "$RUNNING" == "false" ]]; then
                 echo "starting container..."
-                docker start -ai $containerName
+                docker start $containerName
             else
                 echo "running container..."
                 eval "$2"
