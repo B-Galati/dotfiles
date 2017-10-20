@@ -62,7 +62,7 @@ plex() {
         $volumesArgs \\
         -p 32400:32400 \\
         --name \"$0\" \\
-        timhaak/plex" $@
+        timhaak/plex" "$@"
 }
 
 steam() {
@@ -80,7 +80,7 @@ steam() {
         --group-add audio \\
         --group-add video \\
         --name \"$0\" \\
-        tianon/steam" $@
+        tianon/steam" "$@"
 }
 
 redis-commander() {
@@ -88,7 +88,7 @@ redis-commander() {
         -p 8081:8081 \
         --name "$0" \
         tenstartups/redis-commander \
-        --redis-host $@
+        --redis-host "$@"
 }
 
 keepass2() {
@@ -98,7 +98,7 @@ keepass2() {
         -v $HOME/.config/KeePass/KeePass.config.xml:/home/keepass/.config/KeePass/KeePass.config.xml \\
         -e DISPLAY \\
         --name \"$0\" \\
-        benoitg/keepass2" $@
+        benoitg/keepass2" "$@"
 }
 
 evernote() {
@@ -108,7 +108,7 @@ evernote() {
         -e DISPLAY \\
         --cpuset-cpus 0 \\
         --name \"$0\" \\
-        benoitg/evernote" $@
+        benoitg/evernote" "$@"
 }
 
 cadvisor() {
@@ -120,7 +120,7 @@ cadvisor() {
         --publish=8080:8080 \\
         --detach=true \\
         --name=\"$0\" \\
-        google/cadvisor:latest" $@
+        google/cadvisor:latest" "$@"
 }
 
 meteor() {
@@ -128,7 +128,7 @@ meteor() {
         -v "$PWD":/app \
         --name "$0" \
         danieldent/meteor \
-        meteor $@
+        meteor "$@"
 }
 
 composer() {
@@ -143,7 +143,7 @@ composer() {
         -e HTTP_PROXY \
         -e HTTPS_PROXY \
         --name "$0" \
-        benoitg/php-tools composer $@
+        benoitg/php-tools composer "$@"
 }
 
 symfony() {
@@ -159,7 +159,7 @@ symfony() {
         -e HTTPS_PROXY \
         --name "$0" \
         benoitg/php-tools \
-        symfony $@
+        symfony "$@"
 }
 
 phpunit() {
@@ -167,14 +167,14 @@ phpunit() {
         -u $(id -u):$(id -g) \
         -v $PWD:/app \
         --name "$0" \
-        phpunit/phpunit $@
+        phpunit/phpunit "$@"
 }
 
 atoum() {
     docker run --rm -it \
         -v $PWD:/src \
         --name "$0" \
-        atoum/atoum $@
+        atoum/atoum "$@"
 }
 
 ng() {
@@ -183,7 +183,7 @@ ng() {
         -u $(id -u):$(id -g) \
         --name "$0" \
         benoitg/node-tools \
-        ng $@
+        ng "$@"
 }
 
 uglifyjs() {
@@ -192,7 +192,7 @@ uglifyjs() {
         -u $(id -u):$(id -g) \
         --name "$0" \
         benoitg/node-tools \
-        uglifyjs $@
+        uglifyjs "$@"
 }
 
 npm() {
@@ -205,7 +205,7 @@ npm() {
         -e HTTPS_PROXY \
         --name "$0" \
         benoitg/node-tools \
-        npm $@
+        npm "$@"
 }
 
 
@@ -219,7 +219,7 @@ yarn() {
         -e HTTPS_PROXY \
         --name "$0" \
         benoitg/node-tools \
-        yarn $@
+        yarn "$@"
 }
 
 tslint() {
@@ -229,7 +229,7 @@ tslint() {
         -u $(id -u):$(id -g) \
         --name "$0" \
         benoitg/node-tools \
-        tslint $@
+        tslint "$@"
 }
 
 phpsa() {
@@ -238,7 +238,7 @@ phpsa() {
         -v $PWD:/app \
         --name "$0" \
         benoitg/php-tools \
-        phpsa $@
+        phpsa "$@"
 }
 
 phan() {
@@ -247,7 +247,7 @@ phan() {
         -v $PWD:/app \
         --name "$0" \
         benoitg/php-tools \
-        phan $@
+        phan "$@"
 }
 
 skype() {
@@ -261,7 +261,7 @@ skype() {
         --group-add audio \\
         --group-add video \\
     	--name \"$0\" \\
-    	benoitg/skype" $@
+    	benoitg/skype" "$@"
 }
 
 spotify() {
@@ -276,7 +276,7 @@ spotify() {
 		--group-add audio \
 		--group-add video \
 		--name \"$0\" \
-		jess/spotify" $@
+		jess/spotify" "$@"
 }
 
 redis-desktop-manager() {
@@ -288,7 +288,7 @@ redis-desktop-manager() {
         -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
         --device /dev/dri \
         --name "$0" \
-        benoitg/redis-desktop-manager $@
+        benoitg/redis-desktop-manager "$@"
 }
 
 teamviewer() {
@@ -298,7 +298,7 @@ teamviewer() {
         -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
         --name \"$0\" \
         hurricane/teamviewer \
-        teamviewer" $@
+        teamviewer" "$@"
 }
 
 portainer() {
@@ -307,7 +307,7 @@ portainer() {
         -p 9010:9000 \
         -v /var/run/docker.sock:/var/run/docker.sock \
         --name \"$0\" \
-        portainer/portainer" $@
+        portainer/portainer" "$@"
 }
 
 dns-gen() {
@@ -316,12 +316,22 @@ dns-gen() {
       -p 54:53/udp \
       -v /var/run/docker.sock:/var/run/docker.sock \
       --name \"$0\" \
-      jderusse/dns-gen -R" $@
+      jderusse/dns-gen -R" "$@"
 }
 
 redis-cli() {
     docker run -it --rm \
         --name "$0" \
         redis:latest \
-        redis-cli $@
+        redis-cli "$@"
+}
+
+browser-sync() {
+    docker run -it --rm \
+        -v $PWD:/usr/src/app \
+        -u $(id -u):$(id -g) \
+        -p 3000:3000 \
+        --name "$0" \
+        benoitg/node-tools \
+        browser-sync "$@"
 }

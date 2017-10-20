@@ -25,7 +25,8 @@
     ansibleLintExecutablePath: "/home/benoit/.local/bin/ansible-lint"
   "markdown-preview":
     useGitHubStyle: true
-  "markdown-preview-plus": {}
+  "markdown-preview-plus":
+    breakOnSingleNewline: true
   "project-manager":
     sortBy: "last modified"
   "tree-view":

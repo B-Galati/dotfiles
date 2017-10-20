@@ -9,3 +9,4 @@ pimple.json
 docker-compose.override.yml
 .gitmessage
 php-cs-fixer.phar
+bin/app
