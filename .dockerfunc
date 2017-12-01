@@ -258,6 +258,15 @@ phan() {
         phan "$@"
 }
 
+php-cs-fixer() {
+    docker run -it --rm \
+        -u $(id -u):$(id -g) \
+        -v $PWD:/app \
+        --name "$0" \
+        benoitg/php-tools \
+        php-cs-fixer "$@"
+}
+
 skype() {
     docker_service "$0" "docker run \\
         -v /tmp/.X11-unix:/tmp/.X11-unix \\

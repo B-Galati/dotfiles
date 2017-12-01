@@ -6,18 +6,18 @@ Packages used :
 
 ```bash
 sudo apt install git sudo rsync numlockx screenfetch zsh vim \
-arandr gtk2-engines-murrine murrine-themes dmz-cursor-theme \
+arandr dmz-cursor-theme \
 unzip gtk-redshift geoclue-2.0 hddtemp gimp \
-ntfs-3g apt-listbugs apt-listchanges alacarte zenity openjdk-8-jre \
+ntfs-3g apt-listbugs apt-listchanges alacarte zenity \
 ttf-mscorefonts-installer network-manager-openvpn-gnome \
 filezilla apt-transport-https ca-certificates curl python-pip vim-nox \
 meld ntp youtube-dl htop gvfs-backends p7zip cryptkeeper homebank \
 smartmontools msmtp mailutils smart-notifier gsmartcontrol handbrake transmission \
 apt-file hardinfo psensor catfish xarchiver zip simple-scan backintime-gnome \
-shutter phatch gparted gtk3-engines-xfce httpie gnome-screensaver libnss3-tools \
+shutter phatch gparted httpie gnome-screensaver libnss3-tools \
 multitail tig dos2unix gnome-calculator evince \
 colordiff autossh gettext software-properties-common pkg-config libgtk-3-dev \
-automake autoconf sshpass strace powerline kodi tmux \
+automake autoconf sshpass strace powerline tmux \
 ttf-dejavu ttf-dejavu-core ttf-dejavu-extra ttf-freefont ttf-liberation \
 gnome-disk-utility libreoffice-writer libreoffice-calc libreoffice-impress gnome-shell-pomodoro \
 xdotool wmctrl arc-theme shellcheck ansible davfs2 gpick krita sshuttle
@@ -116,6 +116,10 @@ https://wiki.archlinux.org/index.php/HiDPI
 ## Dropbox
 
 Tray icon is not showing [fixed](https://askubuntu.com/questions/732967/dropbox-icon-is-not-working-xubuntu-14-04-lts-64) by runnig `dropbox stop && dbus-launch dropbox start -i`.
+
+## Firefox
+
+Fix firefox input field background color -> https://superuser.com/questions/632980/firefox-input-field-color
 
 ## GTK themes
 
