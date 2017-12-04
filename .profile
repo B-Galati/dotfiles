@@ -12,8 +12,7 @@ PATH="$PATH:/sbin"
 PATH="$PATH:/usr/sbin"
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:$HOME/.local/bin"
-PATH="$PATH:./vendor/bin"
-PATH="$PATH:./bin"
+PATH="$PATH:/snap/bin"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
