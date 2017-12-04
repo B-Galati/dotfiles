@@ -1,9 +1,10 @@
 # custom PhpStorm VM options
 
--Xms512m
--Xmx1536m
--XX:ReservedCodeCacheSize=240m
+-Xms1g
+-Xmx1g
+-XX:ReservedCodeCacheSize=512m
 -XX:+UseConcMarkSweepGC
+-XX:+UseCompressedOops
 -XX:SoftRefLRUPolicyMSPerMB=50
 -ea
 -Dsun.io.useCanonCaches=false
@@ -12,7 +13,7 @@
 -XX:-OmitStackTraceInFastThrow
 -Dawt.useSystemAAFontSettings=lcd
 -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine
+#-Dswing.aatext=true
 #-Dsun.java2d.xrender=true
 #-Dawt.java2d.opengl=true
-#-Dswing.aatext=true
 #-Dhidpi=true
