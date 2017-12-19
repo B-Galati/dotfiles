@@ -50,7 +50,7 @@ plex() {
     var=$PLEX_MEDIA_FOLDERS
     while [ "$var" ] ;do
         iter=${var%%;*}
-        volumesArgs+="-v $iter:/data/$(basename $iter) "
+        volumesArgs+="-v \"$iter:/data/$(basename $iter)\" "
         [ "$var" = "$iter" ] && \
             var='' || \
             var="${var#*;}"
@@ -58,11 +58,14 @@ plex() {
 
     docker_service "$0" "docker run -it -d \\
         -h plex-benoit \\
+        -e TZ=\"Europe/Paris\" \\
+        -e PLEX_CLAIM \\
+        --network=host \\
         -v $HOME/.config/plex:/config \\
         $volumesArgs \\
         -p 32400:32400 \\
         --name \"$0\" \\
-        timhaak/plex" "$@"
+        plexinc/pms-docker" "$@"
 }
 
 steam() {

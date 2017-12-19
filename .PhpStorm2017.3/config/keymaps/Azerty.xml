@@ -16,6 +16,10 @@
     <keyboard-shortcut first-keystroke="alt 7" />
     <keyboard-shortcut first-keystroke="alt plus" />
   </action>
+  <action id="ActivateVersionControlToolWindow">
+    <keyboard-shortcut first-keystroke="alt 9" />
+    <keyboard-shortcut first-keystroke="alt #10000c7" />
+  </action>
   <action id="Diff.SelectedChange" />
   <action id="EditorDeleteLine">
     <keyboard-shortcut first-keystroke="ctrl y" />

@@ -23,4 +23,4 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # cf. bug https://bugzilla.redhat.com/show_bug.cgi?id=889690
-export NO_AT_BRIDGE=1
+#export NO_AT_BRIDGE=1
