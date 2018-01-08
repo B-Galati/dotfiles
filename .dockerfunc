@@ -311,7 +311,7 @@ redis-desktop-manager() {
         benoitg/redis-desktop-manager "$@"
 }
 
-teamviewer() {
+docker_teamviewer() {
     docker_service "$0" "docker run -d \
         -e DISPLAY \
         -e XAUTHORITY \

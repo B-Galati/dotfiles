@@ -116,3 +116,5 @@
 	enabled-plugins = junkchecker
 [hooks "junkchecker"]
     phrasesfile = $HOME/.git-hooks-config/junk-phrases
+[commit]
+	gpgsign = true

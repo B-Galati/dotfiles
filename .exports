@@ -14,10 +14,14 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND" # Ajoute les nouvelles comma
 
 export HISTSIZE=20000 # Nombre de commande max dans l'historique
 export HISTFILESIZE=$HISTSIZE # Taille maxi du fichier d'historique
+export HISTTIMEFORMAT='%F %T'
 export HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
+export HISTIGNORE='ls -l:ll:la:pwd:history'
 
 export DOCKER_UID=$(id -u)
 export DOCKER_GID=$(id -g)
+
+export GPG_TTY=$(tty)
 
 # Configurer un proxy
 # export http_proxy='http://squid:8080/'

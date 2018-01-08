@@ -66,8 +66,8 @@
     <keyboard-shortcut first-keystroke="alt i" />
   </action>
   <action id="GotoTest" />
-  <action id="HideActiveWindow">
-    <keyboard-shortcut first-keystroke="shift escape" />
+  <action id="HideAllWindows">
+    <keyboard-shortcut first-keystroke="shift ctrl f12" />
     <keyboard-shortcut first-keystroke="ctrl numpad0" />
   </action>
   <action id="HippieCompletion" />
@@ -88,11 +88,19 @@
     <keyboard-shortcut first-keystroke="ctrl alt insert" />
     <keyboard-shortcut first-keystroke="ctrl altGraph insert" />
   </action>
+  <action id="NextOccurence">
+    <keyboard-shortcut first-keystroke="ctrl alt down" />
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
   <action id="OptimizeImports">
     <keyboard-shortcut first-keystroke="ctrl alt o" />
     <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
   <action id="PopupHector" />
+  <action id="PreviousOccurence">
+    <keyboard-shortcut first-keystroke="ctrl alt up" />
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="ctrl alt l" />
     <keyboard-shortcut first-keystroke="ctrl alt r" />
