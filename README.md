@@ -119,7 +119,17 @@ Tray icon is not showing [fixed](https://askubuntu.com/questions/732967/dropbox-
 
 ## Firefox
 
-Fix firefox input field background color -> https://superuser.com/questions/632980/firefox-input-field-color
+[source](https://support.mozilla.org/en-US/questions/814083)
+
+edit `~/.mozilla/firefox/{profile_name}.default/chrome/userContent.css`
+
+```css
+input, textarea, select {
+    color:#000 !important;
+    background-color:#fff !important;
+    -moz-appearance: none !important;
+}
+```
 
 ## GTK themes
 
