@@ -2,6 +2,7 @@
 .php_cs.cache
 .composer/
 .php_cs
+yarn-error.log
 .atoum.php
 bin/test-generator.php
 pimple.json
