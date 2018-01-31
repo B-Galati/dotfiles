@@ -11,7 +11,7 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs_joined time)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs symfony2_version)
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%{%B%}❯%{%b%} "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
 plugins=(symfony2 docker docker-compose debian extract colored-man-pages \
     phing supervisor colorize sudo sytemd git-remote-branch git-extras tmux zsh-autosuggestions)
