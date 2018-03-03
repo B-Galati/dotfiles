@@ -5,6 +5,7 @@
     </value>
   </option>
   <option name="LINE_SEPARATOR" value="&#10;" />
+  <option name="SOFT_MARGINS" value="80,120" />
   <JSCodeStyleSettings>
     <option name="ALIGN_OBJECT_PROPERTIES" value="2" />
     <option name="ALIGN_VAR_STATEMENTS" value="1" />
@@ -90,7 +91,6 @@
   </codeStyleSettings>
   <codeStyleSettings language="XML">
     <indentOptions>
-      <option name="USE_TAB_CHARACTER" value="true" />
       <option name="SMART_TABS" value="true" />
     </indentOptions>
   </codeStyleSettings>

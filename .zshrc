@@ -13,7 +13,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs symfony2_version)
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
-plugins=(symfony2 docker docker-compose debian extract colored-man-pages \
+plugins=(docker docker-compose debian extract colored-man-pages \
     phing supervisor colorize sudo sytemd git-remote-branch git-extras tmux zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
