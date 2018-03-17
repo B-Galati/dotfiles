@@ -8,11 +8,10 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-PATH="$PATH:/sbin"
-PATH="$PATH:/usr/sbin"
-PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:/snap/bin"
+PATH="$PATH:$HOME/.platformsh/bin"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

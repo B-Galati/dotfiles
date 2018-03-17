@@ -101,6 +101,10 @@
     <keyboard-shortcut first-keystroke="ctrl alt up" />
     <keyboard-shortcut first-keystroke="shift alt up" />
   </action>
+  <action id="Refactorings.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt t" />
+    <keyboard-shortcut first-keystroke="altGraph t" />
+  </action>
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="ctrl alt l" />
     <keyboard-shortcut first-keystroke="ctrl alt r" />
