@@ -129,6 +129,10 @@
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="ctrl t" second-keystroke="altGraph b" />
   </action>
+  <action id="SurroundWith">
+    <keyboard-shortcut first-keystroke="ctrl alt t" />
+    <keyboard-shortcut first-keystroke="alt t" />
+  </action>
   <action id="SurroundWithEmmet">
     <keyboard-shortcut first-keystroke="alt e" />
   </action>
@@ -176,6 +180,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt h" />
   </action>
   <action id="Vcs.UpdateProject" />
+  <action id="com.karateca.jstoolbox.torelated.GoToTestAction">
+    <keyboard-shortcut first-keystroke="ctrl meta t" />
+  </action>
   <action id="tasks.switch" />
   <action id="tasks.switch.toolbar" />
 </keymap>

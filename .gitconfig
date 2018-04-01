@@ -102,6 +102,9 @@
 [url "git@github.com:"]
     insteadOf = gh:
 
+[commit]
+    gpgsign = true
+
 [diff "exif"]
     textconv = exiftool
 
@@ -112,9 +115,13 @@
     # https://git-scm.com/docs/git-config#git-config-transferfsckObjects
     # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
     # via https://gist.github.com/scottnonnenberg/fefa3f65fdb3715d25882f3023b31c29
+
 [hooks]
 	enabled-plugins = junkchecker
+	enabled-plugins = php/composer
 [hooks "junkchecker"]
     phrasesfile = $HOME/.git-hooks-config/junk-phrases
-[commit]
-	gpgsign = true
+[hooks "notification"]
+	notifier = echo
+[hooks "composer"]
+	onChange = just_warn

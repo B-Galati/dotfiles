@@ -113,24 +113,6 @@ XKBOPTIONS="grp:alt_caps_toggle"
 https://wiki.archlinux.org/index.php/HiDPI
 
 
-## Dropbox
-
-Tray icon is not showing [fixed](https://askubuntu.com/questions/732967/dropbox-icon-is-not-working-xubuntu-14-04-lts-64) by runnig `dropbox stop && dbus-launch dropbox start -i`.
-
-## Firefox
-
-[source](https://support.mozilla.org/en-US/questions/814083)
-
-edit `~/.mozilla/firefox/{profile_name}.default/chrome/userContent.css`
-
-```css
-input, textarea, select {
-    color:#000 !important;
-    background-color:#fff !important;
-    -moz-appearance: none !important;
-}
-```
-
 ## GTK themes
 
 - [Arc](https://github.com/horst3180/arc-theme)

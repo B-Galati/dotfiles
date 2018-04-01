@@ -134,7 +134,7 @@ meteor() {
         meteor "$@"
 }
 
-composer() {
+docker_composer() {
     docker run --rm -it \
         -v $PWD:/app \
         -v $SSH_AUTH_SOCK:/ssh-auth.sock \
@@ -147,22 +147,6 @@ composer() {
         -e HTTPS_PROXY \
         --name "$0" \
         benoitg/php-tools composer "$@"
-}
-
-symfony() {
-    docker run --rm -it \
-        -v $PWD:/app \
-        -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
-        -v /etc/passwd:/etc/passwd:ro \
-        -v /etc/group:/etc/group:ro \
-        -v $HOME/.composer:/composer \
-        -u $(id -u):$(id -g) \
-        -e SSH_AUTH_SOCK \
-        -e HTTP_PROXY \
-        -e HTTPS_PROXY \
-        --name "$0" \
-        benoitg/php-tools \
-        symfony "$@"
 }
 
 phpunit() {
@@ -261,7 +245,7 @@ phan() {
         phan "$@"
 }
 
-php-cs-fixer() {
+docker_php-cs-fixer() {
     docker run -it --rm \
         -u $(id -u):$(id -g) \
         -v $PWD:/app \
@@ -354,4 +338,12 @@ browser-sync() {
         --name "$0" \
         benoitg/node-tools \
         browser-sync "$@"
+}
+
+phaudit() {
+    docker run -it --rm \
+        -v $PWD:/project \
+        --name "$0" \
+        mykiwi/phaudit \
+        "$@"
 }

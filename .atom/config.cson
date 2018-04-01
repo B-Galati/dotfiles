@@ -3,12 +3,11 @@
     autoHideMenuBar: true
     disabledPackages: [
       "markdown-preview"
-      "keyboard-localization"
     ]
     projectHome: "/home/benoit/workspace"
     telemetryConsent: "limited"
   editor:
-    fontSize: 12
+    fontSize: 13
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
@@ -23,6 +22,7 @@
   linter: {}
   "linter-ansible-linting":
     ansibleLintExecutablePath: "/home/benoit/.local/bin/ansible-lint"
+  "linter-ui-default": {}
   "markdown-preview":
     useGitHubStyle: true
   "markdown-preview-plus":

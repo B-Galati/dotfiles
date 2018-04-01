@@ -6,7 +6,7 @@ then
 
     tmux split-window -h -t dev:0
     tmux send-keys -t dev:0.0 'dmesg -HTw' C-m
-    tmux send-keys -t dev:0.1 'journalctl -p 0..4 -fxn' C-m
+    tmux send-keys -t dev:0.1 'journalctl -p 0..3 -fxn' C-m
 
     tmux new-window -n "docs/dotfiles" -t dev
     tmux split-window -h -t dev:1
