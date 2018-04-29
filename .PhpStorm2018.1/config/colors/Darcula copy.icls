@@ -1,9 +1,9 @@
 <scheme name="Darcula copy" version="142" parent_scheme="Darcula">
-  <option name="FONT_SCALE" value="1.5" />
+  <option name="FONT_SCALE" value="1.25" />
   <metaInfo>
-    <property name="modified">2017-12-01T14:02:39</property>
+    <property name="modified">2018-04-03T09:27:58</property>
   </metaInfo>
-  <option name="EDITOR_FONT_SIZE" value="18" />
+  <option name="EDITOR_FONT_SIZE" value="17" />
   <option name="EDITOR_FONT_NAME" value="Hack" />
   <attributes>
     <option name="LINE_FULL_COVERAGE">

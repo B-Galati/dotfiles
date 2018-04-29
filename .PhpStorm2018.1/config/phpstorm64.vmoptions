@@ -1,7 +1,6 @@
 # custom PhpStorm VM options
 
 -Xms1g
--Xmx1g
 -XX:ReservedCodeCacheSize=512m
 -XX:+UseConcMarkSweepGC
 -XX:+UseCompressedOops
@@ -17,3 +16,4 @@
 #-Dsun.java2d.xrender=true
 #-Dawt.java2d.opengl=true
 #-Dhidpi=true
+-Xmx1024m
