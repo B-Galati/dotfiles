@@ -26,3 +26,4 @@ alias sf='php app/console'
 alias sfclear='rm -rf app/cache/* && sf cache:warmup'
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}
 alias phpxdebug='php -dzend_extension=xdebug.so'
+alias watch-dns-gen='docker exec -it dns-gen watch "cat /etc/dnsmasq.conf"'

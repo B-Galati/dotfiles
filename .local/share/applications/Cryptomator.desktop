@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Cryptomator
+Comment=Cloud Storage Encryption Utility
+Icon=/usr/share/java/cryptomator/Cryptomator.png
+Exec=/usr/bin/cryptomator.sh
+Actions=
+MimeType=application/x-vnd.cryptomator-vault-metadata;
+Categories=Utility;
+StartupWMClass=org.cryptomator.launcher.MainApplication

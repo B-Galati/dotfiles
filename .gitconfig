@@ -50,6 +50,7 @@
 
     # tags
     tdelete = fetch --prune origin +refs/tags/*:refs/tags/*
+    last-tag = describe --abbrev=0 --tags
 
 [user]
     useconfigonly = true

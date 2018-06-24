@@ -14,7 +14,7 @@ StartupNotify=true
 Actions=ProfileManager;new-window;new-private-window;
 Keywords=Internet;WWW;Browser;Web;Explorer
 Keywords[fr]=Internet;WWW;Browser;Web;Explorer;Fureteur;Surfer;Navigateur
-StartupWMClass=firefox-dev
+StartupWMClass=Firefox Developer Edition
 
 [Desktop Action ProfileManager]
 Name=Profile Manager
