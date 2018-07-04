@@ -18,8 +18,8 @@ export HISTTIMEFORMAT='%F %T'
 export HISTCONTROL=ignoreboth # Pas de duplication des lignes d'historique
 export HISTIGNORE='ls -l:ll:la:pwd:history'
 
-export DOCKER_UID=$(id -u)
-export DOCKER_GID=$(id -g)
+export HOST_UID=$(id -u)
+export HOST_GID=$(id -g)
 
 export GPG_TTY=$(tty)
 
