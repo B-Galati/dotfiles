@@ -203,6 +203,19 @@ npm() {
         npm "$@"
 }
 
+nodejs() {
+    docker run --rm -it \
+        -v $PWD:/usr/src/app \
+        -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
+        -u $(id -u):$(id -g) \
+        -e SSH_AUTH_SOCK \
+        -e HTTP_PROXY \
+        -e HTTPS_PROXY \
+        --name "$0" \
+        benoitg/node-tools \
+        nodejs "$@"
+}
+
 npx() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \

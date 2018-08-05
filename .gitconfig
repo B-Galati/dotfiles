@@ -4,7 +4,9 @@
     cob   = checkout --no-track -b
     cp    = cherry-pick
     rb    = rebase
-    rbom  = rebase origin/master
+    rba   = rebase --autosquash
+    rbm   = rebase origin/master
+    rbam  = rebase --autosquash origin/master
     rbi   = rebase -i
     rbiom = rebase -i origin/master
     c     = commit
@@ -90,6 +92,9 @@
 
 [branch]
     autosetuprebase = never
+
+[rebase]
+    autoStash = true
 
 [rerere]
     enabled = true
