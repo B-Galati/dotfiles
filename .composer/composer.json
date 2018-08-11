@@ -1,0 +1,8 @@
+{
+    "require": {
+        "symfony/var-dumper": "^4.0",
+        "mnapoli/pretty": "^1.0",
+        "squizlabs/php_codesniffer": "*",
+        "liip/rmt": "^1.3"
+    }
+}
