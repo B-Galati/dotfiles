@@ -55,5 +55,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         --exclude=node_modules/* \
         --exclude=bower_components/* \
         --exclude=public/build/* \
+        --exclude=public/built/* \
+        --exclude=public/bundles/* \
+        --exclude=web/build/* \
+        --exclude=web/built/* \
+        --exclude=web/bundles/* \
         $1
 fi
