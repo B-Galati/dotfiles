@@ -2,6 +2,10 @@
 #                     FONCTIONS                  #
 # ############################################## #
 
+cheatsh() {
+    curl "https://cheat.sh/$1"
+}
+
 # colored man pages
 man() {
         env \

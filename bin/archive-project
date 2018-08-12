@@ -1,0 +1,59 @@
+#!/bin/bash
+#
+# How to use:
+#     archive-project ~/home/data
+#
+
+set -e
+
+info () {
+    printf "  [ \033[00;34m..\033[0m ] %s\n" "$1"
+}
+
+success () {
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
+}
+
+fail () {
+    printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s\n" "$1"
+}
+
+if [[ $# != 1 ]]; then
+    fail "Please provide 1 and only 1 argument"
+    exit 1
+fi
+
+if [[ ! -d "$1" ]]; then
+    fail "$1 is not a directory"
+    exit 2
+fi
+
+archiveName="$1.tar.gz"
+
+read -p "It will generate archive $PWD/$archiveName. Are you sure? (y/n) " -n 1;
+echo
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    if [[ -d "$1/.git" ]]; then
+        (
+            cd "$1"
+            git fetch --all -p -v || true
+            git branch --no-color | grep -v '*' | grep -v master | xargs --no-run-if-empty git branch -D
+            rm -rf .git/refs/original/ .git/logs/
+            git gc --aggressive --prune=now
+        )
+    fi
+
+    tar -cvzf "$archiveName" \
+        --exclude-vcs-ignores \
+        --exclude-backups \
+        --exclude=.idea/* \
+        --exclude=var/cache/* \
+        --exclude=var/logs/* \
+        --exclude=var/mysql/* \
+        --exclude=vendor/* \
+        --exclude=node_modules/* \
+        --exclude=bower_components/* \
+        --exclude=public/build/* \
+        $1
+fi
