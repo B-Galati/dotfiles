@@ -1,6 +1,7 @@
 # custom PhpStorm VM options
-
--Xms1g
+# https://stitcher.io/blog/phpstorm-performance
+-Xms500m
+-Xmx1500m
 -XX:ReservedCodeCacheSize=512m
 -XX:+UseConcMarkSweepGC
 -XX:+UseCompressedOops
@@ -11,9 +12,9 @@
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:-OmitStackTraceInFastThrow
 -Dawt.useSystemAAFontSettings=lcd
+-Dawt.java2d.opengl=true
 -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine
 #-Dswing.aatext=true
 #-Dsun.java2d.xrender=true
-#-Dawt.java2d.opengl=true
 #-Dhidpi=true
--Xmx1024m
+-Djdk.http.auth.tunneling.disabledSchemes=""
