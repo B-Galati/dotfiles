@@ -38,7 +38,7 @@ docker_service() {
     esac
 }
 
-plex() {
+dplex() {
     if [ -z $PLEX_MEDIA_FOLDERS ]; then
         echo "Need to set PLEX_MEDIA_FOLDERS environment variable"
         return 3
@@ -68,7 +68,7 @@ plex() {
         plexinc/pms-docker" "$@"
 }
 
-steam() {
+dsteam() {
     docker_service "$0" "docker run \\
         -v /etc/localtime:/etc/localtime:ro \\
         -v /etc/machine-id:/etc/machine-id:ro \\
@@ -86,7 +86,7 @@ steam() {
         tianon/steam" "$@"
 }
 
-redis-commander() {
+dredis-commander() {
     docker run -it --rm \
         -p 8081:8081 \
         --name "$0" \
@@ -94,7 +94,7 @@ redis-commander() {
         --redis-host "$@"
 }
 
-keepass2() {
+dkeepass2() {
     docker_service "$0" "docker run -it \\
         -v /tmp/.X11-unix:/tmp/.X11-unix \\
         -v $HOME/keepass:/home/keepass \\
@@ -104,7 +104,7 @@ keepass2() {
         benoitg/keepass2" "$@"
 }
 
-evernote() {
+devernote() {
     docker_service "$0" "docker run -it  \\
         -v /tmp/.X11-unix:/tmp/.X11-unix \\
         -v $HOME/evernote_backup:/root/evernote \\
@@ -126,7 +126,7 @@ cadvisor() {
         google/cadvisor:latest" "$@"
 }
 
-meteor() {
+dmeteor() {
     docker run -it --rm \
         -v "$PWD":/app \
         --name "$0" \
@@ -134,7 +134,7 @@ meteor() {
         meteor "$@"
 }
 
-docker_composer() {
+dcomposer() {
     docker run --rm -it \
         -v $PWD:/app \
         -v $SSH_AUTH_SOCK:/ssh-auth.sock \
@@ -149,7 +149,7 @@ docker_composer() {
         benoitg/php-tools composer "$@"
 }
 
-phpunit() {
+dphpunit() {
     docker run --rm -it \
         -u $(id -u):$(id -g) \
         -v $PWD:/app \
@@ -157,14 +157,14 @@ phpunit() {
         phpunit/phpunit "$@"
 }
 
-atoum() {
+datoum() {
     docker run --rm -it \
         -v $PWD:/src \
         --name "$0" \
         atoum/atoum "$@"
 }
 
-ng() {
+dng() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -u $(id -u):$(id -g) \
@@ -173,7 +173,7 @@ ng() {
         ng "$@"
 }
 
-uglifyjs() {
+duglifyjs() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -u $(id -u):$(id -g) \
@@ -181,7 +181,7 @@ uglifyjs() {
         benoitg/node-tools \
         uglifyjs "$@"
 }
-uglifycss() {
+duglifycss() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -u $(id -u):$(id -g) \
@@ -190,7 +190,7 @@ uglifycss() {
         uglifycss "$@"
 }
 
-npm() {
+dnpm() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
@@ -203,7 +203,7 @@ npm() {
         npm "$@"
 }
 
-nodejs() {
+dnodejs() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
@@ -216,7 +216,7 @@ nodejs() {
         nodejs "$@"
 }
 
-npx() {
+dnpx() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
@@ -229,7 +229,7 @@ npx() {
         npx "$@"
 }
 
-yarn() {
+dyarn() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
@@ -242,7 +242,7 @@ yarn() {
         yarn "$@"
 }
 
-tslint() {
+dtslint() {
     docker run --rm -it \
         -v $PWD:/usr/src/app \
         -v $HOME/tslint.json:/home/node/tslint.json \
@@ -252,7 +252,7 @@ tslint() {
         tslint "$@"
 }
 
-phpsa() {
+dphpsa() {
     docker run -it --rm \
         -u $(id -u):$(id -g) \
         -v $PWD:/app \
@@ -261,7 +261,7 @@ phpsa() {
         phpsa "$@"
 }
 
-phan() {
+dphan() {
     docker run -it --rm \
         -u $(id -u):$(id -g) \
         -v $PWD:/app \
@@ -270,7 +270,7 @@ phan() {
         phan "$@"
 }
 
-docker_php-cs-fixer() {
+dphp-cs-fixer() {
     docker run -it --rm \
         -u $(id -u):$(id -g) \
         -v $PWD:/app \
@@ -279,7 +279,7 @@ docker_php-cs-fixer() {
         php-cs-fixer "$@"
 }
 
-skype() {
+dskype() {
     docker_service "$0" "docker run \\
         -v /tmp/.X11-unix:/tmp/.X11-unix \\
     	-v $HOME/.skypeforlinux:/root/.config/skypeforlinux \
@@ -293,7 +293,7 @@ skype() {
     	benoitg/skype" "$@"
 }
 
-spotify() {
+dspotify() {
     docker_service "$0" "docker run -d \
 		-v /etc/localtime:/etc/localtime:ro \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -308,7 +308,7 @@ spotify() {
 		jess/spotify" "$@"
 }
 
-redis-desktop-manager() {
+dredis-desktop-manager() {
     docker run  -it --rm \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         -v $HOME/.rdm:/root/.rdm \
@@ -320,7 +320,7 @@ redis-desktop-manager() {
         benoitg/redis-desktop-manager "$@"
 }
 
-docker_teamviewer() {
+dteamviewer() {
     docker_service "$0" "docker run -d \
         -e DISPLAY \
         -e XAUTHORITY \
@@ -348,14 +348,14 @@ dns-gen() {
       jderusse/dns-gen -R" "$@"
 }
 
-redis-cli() {
+dredis-cli() {
     docker run -it --rm \
         --name "$0" \
         redis:latest \
         redis-cli "$@"
 }
 
-browser-sync() {
+dbrowser-sync() {
     docker run -it --rm \
         -v $PWD:/usr/src/app \
         -u $(id -u):$(id -g) \
@@ -365,7 +365,7 @@ browser-sync() {
         browser-sync "$@"
 }
 
-phaudit() {
+dphaudit() {
     docker run -it --rm \
         -v $PWD:/project \
         --name "$0" \
