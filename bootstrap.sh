@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#
 
 info () {
     printf "  [ \033[00;34m..\033[0m ] %s\n" "$1"
@@ -23,7 +22,7 @@ linkFiles () {
         read -p "Directory '$2' already exists. Do you want to sync it and create symlink ?(y/n) " -n 1;
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            rsync -ah "$2" "$(dirname $1)"
+            rsync -ah "$2" "$(dirname $1)" --delete
             rm -rf "$2"
         else
             return 0;
@@ -51,44 +50,6 @@ doIt () {
         -not -path "*.git/*")
     do
         linkFiles "$file" "$HOME/$(basename $file)"
-    done
-
-    # Add config files in /etc/
-    for file in $(find $PWD/etc -type f -not -name ".*.swp")
-    do
-        f=$(echo $file | sed -e "s|$PWD||")
-        d=$(dirname $f)
-
-        if [[ ! -d "$d" ]]; then
-            if sudo mkdir -p "$d"; then
-                success "Folder $d created"
-            else
-                fail "Folder $d cannot be created"
-            fi
-        fi
-
-        if sudo ln -f "$file" "$f"; then
-            success "Hardlink for $file to $f"
-        else
-            fail "Hardlink for $file to $f"
-        fi
-    done
-    sudo systemctl daemon-reload
-    sudo sysctl --system
-
-    # add aliases for things in bin
-    for file in $(find "$PWD/bin" -xtype f -not -name ".*.swp")
-    do
-        f="/usr/local/bin/$(basename $file)"
-        if [[ -L $f ]]; then
-            info "SKIP '$file' -> symlink already exists in '$f'"
-            continue
-        fi
-        if sudo ln -snf "$file" "$f"; then
-            success "linked $file to $f"
-        else
-            fail "linked $file to $f"
-        fi
     done
 
     # Create private files if does not exist

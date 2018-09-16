@@ -67,3 +67,5 @@ complete -cf man
 # = is a socket.
 # * for executable files
 # > is for a "door" -- a file type currently not implemented for Linux, but supported on Sun/Solaris.
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

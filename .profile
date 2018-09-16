@@ -8,12 +8,12 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+PATH="$PATH:$HOME/.bin"
 PATH="$PATH:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:/snap/bin"
 PATH="$PATH:$HOME/.platformsh/bin"
 PATH="$PATH:$HOME/.sensiocloud/bin"
-PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -25,3 +25,7 @@ fi
 
 # cf. bug https://bugzilla.redhat.com/show_bug.cgi?id=889690
 #export NO_AT_BRIDGE=1
+
+# https://remysharp.com/2018/08/23/cli-improved
+# add support for ctrl+o to open selected file in VS Code
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"

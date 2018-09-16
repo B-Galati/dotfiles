@@ -41,14 +41,14 @@
     aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort"
 
     # diff
-    d    = diff
-    dc   = diff --cached
-    dw   = diff -w
-    dwc  = diff -w --cached
-    da   = difftool -d
-    daw  = difftool -d -w
-    dac  = difftool -d --cached
-    dawc = difftool -d --cached -w
+    d    = diff -M
+    dc   = diff -M --cached
+    dw   = diff -M -w
+    dwc  = diff -M -w --cached
+    da   = difftool -M -d
+    daw  = difftool -M -d -w
+    dac  = difftool -M -d --cached
+    dawc = difftool -M -d --cached -w
 
     # tags
     tdelete = fetch --prune origin +refs/tags/*:refs/tags/*
@@ -58,7 +58,7 @@
     useconfigonly = true
 
 [color]
-    ui   = true
+	ui = true
     diff = true
 
 [color "branch"]
@@ -83,6 +83,10 @@
     tool = meld
     ff = false
     conflictstyle = diff3
+
+[pager]
+   diff = diff-so-fancy | less --tabs=4 -RFX
+   show = diff-so-fancy | less --tabs=4 -RFX
 
 [core]
     excludesfile = ~/.gitignore_global
@@ -131,3 +135,15 @@
 	notifier = echo
 [hooks "composer"]
 	onChange = just_warn
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

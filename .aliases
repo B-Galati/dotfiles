@@ -20,6 +20,8 @@ alias ssh-agent-start='eval $(ssh-agent)'
 alias assh='autossh -M 0 -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3"'
 alias azerty='setxkbmap fr -model pc105'
 alias bepo='setxkbmap fr bepo'
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias ncdu="ncdu --color dark"
 
 # Dev aliases
 alias sf='php app/console'
