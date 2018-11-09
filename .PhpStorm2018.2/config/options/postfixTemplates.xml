@@ -1,12 +1,16 @@
 <application>
   <component name="PostfixTemplates">
+    <template id="sprintf@userDefined" key=".spf" provider="builtin.php" topmost="false">
+      <conditions />
+      <template name="fakeKey" value="sprintf($EXPR$)" toReformat="true" toShortenFQNames="true" />
+    </template>
     <template id="d@userDefined" key=".d" provider="builtin.php" topmost="false">
       <conditions />
       <template name="fakeKey" value="dump($EXPR$);" description="" toReformat="true" toShortenFQNames="true" />
     </template>
     <template id="dd@userDefined" key=".dd" provider="builtin.php" topmost="false">
       <conditions />
-      <template name="fakeKey" value="dd($EXPR$);" toReformat="true" toShortenFQNames="true" />
+      <template name="fakeKey" value="dd($EXPR$);" description="" toReformat="true" toShortenFQNames="true" />
     </template>
   </component>
 </application>
