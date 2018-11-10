@@ -1,0 +1,20 @@
+#!/bin/bash
+tmux has-session -t dev
+if [ $? != 0 ]
+then
+    tmux new-session -s dev -n "logs" -d
+
+    tmux split-window -h -t dev:0
+    tmux send-keys -t dev:0.0 'dmesg -HTw' C-m
+    tmux send-keys -t dev:0.1 'journalctl -p 0..3 -fxn' C-m
+
+    tmux new-window -n "docs/dotfiles" -t dev
+    tmux split-window -h -t dev:1
+    tmux send-keys -t dev:1.0 'cd dotfiles' C-m
+    tmux send-keys -t dev:1.1 'cd docs' C-m
+
+    tmux new-window -t dev
+
+    tmux select-window -t dev:1
+fi
+tmux attach -t dev
