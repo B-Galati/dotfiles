@@ -22,6 +22,8 @@ alias azerty='setxkbmap fr -model pc105'
 alias bepo='setxkbmap fr bepo'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 #need ncdu 1.13need ncdu 1.13  alias ncdu="ncdu --color dark"
+alias watch_power="watch -n 0.5 cat /sys/class/power_supply/BAT1/power_now /sys/class/power_supply/BAT0/power_now"
+
 
 # Dev aliases
 alias sf='php app/console'

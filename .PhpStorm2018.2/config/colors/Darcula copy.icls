@@ -1,10 +1,18 @@
 <scheme name="Darcula copy" version="142" parent_scheme="Darcula">
-  <option name="FONT_SCALE" value="1.25" />
+  <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
-    <property name="modified">2018-04-03T09:27:58</property>
+    <property name="modified">2018-11-12T08:29:52</property>
   </metaInfo>
-  <option name="EDITOR_FONT_SIZE" value="17" />
-  <option name="EDITOR_FONT_NAME" value="Hack" />
+  <option name="LINE_SPACING" value="1.0" />
+  <font>
+    <option name="EDITOR_FONT_NAME" value="Hack" />
+    <option name="EDITOR_FONT_SIZE" value="15" />
+  </font>
+  <font>
+    <option name="EDITOR_FONT_NAME" value="DejaVu Sans Mono" />
+    <option name="EDITOR_FONT_SIZE" value="15" />
+  </font>
+  <option name="EDITOR_LIGATURES" value="true" />
   <attributes>
     <option name="LINE_FULL_COVERAGE">
       <value>
