@@ -13,8 +13,8 @@ then
     tmux send-keys -t dev:1.0 'cd dotfiles' C-m
     tmux send-keys -t dev:1.1 'cd docs' C-m
 
-    tmux new-window -t dev
+    tmux new-window -n "home" -t dev
 
-    tmux select-window -t dev:1
+    tmux select-window -t dev:2
 fi
 tmux attach -t dev

@@ -6,6 +6,18 @@ cheatsh() {
     curl "https://cheat.sh/$1"
 }
 
+print_info () {
+    printf "  [ \033[00;34m..\033[0m ] %s\n" "$1"
+}
+
+print_success () {
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
+}
+
+print_fail () {
+    printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s\n" "$1"
+}
+
 # colored man pages
 man() {
         env \

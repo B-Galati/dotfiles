@@ -51,6 +51,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         --exclude=var/cache/* \
         --exclude=var/logs/* \
         --exclude=var/mysql/* \
+        --exclude=var/legacy/* \
         --exclude=vendor/* \
         --exclude=node_modules/* \
         --exclude=bower_components/* \
