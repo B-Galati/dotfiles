@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ############################################## #
 #                     FONCTIONS                  #
 # ############################################## #
@@ -16,6 +18,17 @@ print_success () {
 
 print_fail () {
     printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s\n" "$1"
+}
+
+console()
+{
+    if [ -f bin/console ]; then
+        bin/console "$@"
+    elif [ -f app/console ]; then
+        app/console "$@"
+    else
+        echo "No console found"
+    fi
 }
 
 # colored man pages
