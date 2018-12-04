@@ -1,6 +1,6 @@
 #!/bin/bash
 tmux has-session -t dev
-if [ $? != 0 ]
+if [[ $? != 0 ]]
 then
     tmux new-session -s dev -n "logs" -d
 

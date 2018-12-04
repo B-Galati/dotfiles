@@ -4,39 +4,29 @@
 #     archive-project ~/home/data
 #
 
-set -e
+set -euo pipefail
 
-info () {
-    printf "  [ \033[00;34m..\033[0m ] %s\n" "$1"
-}
-
-success () {
-    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$1"
-}
-
-fail () {
-    printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s\n" "$1"
-}
+source "${HOME}/.functions"
 
 if [[ $# != 1 ]]; then
-    fail "Please provide 1 and only 1 argument"
+    output_error "Please provide 1 and only 1 argument"
     exit 1
 fi
 
-if [[ ! -d "$1" ]]; then
-    fail "$1 is not a directory"
+if [[ ! -d "${1}" ]]; then
+    output_error "${1} is not a directory"
     exit 2
 fi
 
-archiveName="$1.tar.gz"
+archiveName="${1}.tar.gz"
 
-read -p "It will generate archive $PWD/$archiveName. Are you sure? (y/n) " -n 1;
+read -p "It will generate archive $(pwd)/$archiveName. Are you sure? (y/n) " -n 1;
 echo
 
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    if [[ -d "$1/.git" ]]; then
+if [[ ${REPLY} =~ ^[Yy]$ ]]; then
+    if [[ -d "${1}/.git" ]]; then
         (
-            cd "$1"
+            cd "${1}"
             git fetch --all -p -v || true
             git branch --no-color | grep -v '*' | grep -v master | xargs --no-run-if-empty git branch -D
             rm -rf .git/refs/original/ .git/logs/
@@ -61,5 +51,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         --exclude=web/build/* \
         --exclude=web/built/* \
         --exclude=web/bundles/* \
-        $1
+        ${1}
 fi
