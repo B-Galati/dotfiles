@@ -16,5 +16,6 @@ then
     tmux new-window -n "home" -t dev
 
     tmux select-window -t dev:2
+    tmux send-keys -t dev:2.0 'weather' C-m
 fi
 tmux attach -t dev

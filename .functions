@@ -52,7 +52,7 @@ function output_error {
     output "${1}" 'error'
 }
 
-console()
+function sf
 {
     if [ -f bin/console ]; then
         bin/console "$@"
