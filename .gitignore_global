@@ -1,4 +1,5 @@
 .idea/
+.prettierrc
 .phpunit.result.cache
 .php_cs.cache
 .php_cs
@@ -12,5 +13,6 @@ pimple.json
 .phpstorm.meta.php/
 docker-compose.override.yml
 .gitmessage
+github-changelog-http-cache/
 php-cs-fixer.phar
 bin/app

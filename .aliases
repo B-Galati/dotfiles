@@ -26,6 +26,6 @@ alias watch_power="watch -n 0.5 cat /sys/class/power_supply/BAT1/power_now /sys/
 alias app='bin/app'
 
 # Dev aliases
-alias sfclear='rm -rf app/cache/* && sf cache:warmup'
+alias sfclear='rm -rf var/cache && bin/console cache:clear'
 alias phpxdebug='php -dzend_extension=xdebug.so'
 alias watch-dns-gen='docker exec -it dns-gen watch "cat /etc/dnsmasq.conf"'

@@ -14,8 +14,11 @@ then
     tmux send-keys -t dev:1.1 'cd docs' C-m
 
     tmux new-window -n "home" -t dev
-
+    tmux split-window -h -t dev:2
+    tmux split-window -v -t dev:2.1
     tmux select-window -t dev:2
     tmux send-keys -t dev:2.0 'weather' C-m
+    tmux send-keys -t dev:2.1 'cd workspace/perso/machine-config' C-m
+    tmux send-keys -t dev:2.2 'cd workspace/perso/server-config' C-m
 fi
 tmux attach -t dev
