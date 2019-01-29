@@ -29,3 +29,8 @@ alias app='bin/app'
 alias sfclear='rm -rf var/cache && bin/console cache:clear'
 alias phpxdebug='php -dzend_extension=xdebug.so'
 alias watch-dns-gen='docker exec -it dns-gen watch "cat /etc/dnsmasq.conf"'
+
+# APIF
+alias apif-run='python ~/apif-auto/apif-run.py'
+alias apif-push='python ~/apif-auto/apif-push.py'
+alias apif-local='java -jar ~/apif-local/apif-local.jar'
