@@ -4,6 +4,8 @@
 .php_cs
 .composer/
 .php_cs
+http-client.env.json
+rest-api.http
 yarn-error.log
 .atoum.php
 bin/test-generator.php
