@@ -128,7 +128,7 @@
 
 [hooks]
 	enabled-plugins = junkchecker
-	enabled-plugins = php/composer
+    #enabled-plugins = php/composer
 [hooks "junkchecker"]
     phrasesfile = $HOME/.git-hooks-config/junk-phrases
 [hooks "notification"]
