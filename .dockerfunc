@@ -314,7 +314,7 @@ dredis-desktop-manager() {
         -v $HOME/.rdm:/root/.rdm \
         -e DISPLAY \
         -e SSH_AUTH_SOCK \
-        -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK \
+        -v ${SSH_AUTH_SOCK}:$SSH_AUTH_SOCK \
         --device /dev/dri \
         --name "$0" \
         benoitg/redis-desktop-manager "$@"
@@ -340,12 +340,17 @@ portainer() {
 }
 
 dns-gen() {
+    GATEWAY=$(ip -4 addr show docker0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' || echo "")
+
     docker_service "$0" "docker run -d \
       --restart=always \
-      -p 54:53/udp \
-      -v /var/run/docker.sock:/var/run/docker.sock \
+      --log-opt "max-size=10m" \
+      --net host \
+      -e GATEWAY=${GATEWAY} \
+      --volume /:/host:ro \
+      --volume /var/run/docker.sock:/var/run/docker.sock \
       --name \"$0\" \
-      jderusse/dns-gen -R" "$@"
+      jderusse/dns-gen:2 -R" "$@"
 }
 
 dredis-cli() {
