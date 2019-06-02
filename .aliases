@@ -10,7 +10,7 @@ alias lo="ls -lha --color=always -F --group-directories-first | awk '{k=0;for(i=
 alias vi='vim'
 alias mkdir='mkdir -p -v'
 alias service='sudo service --status-all'
-alias duh='du -h --max-depth=1'
+alias duh='du -h --max-depth=1 | sort -hr'
 alias dusort='du -ah | sort -hr'
 alias df='df -h'
 alias rm='rm -I'

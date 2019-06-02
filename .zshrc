@@ -14,7 +14,7 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
 plugins=(docker docker-compose debian extract colored-man-pages \
-    phing supervisor colorize sudo sytemd git-remote-branch git-extras tmux zsh-autosuggestions)
+    phing supervisor colorize sudo systemd git-remote-branch git-extras tmux zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/powerline/bindings/zsh/powerline.zsh

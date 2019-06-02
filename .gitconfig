@@ -2,6 +2,8 @@
     st    = status
     co    = checkout
     cob   = checkout --no-track -b
+    cobr  = !git checkout $(git branch | grep -v '*' | grep -v 'HEAD' | fzf)
+    copr  = "!f() { git fetch origin pull/${1}/head:${2} && git co ${2}; }; f"
     cp    = cherry-pick
     rb    = rebase
     rba   = rebase --autosquash
@@ -18,6 +20,7 @@
     fa    = fetch --all -p -v
     f     = fetch --all -p
     r1    = reset HEAD~1
+    a     = !git add $(git diff --name-only | fzf)
 
     # push
     p   = push
