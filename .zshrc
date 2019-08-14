@@ -24,6 +24,28 @@ for file in ~/.{aliases,exports,functions,extra,dockerfunc}; do
 done;
 unset file;
 
+HISTFILE=~/.zsh_history
+SAVEHIST=10000
+
+# See http://zsh.sourceforge.net/Doc/Release/Options.html
+unsetopt SHARE_HISTORY
+unsetopt INC_APPEND_HISTORY_TIME
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt BANG_HIST
+setopt HIST_FCNTL_LOCK
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_SPACE
+setopt HIST_VERIFY
+
+# Prevent ZSH to print an error when no match can be found. (http://superuser.com/questions/584249/using-wildcards-in-commands-with-zsh)
+unsetopt nomatch
+
 # Bind up and down keys to search in history by the already entered characters
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
@@ -33,8 +55,5 @@ bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
 #bindkey "${terminfo[khome]}" beginning-of-line
 #bindkey "${terminfo[kend]}" end-of-line
-
-# Prevent ZSH to print an error when no match can be found. (http://superuser.com/questions/584249/using-wildcards-in-commands-with-zsh)
-unsetopt nomatch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

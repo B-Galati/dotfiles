@@ -9,7 +9,6 @@ alias la='ls -lahF'
 alias lo="ls -lha --color=always -F --group-directories-first | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\"%0o \",k);print}'"
 alias vi='vim'
 alias mkdir='mkdir -p -v'
-alias service='sudo service --status-all'
 alias duh='du -h --max-depth=1 | sort -hr'
 alias dusort='du -ah | sort -hr'
 alias df='df -h'
@@ -24,13 +23,9 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 #need ncdu 1.13need ncdu 1.13  alias ncdu="ncdu --color dark"
 alias watch_power="watch -n 0.5 cat /sys/class/power_supply/BAT1/power_now /sys/class/power_supply/BAT0/power_now"
 alias app='bin/app'
+alias is_port_busy='lsof -i -n -P | grep'
 
 # Dev aliases
 alias sfclear='rm -rf var/cache && bin/console cache:clear'
 alias phpxdebug='php -dzend_extension=xdebug.so'
 alias watch-dns-gen='docker exec -it dns-gen watch "cat /etc/dnsmasq.conf"'
-
-# APIF
-alias apif-run='python ~/apif-auto/apif-run.py'
-alias apif-push='python ~/apif-auto/apif-push.py'
-alias apif-local='java -jar ~/apif-local/apif-local.jar'

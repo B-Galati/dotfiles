@@ -149,6 +149,13 @@ dcomposer() {
         benoitg/php-tools composer "$@"
 }
 
+ctop() {
+    docker run --rm -it \
+         --name "$0" \
+         --volume /var/run/docker.sock:/var/run/docker.sock:ro \
+         quay.io/vektorlab/ctop:latest "$@"
+}
+
 dphpunit() {
     docker run --rm -it \
         -u $(id -u):$(id -g) \

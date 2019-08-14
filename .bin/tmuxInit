@@ -1,24 +1,62 @@
 #!/bin/bash
-tmux has-session -t dev
-if [[ $? != 0 ]]
-then
-    tmux new-session -s dev -n "logs" -d
 
-    tmux split-window -h -t dev:0
-    tmux send-keys -t dev:0.0 'dmesg -HTw' C-m
-    tmux send-keys -t dev:0.1 'journalctl -p 0..3 -fxn' C-m
+# http://stackoverflow.com/questions/3432536/create-session-if-none-exists/7231728#7231728
+# http://stackoverflow.com/questions/5447278/bash-scripts-with-tmux-to-launch-a-4-paned-window/7720881#7720881
 
-    tmux new-window -n "docs/dotfiles" -t dev
-    tmux split-window -h -t dev:1
-    tmux send-keys -t dev:1.0 'cd dotfiles' C-m
-    tmux send-keys -t dev:1.1 'cd docs' C-m
+# -----
+# |0|2|
+# -----
+# |1|3|
+# -----
 
-    tmux new-window -n "home" -t dev
-    tmux split-window -h -t dev:2
-    tmux split-window -v -t dev:2.1
-    tmux select-window -t dev:2
-    tmux send-keys -t dev:2.0 'weather' C-m
-    tmux send-keys -t dev:2.1 'cd workspace/perso/machine-config' C-m
-    tmux send-keys -t dev:2.2 'cd workspace/perso/server-config' C-m
-fi
-tmux attach -t dev
+set -uo pipefail
+
+source "${HOME}/.functions"
+
+export SESSIONS="home dev"
+
+source "${HOME}/.bin/tmuxExtra"
+
+function session-home {
+    tmux new-session -d -s ${1} -n 'logs' -c "${HOME}"
+    tmux split-window -h -t ${1}:0
+    tmux new-window -n "docs"           -t ${1} -c "${HOME}/docs"
+    tmux new-window -n "dotfiles"       -t ${1} -c "${HOME}/dotfiles"
+    tmux new-window -n "machine-config" -t ${1} -c "${HOME}/workspace/perso/machine-config"
+    tmux new-window -n "server-config"  -t ${1} -c "${HOME}/workspace/perso/server-config"
+    tmux new-window -n "blog"           -t ${1} -c "${HOME}/workspace/perso/b-galati.github.io"
+    tmux split-window -h -t ${1}:5
+    tmux send-keys -t ${1}:0.0 'dmesg -HTw' C-m
+    tmux send-keys -t ${1}:0.1 'journalctl -p 0..3 -fxn' C-m
+}
+
+function session-dev {
+    tmux new-session -d -s ${1} -n 'redis-bundle' -c "${HOME}/workspace/open-source/SncRedisBundle"
+    tmux split-window -h      -t ${1}:0           -c "${HOME}/workspace/perso/lab/tests-snc-redis-bundle"
+    tmux new-window -n "lab"  -t ${1}             -c "${HOME}/workspace/perso/lab"
+}
+
+# --------------------------------
+
+# Make sure Symfony binary  is up-to-date to avoid having him wating on every pane it is used
+output_heading "-------------------------------"
+output_heading "Trying to update Symfony binary"
+output_heading "-------------------------------"
+symfony self:update || true
+
+echo
+output_heading "----------------------"
+output_heading "Starting tmux sessions"
+output_heading "----------------------"
+echo
+
+for session in ${SESSIONS}; do
+    tmux has-session -t ${session} 2>/dev/null
+    if [[ $? == 0 ]]; then
+        output_warning "Session '${session}' already exists"
+        continue
+    fi
+
+    session-${session} ${session}
+    output_success "Session '${session}' was created"
+done
