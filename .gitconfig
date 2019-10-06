@@ -1,5 +1,5 @@
 [alias]
-    st    = status
+    st    = status -sb
     co    = checkout
     cob   = checkout --no-track -b
     cobr  = !git checkout $(git branch | grep -v '*' | grep -v 'HEAD' | fzf)
@@ -11,6 +11,7 @@
     rbam  = rebase --autosquash origin/master
     rbi   = rebase -i
     rbiom = rebase -i origin/master
+    rbc   = rebase --continue
     c     = commit
     ca    = commit --amend
     can   = commit --amend --no-edit
@@ -21,6 +22,8 @@
     f     = fetch --all -p
     r1    = reset HEAD~1
     a     = !git add $(git diff --name-only | fzf)
+
+    squash-all = "!f(){ git reset ${1} && git commit --amend --no-edit -a;};f"
 
     # push
     p   = push

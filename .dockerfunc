@@ -347,17 +347,18 @@ portainer() {
 }
 
 dns-gen() {
-    GATEWAY=$(ip -4 addr show docker0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' || echo "")
+    GATEWAY=$(ip -4 addr show docker0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' || echo "Fail")
 
     docker_service "$0" "docker run -d \
       --restart=always \
-      --log-opt "max-size=10m" \
+      --log-opt \"max-size=10m\" \
+      --log-driver json-file \
       --net host \
       -e GATEWAY=${GATEWAY} \
       --volume /:/host:ro \
-      --volume /var/run/docker.sock:/var/run/docker.sock \
+      --volume /var/run/docker.sock:/var/run/docker.sock:ro \
       --name \"$0\" \
-      jderusse/dns-gen:2 -R" "$@"
+      jderusse/dns-gen:2" "$@"
 }
 
 dredis-cli() {

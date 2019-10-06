@@ -29,3 +29,7 @@ alias is_port_busy='lsof -i -n -P | grep'
 alias sfclear='rm -rf var/cache && bin/console cache:clear'
 alias phpxdebug='php -dzend_extension=xdebug.so'
 alias watch-dns-gen='docker exec -it dns-gen watch "cat /etc/dnsmasq.conf"'
+
+# Audio
+alias set_mic_vol_internal='amixer set Capture 90%'
+alias set_mic_vol_headphone='amixer set Capture 90%'

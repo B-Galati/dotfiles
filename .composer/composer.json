@@ -4,6 +4,7 @@
         "mnapoli/pretty": "^1.0",
         "squizlabs/php_codesniffer": "*",
         "liip/rmt": "^1.3",
-        "dantleech/fink": "^0.9.0"
+        "dantleech/fink": "^0.9.0",
+        "symfony/flex": "^1.4"
     }
 }
