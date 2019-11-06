@@ -37,7 +37,7 @@ linkFiles () {
 }
 
 doIt () {
-    # Création des fichiers de config
+    # Create config files
     for file in $(find $PWD \
         -maxdepth 1 \
         -name ".*" \
@@ -52,7 +52,7 @@ doIt () {
         linkFiles "$file" "$HOME/$(basename $file)"
     done
 
-    # Create private files if does not exist
+    # Create private files if they do not exist
     for file in ".extra" ".gitconfig_private"
     do
         if [[ ! -f "$HOME/$file" ]]; then
@@ -62,6 +62,17 @@ doIt () {
             output_info "SKIP private file '$file' -> already exists"
         fi
     done
+
+    # Install manpage
+    if [[ ! -f /usr/local/share/man/man1/z.1 ]]; then
+        sudo mkdir -p /usr/local/share/man/man1
+        sudo cp z/z.1 /usr/local/share/man/man1
+        sudo mandb
+
+        output_success "Custom manpage installed"
+    else
+        output_info "SKIP custom manpage already installed"
+    fi
 }
 
 if [[ "${1:-}" == "--force" || "${1:-}" == "-f" ]]; then

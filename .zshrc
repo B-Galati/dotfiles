@@ -57,3 +57,4 @@ bindkey "^[OF" end-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.z.sh ] && . ~/.z.sh

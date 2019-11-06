@@ -22,3 +22,6 @@
 [submodule ".git-templates"]
 	path = .git-templates
 	url = https://github.com/greg0ire/git_template
+[submodule "z"]
+	path = z
+	url = git@github.com:rupa/z.git
