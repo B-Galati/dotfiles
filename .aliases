@@ -24,6 +24,7 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias watch_power="watch -n 0.5 cat /sys/class/power_supply/BAT1/power_now /sys/class/power_supply/BAT0/power_now"
 alias app='bin/app'
 alias is_port_busy='lsof -i -n -P | grep'
+alias netstat_port='netstat -tulpn'
 
 # Dev aliases
 alias sfclear='rm -rf var/cache && bin/console cache:clear'

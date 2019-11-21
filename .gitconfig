@@ -103,16 +103,13 @@
 
 [rebase]
     autoStash = true
-	instructionFormat = [%an @ %ar] %s
+    instructionFormat = [%an @ %ar] %s
 
 [rerere]
     enabled = true
 
 [include]
     path = ~/.gitconfig_private
-
-[init]
-    templatedir = ~/.git-templates/template
 
 [url "git@github.com:"]
     insteadOf = gh:
@@ -131,15 +128,6 @@
     # via https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
     # via https://gist.github.com/scottnonnenberg/fefa3f65fdb3715d25882f3023b31c29
 
-[hooks]
-	enabled-plugins = junkchecker
-    #enabled-plugins = php/composer
-[hooks "junkchecker"]
-    phrasesfile = $HOME/.git-hooks-config/junk-phrases
-[hooks "notification"]
-	notifier = echo
-[hooks "composer"]
-	onChange = just_warn
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52

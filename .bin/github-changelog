@@ -1,0 +1,98 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+ini_set('log_errors_max_len', '-1');
+
+if ($argc !== 3) {
+    $name = basename($argv[0]);
+    echo "Usage: $name [repo] [range]\n";
+    echo "Example:\n";
+    echo "\t$name snc/SncRedisBundle 3.1.1...master\n";
+
+    exit(1);
+}
+
+main($argv[1], $argv[2]);
+
+function main(string $repo, string $range)
+{
+    $commits = fetchGitHubCommits($repo, $range);
+
+    $changelog = '';
+    foreach ($commits as $commit) {
+        $author    = $commit['author']['login'];
+        $authorUrl = $commit['author']['html_url'];
+        $sha       = mb_strimwidth($commit['sha'], 0, 6);
+        $url       = $commit['html_url'];
+
+        $message = explode(PHP_EOL, $commit['commit']['message'], 2);
+
+        $title = $message[0];
+        $body = $message[1] ?? '';
+
+        $changelog .= sprintf('- %s - [@%s](%s) ([%s](%s))', $title, $author, $authorUrl, $sha, $url);
+        $changelog .= $body ? "$body\n" : '';
+        $changelog .= "\n";
+    }
+
+    echo $changelog;
+}
+
+function fetchGitHubCommits(string $repo, string $range): array
+{
+    return request(
+               'GET',
+               "https://api.github.com/repos/$repo/compare/$range",
+               [
+                   'Accept: application/json',
+                   'User-Agent: PHP github-changelog/script',
+               ]
+           )['commits'];
+}
+
+function request(string $verb, string $url, array $headers, array $body = null): ?array
+{
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+    curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 30);
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $verb);
+
+    if ($body) {
+        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($body));
+    }
+
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    $response = curl_exec($curl);
+
+    if ($response === false) {
+        throw new HttpException("Request to '$verb: $url' failed, response is false");
+    }
+
+    $info = curl_getinfo($curl);
+
+    curl_close($curl);
+
+    if ($info['http_code'] >= 300) {
+        $message = <<<MSG
+Request to '$verb: $url' failed, status code '${info['http_code']}':
+%s
+Response info:
+%s
+Response:
+%s
+MSG;
+        $message = sprintf($message, print_r($body, true), print_r($info, true), print_r($response, true));
+
+        throw new HttpException($message, $info['http_code']);
+    }
+
+    return $response ? json_decode($response, true) : null;
+}
+
+class HttpException extends \Exception
+{
+}

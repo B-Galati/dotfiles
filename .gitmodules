@@ -19,9 +19,6 @@
 [submodule ".custom-oh-my-zsh/plugins/zsh-autosuggestions"]
 	path = .custom-oh-my-zsh/plugins/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions
-[submodule ".git-templates"]
-	path = .git-templates
-	url = https://github.com/greg0ire/git_template
 [submodule "z"]
 	path = z
 	url = git@github.com:rupa/z.git
