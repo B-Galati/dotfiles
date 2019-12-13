@@ -20,7 +20,7 @@ source "${HOME}/.bin/tmuxExtra"
 function session-home {
     tmux new-session -d -s ${1} -n 'logs' -c "${HOME}"
 
-    tmux new-window -n "docs"           -t ${1} -c "${HOME}"
+    tmux new-window -n "~"              -t ${1} -c "${HOME}"
     tmux new-window -n "docs"           -t ${1} -c "${HOME}/docs"
     tmux new-window -n "dotfiles"       -t ${1} -c "${HOME}/dotfiles"
     tmux new-window -n "machine-config" -t ${1} -c "${HOME}/workspace/perso/machine-config"

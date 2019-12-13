@@ -35,6 +35,7 @@ Package Control.user-ca-bundle
 !.config/nautilus/*
 !.config/sublime-text-3/*
 !.config/xfce4/*
+!.config/powerline/*
 
 # Others
 bin/phing

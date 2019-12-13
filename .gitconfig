@@ -104,6 +104,7 @@
 [rebase]
     autoStash = true
     instructionFormat = [%an @ %ar] %s
+    autoSquash = true
 
 [rerere]
     enabled = true
