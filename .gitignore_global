@@ -16,4 +16,3 @@ docker-compose.override.yml
 .gitmessage
 github-changelog-http-cache/
 php-cs-fixer.phar
-bin/app
