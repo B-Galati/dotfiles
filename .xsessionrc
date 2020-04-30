@@ -6,4 +6,4 @@
 #xhost +SI:localuser:$(id -un)
 
 # Start smart-notifier
-smart-notifier&
+#smart-notifier&
