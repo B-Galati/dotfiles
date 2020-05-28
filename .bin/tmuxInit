@@ -47,10 +47,10 @@ function session-dev {
 # --------------------------------
 
 # Make sure Symfony binary  is up-to-date to avoid having him wating on every pane it is used
-output_heading "-------------------------------"
-output_heading "Trying to update Symfony binary"
-output_heading "-------------------------------"
-symfony self:update || true
+#output_heading "-------------------------------"
+#output_heading "Trying to update Symfony binary"
+#output_heading "-------------------------------"
+#symfony self:update || true
 
 echo
 output_heading "----------------------"

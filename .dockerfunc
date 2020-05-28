@@ -327,6 +327,17 @@ dredis-desktop-manager() {
         benoitg/redis-desktop-manager "$@"
 }
 
+redis-insight() {
+  docker run -d \
+      -v redisinsight:/db \
+      -p 8001:8001 \
+      --network host \
+      --name "$0" \
+      redislabs/redisinsight "$@"
+
+  output_info "RedisInsight started at http://localhost:8001"
+}
+
 dteamviewer() {
     docker_service "$0" "docker run -d \
         -e DISPLAY \
