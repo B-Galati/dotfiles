@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# See https://wiki.archlinux.org/index.php/Mouse_acceleration
+#
+# Install package:  xserver-xorg-input-evdev-hwe-18.04
+#
+# To list input `xinput list`
+
+#xinput --set-prop 'MX Vertical Mouse' 'libinput Accel Speed' 1

@@ -372,6 +372,11 @@ dns-gen() {
       jderusse/dns-gen:2" "$@"
 }
 
+#docker run -p 80:80 -v pgadmin:/var/lib/pgadmin \
+#    -e 'PGADMIN_DEFAULT_EMAIL=test@example.com' \
+#    -e 'PGADMIN_DEFAULT_PASSWORD=test' \
+#    -d dpage/pgadmin4
+
 dredis-cli() {
     docker run -it --rm \
         --name "$0" \

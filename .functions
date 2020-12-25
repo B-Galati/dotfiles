@@ -162,3 +162,9 @@ transfer() {
 switch-php() {
   sudo update-alternatives --set php /usr/bin/php$1
 }
+
+# Keep header line while doing a grep
+# Usage: ps aux | hgrep ssh
+hgrep() {
+    echo -n "\033[32m"; head -1; echo -n "\033[39m"; grep -i "$*"
+}

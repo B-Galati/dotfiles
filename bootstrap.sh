@@ -38,7 +38,7 @@ linkFiles () {
 
 doIt () {
     # Create config files
-    for file in $(find $PWD \
+    for file in $(find $ROOT_PATH \
         -maxdepth 1 \
         -name ".*" \
         -not -name ".gitignore" \

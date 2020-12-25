@@ -31,7 +31,7 @@ Package Control.user-ca-bundle
 # Config folder
 .config/
 !.config/gtk-3.0/*
-!.config/htop/*
+.config/gtk-3.0/bookmarks
 !.config/nautilus/*
 !.config/sublime-text-3/*
 !.config/xfce4/*
