@@ -45,6 +45,7 @@ doIt () {
         -not -name ".extra" \
         -not -name ".gitconfig_private" \
         -not -name ".git" \
+        -not -name ".idea" \
         -not -name "*.swp" \
         -not -path "*.gitmodules*" \
         -not -path "*.git/*")
