@@ -1,9 +1,16 @@
-# Path to your oh-my-zsh installation.
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH=$HOME/.oh-my-zsh
 export TERM='xterm-256color'
-ZSH_THEME='powerlevel9k/powerlevel9k'
+ZSH_THEME='powerlevel10k/powerlevel10k'
 ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
-COMPLETION_WAITING_DOTS='true' # Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS='true'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
 
 # Theme customization
@@ -13,11 +20,13 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs symfony2_version)
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
-plugins=(docker docker-compose debian extract colored-man-pages vagrant \
-    phing supervisor colorize sudo systemd git-remote-branch git-extras tmux zsh-autosuggestions)
+plugins=(docker docker-compose extract colored-man-pages \
+    supervisor sudo systemd tmux zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/powerline/bindings/zsh/powerline.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 for file in ~/.{aliases,exports,functions,extra,dockerfunc}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -56,5 +65,6 @@ bindkey "^[OF" end-of-line
 #bindkey "${terminfo[khome]}" beginning-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if   [ -f ~/.fzf.zsh ]; then . ~/.fzf.zsh
+elif [ -f /usr/share/fzf/shell/key-bindings.zsh ]; then . /usr/share/fzf/shell/key-bindings.zsh; fi
 [ -f ~/.z.sh ] && . ~/.z.sh

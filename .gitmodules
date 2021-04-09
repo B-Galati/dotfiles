@@ -22,3 +22,6 @@
 [submodule "z"]
 	path = z
 	url = git@github.com:rupa/z.git
+[submodule ".custom-oh-my-zsh/themes/powerlevel10k"]
+	path = .custom-oh-my-zsh/themes/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
