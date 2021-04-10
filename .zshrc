@@ -10,7 +10,7 @@ export TERM='xterm-256color'
 ZSH_THEME='powerlevel10k/powerlevel10k'
 ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 COMPLETION_WAITING_DOTS='true'
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#555'
 ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
 
 # Theme customization
