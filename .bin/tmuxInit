@@ -23,8 +23,7 @@ function session-home {
     tmux new-window -n "~"              -t ${1} -c "${HOME}"
     tmux new-window -n "docs"           -t ${1} -c "${HOME}/docs"
     tmux new-window -n "dotfiles"       -t ${1} -c "${HOME}/dotfiles"
-    tmux new-window -n "machine-config" -t ${1} -c "${HOME}/workspace/perso/machine-config"
-    tmux new-window -n "server-config"  -t ${1} -c "${HOME}/workspace/perso/server-config"
+    tmux new-window -n "machine-config" -t ${1} -c "${HOME}/machine-config"
     tmux new-window -n "blog"           -t ${1} -c "${HOME}/workspace/perso/b-galati.github.io"
 
     tmux split-window -h -t ${1}:0 -c "${HOME}"
@@ -45,12 +44,6 @@ function session-dev {
 }
 
 # --------------------------------
-
-# Make sure Symfony binary  is up-to-date to avoid having him wating on every pane it is used
-#output_heading "-------------------------------"
-#output_heading "Trying to update Symfony binary"
-#output_heading "-------------------------------"
-#symfony self:update || true
 
 echo
 output_heading "----------------------"
