@@ -1,21 +1,6 @@
-[submodule ".themes/Numix"]
-	path = .themes/Numix
-	url = https://github.com/shimmerproject/Numix
-[submodule ".themes/Xfce-darkness"]
-	path = .themes/Xfce-darkness
-	url = https://github.com/vkuzel/Xfce-darkness
-[submodule ".themes/Numix-Holo"]
-	path = .themes/Numix-Holo
-	url = https://github.com/dar5hak/Numix-Holo
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "git-standup"]
-	path = git-standup
-	url = https://github.com/kamranahmedse/git-standup
-[submodule ".custom-oh-my-zsh/plugins/zsh-autosuggestions"]
-	path = .custom-oh-my-zsh/plugins/zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions
 [submodule "z"]
 	path = z
 	url = git@github.com:rupa/z.git

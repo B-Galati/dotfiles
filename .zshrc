@@ -10,8 +10,6 @@ export TERM='xterm-256color'
 ZSH_THEME='powerlevel10k/powerlevel10k'
 ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 COMPLETION_WAITING_DOTS='true'
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#555'
-ZSH_AUTOSUGGEST_STRATEGY='match_prev_cmd'
 
 # Theme customization
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -21,7 +19,7 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
 plugins=(docker docker-compose extract colored-man-pages \
-    supervisor sudo systemd tmux zsh-autosuggestions)
+    supervisor sudo systemd tmux)
 
 source $ZSH/oh-my-zsh.sh
 
