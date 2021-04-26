@@ -12,11 +12,11 @@ ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 COMPLETION_WAITING_DOTS='true'
 
 # Theme customization
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs_joined time)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs symfony2_version)
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%}❯%{%b%} "
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs_joined time)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
 plugins=(docker docker-compose extract colored-man-pages \
     supervisor sudo systemd tmux)

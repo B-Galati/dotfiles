@@ -27,7 +27,7 @@ function session-home {
     tmux new-window -n "blog"           -t ${1} -c "${HOME}/workspace/perso/b-galati.github.io"
 
     tmux split-window -h -t ${1}:0 -c "${HOME}"
-    tmux split-window -h -t ${1}:6 -c "${HOME}/workspace/perso/b-galati.github.io"
+    tmux split-window -h -t ${1}:5 -c "${HOME}/workspace/perso/b-galati.github.io"
 
     tmux send-keys -t ${1}:0.0 'dmesg -HTw'              C-m
     tmux send-keys -t ${1}:0.1 'journalctl -p 0..3 -fxn' C-m
