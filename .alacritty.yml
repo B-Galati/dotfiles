@@ -153,7 +153,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 18.0
+  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -178,6 +178,7 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
+# Pop!_OS colors (custom)
 colors:
   # Default colors
   primary:
@@ -187,8 +188,8 @@ colors:
   # Normal colors
   normal:
     black:   '#333333'
-    red:     '#CC0000'
-    green:   '#4E9A06'
+    red:     '#A04B50' #AE4B50
+    green:   '#859000'
     yellow:  '#C4A000'
     blue:    '#3465A4'
     magenta: '#75507B'
