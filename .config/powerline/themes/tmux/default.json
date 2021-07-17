@@ -2,9 +2,6 @@
   "segments": {
     "right": [
       {
-        "function": "powerline.segments.common.wthr.weather"
-      },
-      {
         "function": "powerline.segments.common.net.network_load"
       },
       {
