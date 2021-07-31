@@ -2,6 +2,7 @@
   "path": "cz-emoji",
   "config": {
     "cz-emoji": {
+      "subjectMaxLength": 200,
       "symbol": true,
       "skipQuestions": ["issues", "scope"]
     }
