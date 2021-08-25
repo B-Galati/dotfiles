@@ -1,3 +1,4 @@
+export EDITOR=vim
 if command -v tmux &> /dev/null && command -v tmuxInit &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   tmuxInit
   tmux attach -t home
