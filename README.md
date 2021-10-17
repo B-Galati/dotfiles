@@ -9,8 +9,6 @@ git clone --recursive
 
 - If needed, install [Powerline patched fonts](https://github.com/powerline/fonts).
     - see [Unicode table](http://unicode-table.com/)
-- L2TP https://github.com/nm-l2tp/network-manager-l2tp/wiki/Prebuilt-Packages#ubuntu
-- See [this article](http://ajclarkson.co.uk/blog/auto-mount-webdav-raspberry-pi/) to mount a webdav folder locally
 
 ## Atom
 
