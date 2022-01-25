@@ -27,6 +27,7 @@ COMPLETION_WAITING_DOTS='true'
 plugins=(docker docker-compose extract colored-man-pages \
     supervisor sudo systemd tmux)
 
+zstyle ':omz:update' mode disabled
 source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
