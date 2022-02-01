@@ -98,7 +98,7 @@
     excludesfile = ~/.gitignore_global
 
 [pull]
-    rebase = preserve
+    rebase = merges
 
 [branch]
     autosetuprebase = never
