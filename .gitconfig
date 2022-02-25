@@ -20,6 +20,7 @@
     aa    = add --all
     fa    = fetch --all -p -v
     f     = fetch --all -p
+    fm    = fetch origin master:master
     r1    = reset HEAD~1
     a     = !git add $(git diff --name-only | fzf)
 
