@@ -14,7 +14,6 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 export TERM='xterm-256color'
 ZSH_THEME='powerlevel10k/powerlevel10k'
-ZSH_CUSTOM=$HOME/.custom-oh-my-zsh
 COMPLETION_WAITING_DOTS='true'
 
 # Theme customization

@@ -68,17 +68,6 @@ doIt () {
             output_info "SKIP private file '$file' -> already exists"
         fi
     done
-
-    # Install manpage
-    if [[ ! -f /usr/local/share/man/man1/z.1 ]]; then
-        sudo mkdir -p /usr/local/share/man/man1
-        sudo cp z/z.1 /usr/local/share/man/man1
-        sudo mandb
-
-        output_success "Custom manpage installed"
-    else
-        output_info "SKIP custom manpage already installed"
-    fi
 }
 
 if [[ "${1:-}" == "--force" || "${1:-}" == "-f" ]]; then
