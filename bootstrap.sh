@@ -29,7 +29,7 @@ linkFiles () {
         fi
     fi
 
-    if ln -snf "${1}" "${2}"; then
+    if ln -snfT "${1}" "${2}"; then
         output_success "linked ${1} to ${2}"
     else
         output_error "linked ${1} to ${2}"
@@ -46,12 +46,17 @@ doIt () {
         -not -name ".gitconfig_private" \
         -not -name ".git" \
         -not -name ".idea" \
+        -not -name ".local" \
+        -not -name ".config" \
         -not -name "*.swp" \
         -not -path "*.gitmodules*" \
         -not -path "*.git/*")
     do
         linkFiles "$file" "$HOME/$(basename $file)"
     done
+    
+    linkFiles "${ROOT_PATH}/.config/fontconfig" "$HOME/.config/fontconfig"
+    linkFiles "${ROOT_PATH}/.config/powerline" "$HOME/.config/powerline"
 
     # Create private files if they do not exist
     for file in ".extra" ".gitconfig_private"

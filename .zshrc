@@ -25,7 +25,7 @@ COMPLETION_WAITING_DOTS='true'
 # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%}❯%{%b%} "
 
 plugins=(docker docker-compose extract colored-man-pages \
-    supervisor sudo systemd tmux)
+    supervisor sudo systemd tmux fzf)
 
 zstyle ':omz:update' mode disabled
 source $ZSH/oh-my-zsh.sh
@@ -70,6 +70,4 @@ bindkey "^[OF" end-of-line
 #bindkey "${terminfo[khome]}" beginning-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
-if   [ -f ~/.fzf.zsh ]; then . ~/.fzf.zsh
-elif [ -f /usr/share/fzf/shell/key-bindings.zsh ]; then . /usr/share/fzf/shell/key-bindings.zsh; fi
 [ -f ~/.z.sh ] && . ~/.z.sh

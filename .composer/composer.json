@@ -1,6 +1,0 @@
-{
-    "require": {
-        "symfony/var-dumper": "^5.0",
-        "squizlabs/php_codesniffer": "*"
-    }
-}
