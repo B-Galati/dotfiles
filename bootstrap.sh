@@ -38,7 +38,7 @@ linkFiles () {
 
 doIt () {
     # Create config files
-    for file in $(find $ROOT_PATH \
+    for file in $(find ${ROOT_PATH} \
         -maxdepth 1 \
         -name ".*" \
         -not -name ".gitignore" \
@@ -52,20 +52,26 @@ doIt () {
         -not -path "*.gitmodules*" \
         -not -path "*.git/*")
     do
-        linkFiles "$file" "$HOME/$(basename $file)"
+        linkFiles "${file}" "${HOME}/$(basename ${file})"
     done
     
-    linkFiles "${ROOT_PATH}/.config/fontconfig" "$HOME/.config/fontconfig"
-    linkFiles "${ROOT_PATH}/.config/powerline" "$HOME/.config/powerline"
+    linkFiles "${ROOT_PATH}/.config/fontconfig" "${HOME}/.config/fontconfig"
+    linkFiles "${ROOT_PATH}/.config/powerline" "${HOME}/.config/powerline"
+
+    mkdir -p "${HOME}/.local/bin"
+    for script in script/*
+    do
+        linkFiles "${ROOT_PATH}/${script}" "${HOME}/.local/bin/$(basename ${script})"
+    done
 
     # Create private files if they do not exist
     for file in ".extra" ".gitconfig_private"
     do
-        if [[ ! -f "$HOME/$file" ]]; then
-            cp "$file" "$HOME"
-            output_success "Create $file in home $HOME"
+        if [[ ! -f "${HOME}/${file}" ]]; then
+            cp "${file}" "${HOME}"
+            output_success "Create ${file} in home ${HOME}"
         else
-            output_info "SKIP private file '$file' -> already exists"
+            output_info "SKIP private file '${file}' -> already exists"
         fi
     done
 }

@@ -15,7 +15,7 @@ source "${HOME}/.functions"
 
 export SESSIONS="home dev"
 
-source "${HOME}/.bin/tmuxExtra"
+source "${0%/*}/tmuxExtra"
 
 function session-home {
     tmux new-session -d -s ${1} -n 'logs' -c "${HOME}"

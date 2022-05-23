@@ -1,5 +1,5 @@
-.bin/tmuxExtra
-.bin/php-v3
+script/tmuxExtra
+script/php-v3
 
 # NPM
 nohup.out
