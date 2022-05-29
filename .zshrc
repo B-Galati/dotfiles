@@ -69,4 +69,4 @@ bindkey "^[OF" end-of-line
 #bindkey "${terminfo[khome]}" beginning-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
-[ -f ~/.z.sh ] && . ~/.z.sh
+[ -f ~/z/z.sh ] && . ~/z/z.sh
