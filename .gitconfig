@@ -101,6 +101,10 @@
 [delta]
     navigate = true  # use n and N to move between diff sections
     light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    features = line-numbers
+    syntax-theme = Dracula
+    plus-style = syntax "#003800"
+    minus-style = syntax "#3f0001"
 
 [pull]
     rebase = merges
