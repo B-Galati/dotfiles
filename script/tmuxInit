@@ -13,7 +13,7 @@ set -uo pipefail
 
 source "${HOME}/.functions"
 
-export SESSIONS="home dev"
+export SESSIONS="home"
 
 [ -f "${0%/*}/tmuxExtra" ] && source "${0%/*}/tmuxExtra"
 
@@ -24,23 +24,15 @@ function session-home {
     tmux new-window -n "docs"           -t ${1} -c "${HOME}/docs"
     tmux new-window -n "dotfiles"       -t ${1} -c "${HOME}/dotfiles"
     tmux new-window -n "machine-config" -t ${1} -c "${HOME}/machine-config"
-    tmux new-window -n "blog"           -t ${1} -c "${HOME}/workspace/perso/b-galati.github.io"
+    tmux new-window -n "blog"           -t ${1} -c "${HOME}/workspace/b-galati.github.io"
 
     tmux split-window -h -t ${1}:0 -c "${HOME}"
-    tmux split-window -h -t ${1}:5 -c "${HOME}/workspace/perso/b-galati.github.io"
+    tmux split-window -h -t ${1}:5 -c "${HOME}/workspace/b-galati.github.io"
 
     tmux send-keys -t ${1}:0.0 'dmesg -HTw'              C-m
     tmux send-keys -t ${1}:0.1 'journalctl -p 0..3 -fxn' C-m
 
     tmux select-window -t ${1}:0
-}
-
-function session-dev {
-    tmux new-session -d -s ${1} -n 'redis-bundle' -c "${HOME}/workspace/open-source/SncRedisBundle"
-
-    tmux split-window -h -t ${1}:0 -c "${HOME}/workspace/perso/lab/tests-snc-redis-bundle"
-
-    tmux new-window -n "lab" -t ${1} -c "${HOME}/workspace/perso/lab"
 }
 
 # --------------------------------
