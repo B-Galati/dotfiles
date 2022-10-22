@@ -53,4 +53,4 @@ bindkey "^[OF" end-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
 [ -f ~/z/z.sh ] && . ~/z/z.sh
-if command -v starship; then eval "$(starship init zsh)"; fi
+if command -v starship &> /dev/null; then eval "$(starship init zsh)"; fi
