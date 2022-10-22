@@ -4,16 +4,8 @@ if command -v tmux &> /dev/null && command -v tmuxInit &> /dev/null && [ -n "$PS
   tmux attach -t home
 fi
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZSH=$HOME/.oh-my-zsh
 export TERM='xterm-256color'
-ZSH_THEME='powerlevel10k/powerlevel10k'
 COMPLETION_WAITING_DOTS='true'
 
 plugins=(docker docker-compose extract colored-man-pages \
@@ -22,8 +14,6 @@ plugins=(docker docker-compose extract colored-man-pages \
 zstyle ':omz:update' mode disabled
 source $ZSH/oh-my-zsh.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 for file in ~/.{aliases,exports,functions,extra,dockerfunc}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -63,3 +53,4 @@ bindkey "^[OF" end-of-line
 #bindkey "${terminfo[kend]}" end-of-line
 
 [ -f ~/z/z.sh ] && . ~/z/z.sh
+if command -v starship; then eval "$(starship init zsh)"; fi
