@@ -6,3 +6,18 @@ disabled = true
 
 [php]
 disabled = true
+
+[battery]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[git_metrics]
+disabled = false
+
+[git_status]
+staged = '[++\($count\)](green)'
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
