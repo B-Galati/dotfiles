@@ -17,27 +17,7 @@
         }
       },
       {
-        "function": "powerlinemem.mem_usage.mem_usage_percent"
-      },
-      {
         "function": "powerline.segments.common.sys.system_load"
-      },
-      {
-        "function": "powerline.segments.common.sys.uptime"
-      },
-      {
-        "function": "powerline.segments.common.time.date",
-        "name": "time",
-        "args": {
-          "format": "%H:%M",
-          "istime": true
-        }
-      },
-      {
-        "function": "powerline.segments.common.net.hostname",
-        "args": {
-          "only_if_ssh": true
-        }
       }
     ]
   }
