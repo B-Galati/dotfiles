@@ -1,7 +1,16 @@
 export EDITOR=vim
-if command -v tmux &> /dev/null && command -v tmuxInit &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  tmuxInit
-  tmux attach -t home
+
+if command -v tmux &> /dev/null \
+    && command -v tmuxInit &> /dev/null \
+    && ! tmux list-sessions &> /dev/null \
+    && [ -n "$PS1" ] \
+    && [ -n "$ALACRITTY_WINDOW_ID" ] \
+    && [ -z "$TMUX" ] \
+    && [[ ! "$TERM" =~ screen ]] \
+    && [[ ! "$TERM" =~ tmux ]]
+  then
+    tmuxInit
+    tmux attach -t home
 fi
 
 export ZSH=$HOME/.oh-my-zsh
