@@ -55,8 +55,6 @@ doIt () {
         linkFiles "${file}" "${HOME}/$(basename ${file})"
     done
     
-    linkFiles "${ROOT_PATH}/.config/fontconfig" "${HOME}/.config/fontconfig"
-    linkFiles "${ROOT_PATH}/.config/powerline" "${HOME}/.config/powerline"
     linkFiles "${ROOT_PATH}/.config/starship.toml" "${HOME}/.config/starship.toml"
 
     mkdir -p "${HOME}/.local/bin"
