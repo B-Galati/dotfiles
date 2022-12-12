@@ -65,7 +65,7 @@
     useconfigonly = true
 
 [color]
-	ui = true
+    ui = true
     diff = true
 
 [color "branch"]
@@ -100,11 +100,9 @@
 
 [delta]
     navigate = true  # use n and N to move between diff sections
-    light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    light = true    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
     features = line-numbers
-    syntax-theme = Dracula
-    plus-style = syntax "#003800"
-    minus-style = syntax "#3f0001"
+    syntax-theme = GitHub
 
 [pull]
     rebase = merges
@@ -142,18 +140,18 @@
     # via https://gist.github.com/scottnonnenberg/fefa3f65fdb3715d25882f3023b31c29
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [gpg]
-	program = gpg2
+    program = gpg2
 [init]
-	defaultBranch = main
+    defaultBranch = main
