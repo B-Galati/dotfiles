@@ -33,7 +33,7 @@
 
     # log section
     l   = !git log | tig -FRSX
-    lg  = log --graph --oneline --abbrev-commit --color --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+    lg  = log --graph --oneline --abbrev-commit --color --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(dim black)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
     lgs = log --format=format:%s
     lga = !git lg --all
 
