@@ -16,3 +16,5 @@ fi
 if [ -d "$HOME/.cargo" ]; then
     source "$HOME/.cargo/env"
 fi
+
+export BAT_THEME="Monokai Extended Light"
