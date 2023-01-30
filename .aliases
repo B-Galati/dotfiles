@@ -29,6 +29,8 @@ alias netstat_port='netstat -tulpn'
 alias sfclear='rm -rf var/cache && bin/console cache:clear'
 alias phpxdebug='php -dzend_extension=xdebug.so'
 alias watch-dns-gen='docker exec -it dns-gen watch "cat /etc/dnsmasq.conf"'
+alias kx=kubectx
+alias kn=kubens
 
 # Audio
 alias set_mic_vol_internal='amixer set Capture 90%'

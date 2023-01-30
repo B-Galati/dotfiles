@@ -25,3 +25,6 @@ behind = "⇣${count}"
 [ruby]
 disabled = true
 
+# See https://starship.rs/config/#kubernetes
+[kubernetes]
+disabled = false
