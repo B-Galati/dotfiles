@@ -2,3 +2,4 @@
 http-client.env.json
 .gitmessage
 github-changelog-http-cache/
+.envrc
