@@ -28,3 +28,7 @@ disabled = true
 # See https://starship.rs/config/#kubernetes
 [kubernetes]
 disabled = false
+
+[status]
+map_symbol = true
+disabled = false
