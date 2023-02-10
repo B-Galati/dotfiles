@@ -27,9 +27,9 @@ font:
 # See https://github.com/alacritty/alacritty-theme
 import:
 #  - ~/.config/alacritty/themes/themes/ayu_light.yaml
-  - ~/.config/alacritty/themes/themes/papercolor_light.yaml
+#  - ~/.config/alacritty/themes/themes/papercolor_light.yaml
 #  - ~/.config/alacritty/themes/themes/solarized_light.yaml
-#  - ~/.config/alacritty/themes/themes/night_owlish_light.yaml
+  - ~/.config/alacritty/themes/themes/night_owlish_light.yaml
 
 #  - ~/.config/alacritty/themes/themes/afterglow.yaml
 #  - ~/.config/alacritty/themes/themes/argonaut.yaml
