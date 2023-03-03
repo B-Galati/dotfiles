@@ -31,6 +31,10 @@ import:
 #  - ~/.config/alacritty/themes/themes/solarized_light.yaml
   - ~/.config/alacritty/themes/themes/night_owlish_light.yaml
 
+colors:
+  normal:
+    white: '#ffffff' # overrided because it was not playing nicely with red background
+
 #  - ~/.config/alacritty/themes/themes/afterglow.yaml
 #  - ~/.config/alacritty/themes/themes/argonaut.yaml
 #  - ~/.config/alacritty/themes/themes/atom_one_light.yaml
