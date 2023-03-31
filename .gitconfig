@@ -4,7 +4,7 @@
     cob   = checkout --no-track -b
     cobr  = !git checkout $(git branch | grep -v '*' | grep -v 'HEAD' | fzf)
     copr  = "!f() { git fetch origin pull/${1}/head:${2} && git co ${2}; }; f"
-    cp    = cherry-pick
+    chp   = cherry-pick
     rb    = rebase
     rba   = rebase --autosquash
     rbm   = rebase origin/master
