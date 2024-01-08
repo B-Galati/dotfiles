@@ -1,0 +1,33 @@
+import = ["/home/benoit/.config/alacritty/themes/themes/night_owlish_light.toml"]
+live_config_reload = true
+
+[colors.normal]
+white = "#ffffff"
+
+[font]
+size = 12
+
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "monospace"
+style = "Italic"
+
+[font.normal]
+family = "monospace"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+decorations = "none"
+dynamic_padding = true
+startup_mode = "Maximized"
