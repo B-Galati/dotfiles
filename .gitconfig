@@ -117,6 +117,7 @@
     autoStash = true
     autoSquash = true
     instructionFormat = [%an @ %ar] %s
+    updateRefs = true # See https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
 
 [rerere]
     enabled = true
@@ -129,6 +130,7 @@
     insteadOf = gh:
 
 [commit]
+    verbose = true
     gpgsign = true
 
 [diff "exif"]
