@@ -80,16 +80,17 @@
     untracked = red
 
 [push]
-    default = simple
+    default = current
     followTags = false
 
 [diff]
+    algorithm = histogram # see https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
     tool = meld
     guitool = meld
 
 [merge]
     ff = false
-    conflictstyle = diff3
+    conflictstyle = zdiff3
     colorMoved = default
 
 [core]
@@ -106,15 +107,16 @@
     syntax-theme = GitHub
 
 [pull]
-    rebase = merges
+    ff = only
 
 [branch]
     autosetuprebase = never
+    sort = committerdate
 
 [rebase]
     autoStash = true
-    instructionFormat = [%an @ %ar] %s
     autoSquash = true
+    instructionFormat = [%an @ %ar] %s
 
 [rerere]
     enabled = true
@@ -132,6 +134,10 @@
 [diff "exif"]
     textconv = exiftool
 
+[fetch]
+    fsckobjects = true
+[receive]
+    fsckobjects = true
 [transfer]
     fsckobjects = true
     # To combat repository corruption!
