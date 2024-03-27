@@ -33,10 +33,10 @@
     pf  = push --force-with-lease
 
     # log section
-    l   = !git log | tig -FRSX
     lg  = log --graph --oneline --abbrev-commit --color --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(dim black)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-    lgs = log --format=format:%s
+    lgs = log --oneline --no-merges --format=format:'- %s'
     lga = !git lg --all
+    dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
 
     # branch management
     bdelete-force  = !git branch --no-color | grep -v '*' | grep -v master | xargs --no-run-if-empty git branch -D
@@ -49,14 +49,14 @@
     aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\t=> \\2/' | sort"
 
     # diff
-    d    = diff -M
-    dc   = diff -M --cached
-    dw   = diff -M -w
-    dwc  = diff -M -w --cached
-    da   = difftool -M -d
-    daw  = difftool -M -d -w
-    dac  = difftool -M -d --cached
-    dawc = difftool -M -d --cached -w
+    d     = diff
+    dc    = diff --cached
+    dw    = diff -w
+    dwc   = diff -w --cached
+    dt    = difftool
+    dtc   = difftool --cached
+    dtw   = difftool -w
+    dtwc  = difftool -w --cached
 
     # tags
     tdelete = fetch --prune origin +refs/tags/*:refs/tags/*
@@ -85,8 +85,21 @@
 
 [diff]
     algorithm = histogram # see https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
-    tool = meld
+    tool = difftastic
     guitool = meld
+    #external = difft # Difftastic by default
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[diff "exif"]
+    textconv = exiftool
+
+[pager]
+    difftool = true
 
 [merge]
     ff = false
@@ -132,9 +145,6 @@
 [commit]
     verbose = true
     gpgsign = true
-
-[diff "exif"]
-    textconv = exiftool
 
 [fetch]
     fsckobjects = true
