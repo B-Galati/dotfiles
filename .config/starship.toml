@@ -1,20 +1,20 @@
-[aws]
-disabled = true
-
-[nodejs]
-disabled = true
-
-[php]
-disabled = true
+#[aws]
+#disabled = true
+#
+#[nodejs]
+#disabled = true
+#
+#[php]
+#disabled = true
 
 [battery]
 disabled = true
 
-[docker_context]
-disabled = true
+#[docker_context]
+#disabled = true
 
-[git_metrics]
-disabled = false
+#[git_metrics]
+#disabled = false
 
 [git_status]
 staged = '[++\($count\)](green)'
