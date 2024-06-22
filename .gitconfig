@@ -6,9 +6,7 @@
     copr  = "!f() { git fetch origin pull/${1}/head:${2} && git co ${2}; }; f"
     chp   = cherry-pick
     rb    = rebase
-    rba   = rebase --autosquash
     rbm   = rebase origin/master
-    rbam  = rebase --autosquash origin/master
     rbi   = rebase -i
     rbiom = rebase -i origin/master
     rbc   = rebase --continue
@@ -121,6 +119,7 @@
 
 [pull]
     ff = only
+    autoStash = true
 
 [branch]
     autosetuprebase = never
