@@ -18,7 +18,7 @@ export TERM='xterm-256color'
 COMPLETION_WAITING_DOTS='true'
 
 plugins=(docker docker-compose extract colored-man-pages \
-    supervisor sudo systemd tmux fzf rust kubectl k3d helm)
+    supervisor sudo systemd tmux fzf rust kubectl k3d helm nvm)
 
 zstyle ':omz:update' mode disabled
 source $ZSH/oh-my-zsh.sh
@@ -65,5 +65,4 @@ bindkey "^[OF" end-of-line
 if command -v starship &> /dev/null; then eval "$(starship init zsh)"; fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

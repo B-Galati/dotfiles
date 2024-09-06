@@ -55,7 +55,9 @@ doIt () {
         linkFiles "${file}" "${HOME}/$(basename ${file})"
     done
     
+    mkdir -p "${HOME}/.config/zellij"
     linkFiles "${ROOT_PATH}/.config/starship.toml" "${HOME}/.config/starship.toml"
+    linkFiles "${ROOT_PATH}/.config/zellij/config.kdl" "${HOME}/.config/zellij/config.kdl"
 
     mkdir -p "${HOME}/.local/bin"
     for script in script/*
