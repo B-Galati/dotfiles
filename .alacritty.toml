@@ -15,4 +15,4 @@ normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
 [window]
 #decorations = "none"
 dynamic_padding = true
-startup_mode = "Maximized"
+#startup_mode = "Maximized"
