@@ -13,6 +13,6 @@ italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
 normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
 
 [window]
-#decorations = "none"
+decorations = "none"
 dynamic_padding = true
 #startup_mode = "Maximized"
