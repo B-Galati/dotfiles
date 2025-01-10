@@ -20,9 +20,12 @@ COMPLETION_WAITING_DOTS='true'
 plugins=(docker docker-compose extract colored-man-pages \
     supervisor sudo systemd tmux fzf rust kubectl k3d helm nvm)
 
+# @see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nv
+zstyle ':omz:plugins:nvm' autoload yes # auto "nvm use" when if finds a .nvmrc file
+zstyle ':omz:plugins:nvm' silent-autoload yes
+
 zstyle ':omz:update' mode disabled
 source $ZSH/oh-my-zsh.sh
-
 
 for file in ~/.{aliases,exports,functions,extra,dockerfunc}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
