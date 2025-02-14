@@ -56,8 +56,10 @@ doIt () {
     done
     
     mkdir -p "${HOME}/.config/zellij"
+    mkdir -p "${HOME}/.config/fabric/patterns"
     linkFiles "${ROOT_PATH}/.config/starship.toml" "${HOME}/.config/starship.toml"
     linkFiles "${ROOT_PATH}/.config/zellij/config.kdl" "${HOME}/.config/zellij/config.kdl"
+    linkFiles "${ROOT_PATH}/.config/fabric/patterns" "${HOME}/.config/fabric/patterns"
 
     mkdir -p "${HOME}/.local/bin"
     for script in script/*
