@@ -18,7 +18,7 @@ export TERM='xterm-256color'
 COMPLETION_WAITING_DOTS='true'
 
 plugins=(docker docker-compose extract colored-man-pages \
-    supervisor sudo systemd tmux fzf rust kubectl k3d helm nvm)
+    supervisor sudo systemd tmux fzf rust kubectl k3d helm nvm z)
 
 # @see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nv
 zstyle ':omz:plugins:nvm' autoload yes # auto "nvm use" when if finds a .nvmrc file
