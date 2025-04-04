@@ -168,3 +168,68 @@ switch-php() {
 hgrep() {
     echo -n "\033[32m"; head -1; echo -n "\033[39m"; grep -i "$*"
 }
+
+ai_code_review() {
+    if [ -z "$1" ]; then
+        output_error "Branch name is required"
+        return 1
+    fi
+
+    branch="$1"
+    base_branch="${2:-master}"  # Use provided base branch or default to master
+
+    if ! git fetch origin "$branch" "$base_branch"; then
+        output_error "Failed to fetch from origin."
+        return 2
+    fi
+
+    base_commit=$(git merge-base "origin/$base_branch" "origin/${branch}")
+    if [ -z "$base_commit" ]; then
+        output_error "Failed to determine merge base between ${base_branch} and ${branch}."
+        return 3
+    fi
+
+    git diff $base_commit..origin/${branch} | fabric --stream -p c_code_review
+}
+
+ai_commit() {
+    # Check if we have staged changes
+    if git diff --cached --quiet; then
+        output_error "No staged changes found. Use 'git add' to stage your changes first."
+        return 1
+    fi
+
+    # Check if fabric is installed
+    if ! command -v fabric &> /dev/null; then
+        output_error "fabric is not installed or not in PATH"
+        return 2
+    fi
+
+    output_info "Generating commit message from staged changes..."
+
+    # Generate commit message with AI
+    commit_msg="$(echo "Branch: $(git rev-parse --abbrev-ref HEAD)
+    Files changed: $(git diff --cached --name-only | tr '\n' ' ')
+    $(git diff --cached -w)" | fabric -p c_git_commit)"
+
+    # Create a temporary file with the generated message
+    temp_file=$(mktemp)
+    echo "$commit_msg" > "$temp_file"
+
+    # Open the message in the default editor
+    ${EDITOR:-vi} "$temp_file"
+
+    # Read the edited message
+    edited_msg=$(cat "$temp_file")
+    rm -f "$temp_file"
+
+    # Skip if the user provided an empty message
+    if [[ -z "$edited_msg" || "$edited_msg" =~ ^[[:space:]]*$ ]]; then
+        output_warning "Empty commit message. Commit aborted."
+        return 3
+    fi
+
+    output
+    echo "$edited_msg" | git commit --file=-
+    output_success "Commit completed!"
+}
