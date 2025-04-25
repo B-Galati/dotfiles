@@ -192,6 +192,24 @@ ai_code_review() {
     git diff $base_commit..origin/${branch} | fabric --stream -p c_code_review
 }
 
+ai_summary() {
+    branch="HEAD"
+    base_branch="${1:-master}"  # Use provided base branch or default to master
+
+    if ! git fetch origin "$branch" "$base_branch"; then
+        output_error "Failed to fetch from origin."
+        return 2
+    fi
+
+    base_commit=$(git merge-base "origin/$base_branch" "origin/${branch}")
+    if [ -z "$base_commit" ]; then
+        output_error "Failed to determine merge base between ${base_branch} and ${branch}."
+        return 3
+    fi
+
+    git diff $base_commit..origin/${branch} | fabric --stream -p c_merge_request_summary
+}
+
 ai_commit() {
     # Check if we have staged changes
     if git diff --cached --quiet; then
