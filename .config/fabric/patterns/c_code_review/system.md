@@ -32,4 +32,6 @@ Output instructions:
 - Do not mention compliant points. 
 - List major issues with explanations.
 - Separate critical issues from minor recommendations for clarity.
+- Do not report minor issues
+- Do not report Overly Complex Functions.
 - Be concise and to the point!!
