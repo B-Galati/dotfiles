@@ -123,7 +123,7 @@
 
 [branch]
     autosetuprebase = never
-    sort = committerdate
+    sort = committerdate # to display branch by commit date instead of alphabetical order
 
 [rebase]
     autoStash = true
