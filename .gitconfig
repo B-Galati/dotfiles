@@ -6,9 +6,9 @@
     copr  = "!f() { git fetch origin pull/${1}/head:${2} && git co ${2}; }; f"
     chp   = cherry-pick
     rb    = rebase
-    rbm   = rebase origin/master
+    rbm   = rebase origin/main
     rbi   = rebase -i
-    rbiom = rebase -i origin/master
+    rbiom = rebase -i origin/main
     rbc   = rebase --continue
     c     = commit
     ca    = commit --amend
@@ -37,8 +37,8 @@
     dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
 
     # branch management
-    bdelete-force  = !git branch --no-color | grep -v '*' | grep -v master | xargs --no-run-if-empty git branch -D
-    bdelete        = !git branch --no-color --merged | grep -v '*' | grep -v master | xargs --no-run-if-empty git branch -d
+    bdelete-force  = !git branch --no-color | grep -v '*' | grep -v main | xargs --no-run-if-empty git branch -D
+    bdelete        = !git branch --no-color --merged | grep -v '*' | grep -v main | xargs --no-run-if-empty git branch -d
     bm             = branch -m
     recent         = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
     branch-authors = for-each-ref --format='%(authorname) %09 %(if)%(HEAD)%(then)*%(else)%(refname:short)%(end) %09 %(creatordate)' refs/remotes/ --sort=authorname DESC
