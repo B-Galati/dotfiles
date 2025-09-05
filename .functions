@@ -176,7 +176,7 @@ ai_code_review() {
     fi
 
     branch="$1"
-    base_branch="${2:-master}"  # Use provided base branch or default to master
+    base_branch="${2:-main}"  # Use provided base branch or default to main
 
     if ! git fetch origin "$branch" "$base_branch"; then
         output_error "Failed to fetch from origin."
@@ -194,7 +194,7 @@ ai_code_review() {
 
 ai_summary() {
     branch="HEAD"
-    base_branch="${1:-master}"  # Use provided base branch or default to master
+    base_branch="${1:-main}"  # Use provided base branch or default to main
 
     if ! git fetch origin "$branch" "$base_branch"; then
         output_error "Failed to fetch from origin."
