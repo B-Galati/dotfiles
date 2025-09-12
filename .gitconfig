@@ -23,8 +23,6 @@
     r1    = reset HEAD~1
     a     = !git add $(git diff --name-only | fzf)
 
-    squash-all = "!f(){ git reset ${1} && git commit --amend --no-edit -a;};f"
-
     # push
     p   = push
     poh = push -u origin HEAD # like first push
@@ -37,7 +35,7 @@
     dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
 
     # branch management
-    parent = "!git show-branch 2>/dev/null | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #" # source https://stackoverflow.com/a/52025740/4173130
+    parent         = "!git show-branch 2>/dev/null | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | cut -d'[' -f2 | cut -d']' -f1 | sed 's/[\\^~].*//'" # source https://stackoverflow.com/a/52025740/4173130
     bdelete-force  = !git branch --no-color | grep -v '*' | grep -v main | xargs --no-run-if-empty git branch -D
     bdelete        = !git branch --no-color --merged | grep -v '*' | grep -v main | xargs --no-run-if-empty git branch -d
     bm             = branch -m

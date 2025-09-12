@@ -251,3 +251,107 @@ ai_commit() {
     echo "$edited_msg" | git commit --file=-
     output_success "Commit completed!"
 }
+
+# Cancel all running pipelines for a given user
+glab_cancel_user_pipelines() {
+    local auto_confirm=false
+
+    # parse options (-y/--yes)
+    while [[ "$1" == -* ]]; do
+        case "$1" in
+            -y|--yes)
+                auto_confirm=true
+                shift
+                ;;
+            *)
+                output_error "Unknown option: $1"
+                return 1
+                ;;
+        esac
+    done
+
+    local username="$1"
+
+    # Check if username is provided
+    if [ -z "$username" ]; then
+        output_error "Username is required. Usage: cancel_user_pipelines [-y|--yes] <username>"
+        return 1
+    fi
+
+    # Check if required tools are available
+    if ! command -v glab &> /dev/null; then
+        output_error "glab is not installed or not in PATH"
+        return 2
+    fi
+
+    if ! command -v jq &> /dev/null; then
+        output_error "jq is not installed or not in PATH"
+        return 3
+    fi
+
+    output_info "Fetching pipelines for user: $username"
+
+    # Get all pipelines for the user (using a high per-page limit to get all)
+    local pipelines_json
+    pipelines_json=$(glab ci list --username "$username" --per-page 10 --output json 2>/dev/null)
+
+    if [ $? -ne 0 ] || [ -z "$pipelines_json" ]; then
+        output_error "Failed to fetch pipelines for user: $username"
+        return 4
+    fi
+
+    # Filter pipelines with statuses that should be canceled and extract id, status and ref
+    local pipelines
+    pipelines=$(echo "$pipelines_json" | jq -r '.[] | select(.status == "running" or .status == "pending" or .status == "created" or .status == "waiting_for_resource" or .status == "preparing" or .status == "scheduled") | select(.ref != "main") | "\(.id)\t\(.status)\t\(.ref)"')
+
+    if [ -z "$pipelines" ]; then
+        output_success "No matching pipelines found for user: $username"
+        return 0
+    fi
+
+    # Count the pipelines
+    local pipeline_count
+    pipeline_count=$(printf "%s\n" "$pipelines" | wc -l | tr -d ' ')
+
+    output_warning "Found $pipeline_count pipeline(s) for user: $username that will be cancelled"
+
+    # Display list of pipelines with status and ref
+    output_info "List of pipelines:"
+    while IFS=$'\t' read -r pid pstatus pref; do
+        output_info "  ID: $pid  status: $pstatus  ref: $pref"
+    done <<< "$pipelines"
+
+    # Confirm unless auto_confirm was passed
+    if [ "$auto_confirm" != "true" ]; then
+        output "Do you want to cancel all these pipelines? (y/N): "
+        read -r REPLY
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            output_info "Operation cancelled by user"
+            return 0
+        fi
+    else
+        output_info "Auto-confirm enabled (-y/--yes): proceeding to cancel pipelines"
+    fi
+
+    # Cancel each pipeline (use here-string to keep counters in the current shell)
+    local success_count=0
+    local error_count=0
+
+    while IFS=$'\t' read -r pipeline_id status_test ref; do
+        output_info "Cancelling pipeline ID: $pipeline_id (status: $status_test, ref: $ref)"
+        if glab ci cancel pipeline "$pipeline_id" &> /dev/null; then
+            output_success "  ✓ Pipeline $pipeline_id cancelled successfully"
+            success_count=$((success_count + 1))
+        else
+            output_error "  ✗ Failed to cancel pipeline $pipeline_id"
+            error_count=$((error_count + 1))
+        fi
+    done <<< "$pipelines"
+
+    if [ $error_count -eq 0 ]; then
+        output_success "All $pipeline_count pipeline(s) cancelled successfully!"
+    else
+        output_warning "Cancelled $success_count pipeline(s), failed to cancel $error_count pipeline(s)"
+    fi
+}
