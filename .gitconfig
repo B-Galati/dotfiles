@@ -32,10 +32,34 @@
     lg  = log --graph --oneline --abbrev-commit --color --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(dim black)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
     lgs = log --oneline --no-merges --format=format:'- %s'
     lga = !git lg --all
+    lgb  = log --graph --oneline --abbrev-commit --color --decorate --format=format:'%C(bold blue)%h%C(reset)%C(bold yellow)%d%C(reset)'
     dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
 
     # branch management
-    parent         = "!git show-branch 2>/dev/null | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | cut -d'[' -f2 | cut -d']' -f1 | sed 's/[\\^~].*//'" # source https://stackoverflow.com/a/52025740/4173130
+    parent = !"git lgb origin/main^1..HEAD \
+      | sed -E 's/^[* ]+//' \
+      | sed -E 's/^[0-9a-f]{7,40}\\s+//' \
+      | grep -oE '\\([^)]*\\)' \
+      | tr -d '()' \
+      | tr ',' '\\n' \
+      | sed -E 's/^[[:space:]]+|[[:space:]]+$//g' \
+      | grep -vE '^(HEAD|main|master|tags?/|remotes/|pull/|refs/)' \
+      | sed -E 's#^origin/##' \
+      | awk 'NF' \
+      | awk '!seen[$0]++' \
+      | head -n1"
+    parents = !"git lgb origin/main..HEAD \
+      | sed -E 's/^[* ]+//' \
+      | sed -E 's/^[0-9a-f]{7,40}\\s+//' \
+      | grep -oE '\\([^)]*\\)' \
+      | tr -d '()' \
+      | tr ',' '\\n' \
+      | sed -E 's/^[[:space:]]+|[[:space:]]+$//g' \
+      | grep -vE '^(HEAD|main|master|tags?/|remotes/|pull/|refs/)' \
+      | sed -E 's#^origin/##' \
+      | awk 'NF' \
+      | awk '!seen[$0]++' \
+      | paste -sd\" \" -"
     bdelete-force  = !git branch --no-color | grep -v '*' | grep -v main | xargs --no-run-if-empty git branch -D
     bdelete        = !git branch --no-color --merged | grep -v '*' | grep -v main | xargs --no-run-if-empty git branch -d
     bm             = branch -m
