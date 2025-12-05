@@ -17,3 +17,11 @@ normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
 decorations = "none"
 dynamic_padding = true
 startup_mode = "Maximized"
+
+[keyboard]
+bindings = [
+    # Shift+Return sends ESC+Enter (same as Option+Enter) to work in tmux
+    # source: https://www.reddit.com/r/ClaudeAI/comments/1m83if0/you_can_use_shiftenter_to_add_new_lines_in_claude/
+    { key = "Return", mods = "Shift", chars = "\u001b\r" }
+    #{ key = "Return", mods = "Shift", chars = "\n" }
+]
