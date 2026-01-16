@@ -7,7 +7,7 @@ ini_set('log_errors_max_len', '-1');
 
 if ($argc !== 3) {
     $name = basename($argv[0]);
-    echo "Usage: $name [repo] [range]\n";
+    echo "Usage: $name [repo] [range]\n";
     echo "Example:\n";
     echo "\t$name snc/SncRedisBundle 3.1.1...master\n";
 
