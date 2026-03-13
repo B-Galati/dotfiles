@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "includeGitInstructions": false,
+  "permissions": {
+    "allow": [
+      "Bash(make quick-phpstan:*)",
+      "Bash(bin/symfony php bin/phpunit:*)",
+      "Bash(find:*)",
+      "Bash(git show:*)",
+      "Bash(git fetch:*)",
+      "Bash(git commit:*)",
+      "Bash(glab:*)",
+      "mcp__linear-server__get_issue",
+      "Bash(make test-cc:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "mcp__sentry__get_issue_details"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ],
+    "ask": [],
+    "defaultMode": "default"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send --app-name \"Claude Code\" --icon claude -h \"string:sound-name:complete\" \"Done thinking\""
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send --app-name \"Claude Code\" --icon claude -h \"string:sound-name:complete\" \"Permission request\""
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "document-skills@anthropic-agent-skills": true,
+    "example-skills@anthropic-agent-skills": false
+  },
+  "voiceEnabled": true
+}

@@ -2,12 +2,7 @@
 
 set -euo pipefail
 
-ROOT_PATH=$(
-    set -e
-    cd "$(dirname "${BASH_SOURCE[0]}")"
-    pwd
-)
-
+ROOT_PATH=$(set -e && cd "${0%/*}" && pwd)
 cd "${ROOT_PATH}"
 
 source "./.functions"
@@ -60,6 +55,11 @@ doIt () {
     linkFiles "${ROOT_PATH}/.config/starship.toml" "${HOME}/.config/starship.toml"
     linkFiles "${ROOT_PATH}/.config/zellij/config.kdl" "${HOME}/.config/zellij/config.kdl"
     linkFiles "${ROOT_PATH}/.config/fabric/patterns" "${HOME}/.config/fabric/patterns"
+    linkFiles "${ROOT_PATH}/claude/agents" "${HOME}/.claude/agents"
+    linkFiles "${ROOT_PATH}/claude/skills" "${HOME}/.claude/skills"
+    linkFiles "${ROOT_PATH}/claude/settings.json" "${HOME}/.claude/settings.json"
+    linkFiles "${ROOT_PATH}/claude/statusline.sh" "${HOME}/.claude/statusline.sh"
+    linkFiles "${ROOT_PATH}/claude/CLAUDE.md" "${HOME}/.claude/CLAUDE.md"
 
     mkdir -p "${HOME}/.local/bin"
     for script in script/*

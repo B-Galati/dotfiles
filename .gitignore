@@ -6,6 +6,13 @@ script/php-v3
 .config/fabric/patterns/*
 !.config/fabric/patterns/c_*
 
+claude/*
+!claude/agents/
+!claude/skills/
+!claude/CLAUDE.md
+!claude/settings.json
+!claude/statusline.sh
+
 # NPM
 nohup.out
 npm-debug.log
