@@ -82,6 +82,17 @@ if [ -n "$STYLE" ] && [ "$STYLE" != "default" ]; then
   MODE=" [${STYLE}]"
 fi
 
-printf "%s%s | ${CTX_BAR} ${FG}%s%%${RST} %sk/%sk | ${DIM}in:${RST}%s ${DIM}out:${RST}%s | ${DIM}cache:${RST}%s%% | %s\n" \
+# Rate limits (Claude.ai subscription)
+RATE_5H=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+RATE_7D=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
+RATE_STR=""
+if [ -n "$RATE_5H" ]; then
+  RATE_STR+=" | ${DIM}5h:${RST}$(printf '%.0f' "$RATE_5H")%"
+fi
+if [ -n "$RATE_7D" ]; then
+  RATE_STR+=" ${DIM}7d:${RST}$(printf '%.0f' "$RATE_7D")%"
+fi
+
+printf "%s%s | ${CTX_BAR} ${FG}%s%%${RST} %sk/%sk | ${DIM}in:${RST}%s ${DIM}out:${RST}%s | ${DIM}cache:${RST}%s%% | %s%b\n" \
   "$MODEL" "$MODE" "$PCT" "$USED_K" "$CTX_K" \
-  "$LAST_IN_FMT" "$LAST_OUT_FMT" "$CACHE_PCT" "$COST_FMT"
+  "$LAST_IN_FMT" "$LAST_OUT_FMT" "$CACHE_PCT" "$COST_FMT" "$RATE_STR"

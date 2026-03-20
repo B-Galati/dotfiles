@@ -1,57 +1,48 @@
 ---
 name: gitlab-mr
-description: Create GitLab merge requests with intelligent title and description generation from git commits. Use when you want to create an MR and need to generate a clear title following git conventions and auto-populate the description from commit messages. Supports single and multiple commits, with configurable assignee, labels, reviewer, and target branch.
+description: Create GitLab merge requests with intelligent title and description generation from git commits. Supports stacked MRs by targeting the parent branch (falls back to main). Use when you want to create an MR and need to generate a clear title following git conventions and auto-populate the description from commit messages.
 model: haiku
 context: fork
 ---
 
 # GitLab Merge Request
 
-## Overview
+## Context
 
-This skill automates GitLab merge request creation by inspecting git commits on the current branch and generating a clear, conventional title and description. It eliminates manual typing and ensures consistency with your team's conventions.
-
-## How It Works
-
-1. **Inspect commits**: Analyzes all commits on the current branch (compared to target branch)
-2. **Generate title**: Creates a clear title following git commit conventions
-   - Single commit: Uses the commit subject line
-   - Multiple commits: Generates a summary from commit types/subjects
-3. **Generate description**: Focuses on **behavior changes**, not implementation details
-   - Describe what changed from the user's or system's perspective, not how the code was modified
-   - Keep it concise, straight to the point, and easy to understand
-   - Avoid mentioning class names, method names, or internal refactoring details
-4. **Create MR**: Runs `glab mr create` with generated content and your configuration
+- Current branch: !`git branch --show-current`
+- Parent branches: !`git parents`
+- Current glab user: !`glab api user | jq -r .username`
 
 ## Configuration
 
 Default values can be customized when invoking the skill. Current defaults:
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| `--assignee` | `bgalati` | GitLab username to assign the MR |
-| `--labels` | *(dynamic, see below)* | Comma-separated labels |
-| `--reviewer` | `sa_ai_user` | Reviewer username |
-| `--target` | `main` | Target/base branch |
+| Option           | Default                | Description                      |
+|------------------|------------------------|----------------------------------|
+| `--assignee`     | *(current glab user)*  | GitLab username to assign the MR |
+| `--labels`       | *(dynamic, see below)* | Comma-separated labels           |
+| `--reviewer`     | `sa_ai_user`           | Reviewer username                |
+| `--target`       | *(dynamic, see below)* | Target/base branch               |
+
+### Target Branch
+
+Use the **first parent branch** from the Context section. Fall back to `main` if there are no parents. This enables **stacked merge requests**.
 
 ### Labels
 
 The label `ai-generated` is **always** included. Additional labels depend on the current branch name:
 
-| Branch prefix | Labels |
-|---------------|--------|
-| `back-` | `ai-generated,Back,guild-back` |
-| `expand-` | `ai-generated,Back,squad-expand` |
-| *(other)* | `ai-generated` |
+| Branch prefix | Labels                         |
+|---------------|--------------------------------|
+| `back-`       | `ai-generated,Back,guild-back` |
+| `expand-`     | `ai-generated,Back,squad-expand` |
+| *(other)*     | `ai-generated`                 |
 
 If a review app should be deployed, add the label `"deploy::review-app"`.
 
-Determine the branch name with `git branch --show-current` before building the label list.
+## Commit Conventions
 
-### Custom Git Commit Conventions
-
-- Avoid overly verbose descriptions or unnecessary details.
-- The commit message should follow the following structure inspired by Conventional Commit format:
+Commit messages follow a Conventional Commit-inspired format:
 
 ```
 <type>[(<Optional branch name>)]: <title>
@@ -59,19 +50,19 @@ Determine the branch name with `git branch --show-current` before building the l
 <Optional body>
 ```
 
-- Types (required):
-  - `build`: "🏗️ Builds"
-  - `chore`: "🛠️ Chores"
-  - `ci`: "👷 CI"
-  - `docs`: "📚 Documentations"
-  - `feat`: "✨ Features"
-  - `fix`: "🐛 Fixes"
-  - `other`: "❓ Others"
-  - `perf`: "🚀 Performance Improvements"
-  - `refactor`: "📦 Code Refactoring"
-  - `revert`: "🗑️ Reverts"
-  - `style`: "💄 UI"
-  - `test`: "🧪 Tests"
+Types (required):
+- `build`: "🏗️ Builds"
+- `chore`: "🛠️ Chores"
+- `ci`: "👷 CI"
+- `docs`: "📚 Documentations"
+- `feat`: "✨ Features"
+- `fix`: "🐛 Fixes"
+- `other`: "❓ Others"
+- `perf`: "🚀 Performance Improvements"
+- `refactor`: "📦 Code Refactoring"
+- `revert`: "🗑️ Reverts"
+- `style`: "💄 UI"
+- `test`: "🧪 Tests"
 
 Examples:
 - fix(back-1023): resolve N+1 query in WorkflowFormSubmissionGenerator
@@ -79,22 +70,21 @@ Examples:
 - feat(dx-1593): Add feature flag to use new messager
 - chore(dx-1610): Run php using yousign user (2000:2000) in cloud native docker images
 
-
 ## Workflow
 
-### 1. Analyze Commits
+### 1. Get commits for this MR
 
-Get commits between target branch and current branch:
+Get commits between the target branch and HEAD:
 
 ```bash
-git log main..HEAD --pretty=format:"%s%n%b"
+git log TARGET_BRANCH..HEAD --pretty=format:"%s%n%b"
 ```
 
 ### 2. Generate Title and Description
 
 **Title:**
 - Single commit: Use the commit subject line directly
-- Multiple commits: Primary type prefix + "multiple improvements" (e.g., `feat(expand-100): multiple improvements`)
+- Multiple commits: Primary type prefix + summary (e.g., `feat(expand-100): multiple improvements`)
 
 **Description:**
 - Focus on **behavior changes**: what the MR changes from the user's or system's perspective
@@ -107,12 +97,12 @@ git log main..HEAD --pretty=format:"%s%n%b"
 
 ```bash
 glab mr create \
-  -a "<TODO>" \
+  -a "ASSIGNEE" \
   -l "LABELS" \
   --reviewer "sa_ai_user" \
   --remove-source-branch \
   --push \
-  -b "main" \
+  -b "TARGET_BRANCH" \
   -t "TITLE" \
   -d "$(cat <<'EOF'
 DESCRIPTION
@@ -120,8 +110,6 @@ EOF
 )" \
   -y
 ```
-
-Where `LABELS` is resolved from the branch name (see [Labels](#labels)).
 
 ## Requirements
 

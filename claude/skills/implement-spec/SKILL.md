@@ -5,7 +5,7 @@ description: "Implement behaviors from a specification file produced by the loca
 
 # Implement Spec
 
-Sequentially implement each unchecked behavior from a spec file using TDD (via the tdd-coach agent). Mark each behavior as done in the spec file after successful implementation.
+Sequentially implement each unchecked behavior from a spec file using TDD (via the tdd-expert agent). Mark each behavior as done in the spec file after successful implementation.
 
 ## Workflow
 
@@ -32,7 +32,7 @@ Implement all of them sequentially?
 For each unchecked behavior, in order:
 
 1. **Announce** which behavior is being implemented (e.g., "Implementing behavior 2/5: Reject workflow without signers")
-2. **Launch the tdd-coach agent** with a prompt containing:
+2. **Launch the tdd-expert agent** with a prompt containing:
    - The full behavior (title + Given/When/Then)
    - The spec's Context, Goal, and References sections for background
    - Instruction to follow the red-green-refactor cycle

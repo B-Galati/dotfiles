@@ -16,6 +16,7 @@
       "Bash(git show:*)",
       "Bash(git fetch:*)",
       "Bash(git commit:*)",
+      "Bash(git parents:*)",
       "Bash(glab:*)",
       "mcp__linear-server__get_issue",
       "Bash(make test-cc:*)",

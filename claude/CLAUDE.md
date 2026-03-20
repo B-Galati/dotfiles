@@ -1,3 +1,8 @@
+## Testing
+
+- Use the `test-runner` agent to run any test
+- Use the `backend-engineer` agent to write any backend code
+
 ## Plan Mode
 
 - Make the plan extremely concise.
