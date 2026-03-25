@@ -89,6 +89,7 @@ git log TARGET_BRANCH..HEAD --pretty=format:"%s%n%b"
 **Description:**
 - Focus on **behavior changes**: what the MR changes from the user's or system's perspective
 - Do **not** describe implementation details (class names, method names, internal refactoring)
+- Explain **WHY** the change is necessary: SUPER IMPORTANT!
 - Keep it concise and straight to the point
 - Single commit: Rewrite the commit body as a behavior-focused summary (do not copy verbatim if it contains implementation details)
 - Multiple commits: Bullet-point list summarizing the behavior change of each commit

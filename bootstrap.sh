@@ -43,6 +43,7 @@ doIt () {
         -not -name ".idea" \
         -not -name ".local" \
         -not -name ".config" \
+        -not -name ".claude" \
         -not -name "*.swp" \
         -not -path "*.gitmodules*" \
         -not -path "*.git/*")
