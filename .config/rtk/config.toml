@@ -1,0 +1,13 @@
+#[tracking]
+#database_path = "/path/to/custom.db"  # default: ~/.local/share/rtk/history.db
+
+#[hooks]
+#exclude_commands = ["curl", "playwright"]  # skip rewrite for these
+
+#[tee]
+#enabled = true          # save raw output on failure (default: true)
+#mode = "failures"       # "failures", "always", or "never"
+#max_files = 20          # rotation limit
+
+[telemetry]
+enabled = false

@@ -8,6 +8,7 @@ script/php-v3
 
 claude/*
 !claude/agents/
+!claude/hooks/
 !claude/skills/
 !claude/CLAUDE.md
 !claude/settings.json
