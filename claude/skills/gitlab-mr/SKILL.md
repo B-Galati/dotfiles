@@ -70,6 +70,16 @@ Examples:
 - feat(dx-1593): Add feature flag to use new messager
 - chore(dx-1610): Run php using yousign user (2000:2000) in cloud native docker images
 
+## Merge Request Templates
+
+Before generating the description, check for templates in `.gitlab/merge_request_templates/`:
+
+1. **No templates directory or empty** → skip, generate description as usual
+2. **Only `Default.md` exists** → use it automatically (no prompt needed)
+3. **Multiple templates** → ask the user which one to use
+
+When a template is used, **append** it before the generated description (separated by a blank line). Do not replace the generated description — the template is additional content.
+
 ## Workflow
 
 ### 1. Get commits for this MR

@@ -47,15 +47,14 @@ For each task, in order:
    - The issue's description, implementation hints, and references for background
    - Instruction to follow the red-green-refactor cycle
    - **Explicit instruction to use `AskUserQuestion`** to interact with the user at each phase boundary (after RED to ask for architectural guidance, before moving to SUPER GREEN). The agent MUST NOT run the full TDD cycle autonomously — it must pause and get user input between phases. Any interaction with the user must be forwarded via `AskUserQuestion`.
-4. **Wait** for the agent to complete
-5. **Mark the task as completed** via `TaskUpdate`
-6. **Move to the next task**
+4. **Mark the task as completed** via `TaskUpdate`
+5. **Move to the next task**
 
 ### 4. Update the Linear issue
 
 Only after ALL tasks are successfully implemented:
 
-1. **Update the issue status** to "Done" using `mcp__claude_ai_Linear__save_issue`
+1. **Check off the acceptance criteria** in the Linear issue
 2. **Report** to the user:
    - How many tasks were implemented
    - Any that were skipped or already done

@@ -67,6 +67,8 @@ A concise description of this vertical slice. Describe the end-to-end behavior, 
 
 ## Acceptance criteria
 
+Focus on observable behaviors, not implementation details.
+
 - [ ] Criterion 1
 - [ ] Criterion 2
 - [ ] Criterion 3

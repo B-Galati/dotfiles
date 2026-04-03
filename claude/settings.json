@@ -1,7 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "MAX_CONSECUTIVE_AUTOCOMPACT_FAILURES": 3
   },
   "attribution": {
     "commit": "",
@@ -10,6 +11,8 @@
   "includeGitInstructions": false,
   "permissions": {
     "allow": [
+      "Read",
+      "Grep",
       "Bash(make quick-phpstan:*)",
       "Bash(bin/symfony php bin/phpunit:*)",
       "Bash(find:*)",
@@ -31,7 +34,7 @@
       "Read(./secrets/**)"
     ],
     "ask": [],
-    "defaultMode": "default"
+    "defaultMode": "plan"
   },
   "hooks": {
     "Stop": [

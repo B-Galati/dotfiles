@@ -1,7 +1,8 @@
-## Testing
+## Agents’ specificities
 
-- Use the `test-runner` agent to run any test
-- Use the `backend-engineer` agent to write any backend code
+- Use the `backend-engineer` agent to write any backend code or tests
+- Any question from the `backend-engineer` agent should be forwarded to me.
+- Any question from the `tdd-expert` agent should be forwarded to me.
 
 ## Plan Mode
 
@@ -39,3 +40,7 @@
 - **Simplicity First**: Make every change as simple as possible. Impact minimal code.
 - **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
 - **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
+
+## Notion Integration
+
+- When working with Notion documents, always fetch and read existing content carefully before proposing new content. Never assume a section or database is empty without verifying.

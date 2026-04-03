@@ -28,6 +28,8 @@ Based on the above changes, create a single git commit.
 <Optional body>
 ```
 
+- Only include the branch name in the commit type if it contains a number (e.g., a ticket/issue number like `back-1023`, `dx-1593`). If the branch name has no number, omit it.
+
 - Types (required):
   - `build`: "🏗️ Builds"
   - `chore`: "🛠️ Chores"
