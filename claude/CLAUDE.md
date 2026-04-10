@@ -1,8 +1,6 @@
 ## Agents’ specificities
 
-- Use the `backend-engineer` agent to write any backend code or tests
-- Any question from the `backend-engineer` agent should be forwarded to me.
-- Any question from the `tdd-expert` agent should be forwarded to me.
+- Any question from the `software-engineer` agent should be forwarded to me.
 
 ## Plan Mode
 

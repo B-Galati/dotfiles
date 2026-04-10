@@ -5,7 +5,7 @@ description: "Implement a Linear issue by breaking its acceptance criteria into 
 
 # Implement Linear Issue
 
-Implement a Linear issue by breaking its acceptance criteria into internal tasks, implementing each sequentially using TDD (via the tdd-expert agent), and updating the Linear issue only after all tasks are complete.
+Implement a Linear issue by breaking its acceptance criteria into internal tasks, implementing each sequentially using TDD, and updating the Linear issue only after all tasks are complete.
 
 ## Workflow
 
@@ -42,11 +42,11 @@ For each task, in order:
 
 1. **Mark the task as in_progress** via `TaskUpdate`
 2. **Announce** which task is being implemented (e.g., "Implementing task 2/3: Return 422 with error details for invalid email")
-3. **Launch the tdd-expert agent** with a prompt containing:
+3. **Launch the software-engineer agent** with a prompt containing:
    - The full task description
    - The issue's description, implementation hints, and references for background
    - Instruction to follow the red-green-refactor cycle
-   - **Explicit instruction to use `AskUserQuestion`** to interact with the user at each phase boundary (after RED to ask for architectural guidance, before moving to SUPER GREEN). The agent MUST NOT run the full TDD cycle autonomously — it must pause and get user input between phases. Any interaction with the user must be forwarded via `AskUserQuestion`.
+   - The agent MUST NOT run the full TDD cycle autonomously — it must pause and get user input between phases.
 4. **Mark the task as completed** via `TaskUpdate`
 5. **Move to the next task**
 
