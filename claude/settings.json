@@ -36,7 +36,6 @@
     "ask": [],
     "defaultMode": "plan"
   },
-  "model": "opusplan",
   "hooks": {
     "Stop": [
       {
@@ -78,5 +77,6 @@
     "document-skills@anthropic-agent-skills": true,
     "example-skills@anthropic-agent-skills": false
   },
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
