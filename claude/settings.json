@@ -63,7 +63,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/hooks/rtk-rewrite.sh"
+            "command": "rtk hook claude"
           }
         ]
       }
@@ -77,6 +77,7 @@
     "document-skills@anthropic-agent-skills": true,
     "example-skills@anthropic-agent-skills": false
   },
+  "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "theme": "light"
 }

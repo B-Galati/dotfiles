@@ -1,13 +1,45 @@
-#[tracking]
-#database_path = "/path/to/custom.db"  # default: ~/.local/share/rtk/history.db
+[tracking]
+enabled = true
+history_days = 90
 
-#[hooks]
-#exclude_commands = ["curl", "playwright"]  # skip rewrite for these
+[display]
+colors = true
+emoji = true
+max_width = 120
 
-#[tee]
-#enabled = true          # save raw output on failure (default: true)
-#mode = "failures"       # "failures", "always", or "never"
-#max_files = 20          # rotation limit
+[filters]
+ignore_dirs = [
+    ".git",
+    "node_modules",
+    "target",
+    "__pycache__",
+    ".venv",
+    "vendor",
+]
+ignore_files = [
+    "*.lock",
+    "*.min.js",
+    "*.min.css",
+]
+
+[tee]
+enabled = true
+mode = "failures"
+max_files = 20
+max_file_size = 1048576
 
 [telemetry]
 enabled = false
+consent_given = false
+consent_date = "2026-05-12T08:25:55.797305842+00:00"
+
+[hooks]
+exclude_commands = []
+transparent_prefixes = []
+
+[limits]
+grep_max_results = 200
+grep_max_per_file = 25
+status_max_files = 15
+status_max_untracked = 10
+passthrough_max_chars = 2000
