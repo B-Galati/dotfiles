@@ -1,7 +1,7 @@
 ---
 name: gitlab-mr
 description: Create GitLab merge requests with intelligent title and description generation from git commits. Supports stacked MRs by targeting the parent branch (falls back to main). Use when you want to create an MR and need to generate a clear title following git conventions and auto-populate the description from commit messages.
-model: haiku
+model: sonnet
 context: fork
 ---
 
