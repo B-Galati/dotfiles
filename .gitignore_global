@@ -3,3 +3,5 @@
 github-changelog-http-cache/
 .envrc
 .claude/
+
+**/.claude/settings.local.json

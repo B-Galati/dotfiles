@@ -1,139 +1,106 @@
 ---
 name: tdd
-description: TDD workflow - Write a failing test, then implement Super Green
+description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.
 ---
 
-# Claude Code TDD: Red → Super Green
+# Test-Driven Development
 
-You are executing a **TDD** workflow - a two-step process that leverages AI synthesis capabilities to produce clean, production-ready code without an intermediate "quick and dirty" phase.
+## Philosophy
 
-We will implement the behavior iteratively, one step at a time.
-The user will guide you for each step.
-Your role is to write failing tests and implement Super Green.
-DO NOT try to implement all behavior at once.
-DO NOT try to plan to write any code until STEP 2 is Reached.
-Start by writing failing tests.
+**Core principle**: Tests should verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't.
 
-## The Claude Code TDD Philosophy
+**Good tests** are integration-style: they exercise real code paths through public APIs. They describe _what_ the system does, not _how_ it does it. A good test reads like a specification - "user can checkout with valid cart" tells you exactly what capability exists. These tests survive refactors because they don't care about internal structure.
 
-### Claude Code TDD (2 Steps)
-```
-Red → Super Green
-```
-AI synthesizes clean, architectural code directly - no crappy code phase needed.
+**Bad tests** are coupled to implementation. They mock internal collaborators, test private methods, or verify through external means (like querying a database directly instead of using the interface). The warning sign: your test breaks when you refactor, but behavior hasn't changed. If you rename an internal function and tests fail, those tests were testing implementation, not behavior.
 
-## Key Concepts
+## Anti-Pattern: Horizontal Slices
 
-### What is TRUE RED?
+**DO NOT write all tests first, then all implementation.** This is "horizontal slicing" - treating RED as "write all tests" and GREEN as "write all code."
 
-**Compilation errors are NOT RED** - they are part of design discovery ("Programming by Wishful Thinking"). When writing tests, you design the API you wish existed.
+This produces **crap tests**:
 
-**TRUE RED = Behavior failure** once the wished-for API compiles and runs.
+- Tests written in bulk test _imagined_ behavior, not _actual_ behavior
+- You end up testing the _shape_ of things (data structures, function signatures) rather than user-facing behavior
+- Tests become insensitive to real changes - they pass when behavior breaks, fail when behavior is fine
+- You outrun your headlights, committing to test structure before understanding the implementation
 
-- ❌ NOT RED: `Class 'App\Domain\UseCase\Foo\Input' not found`
-- ❌ NOT RED: `Method Bar::doSomething() does not exist`
-- ✅ TRUE RED: `Failed asserting that 'actual' equals 'expected'`
-- ✅ TRUE RED: `ExpectedException was not thrown`
-
-### What is Super Green?
-
-**Super Green** means implementing clean, production-ready code that:
-- Follows all architectural patterns
-- Requires no subsequent refactoring phase
-
----
-
-## Workflow Execution
-
-### STEP 1: RED Phase - Write the Failing Test
-
-**Input Required:** $ARGUMENTS
-
-1. **Analyze the Specification**
-   - Understand what behavior is being specified
-   - Identify the bounded context and use case
-   - Determine test type: FunctionalTestCase vs UnitTestCase
-
-2. **Ask Where to Write the Test**
-   - Search for existing test files related to the behavior under test
-   - Present the user with options:
-     - Add the new test method to an existing test file (suggest the most relevant one(s))
-     - Create a new test file (suggest a path following project conventions)
-   - Wait for the user's answer before writing any test code
-
-3. **Design the API via Programming by Wishful Thinking**
-   - Write the test as if the ideal API already exists
-   - Use expressive names that reveal intent
-   - Follow Given/When/Then structure with comments
-   - Use builders for test data setup
-   - Use data providers for multiple scenarios when appropriate
-
-4. **Write the Test File**
-   - Use correct namespace mirroring source structure
-   - Extend appropriate base class
-
-5. **Reach TRUE RED**
-   - Run the test
-   - If compilation error → Create minimal stub classes to make it compile
-   - Keep creating stubs until the test RUNS but FAILS on behavior
-   - **Report when TRUE RED is achieved**
-
-**RED Phase Report Format:**
-```
-══════════════════════════════════════════════════════════════
-🔴 RED PHASE COMPLETE
-══════════════════════════════════════════════════════════════
-
-📝 Test File: <path>
-🎯 Behavior Under Test: <description>
-❌ Failure Message: <actual test failure>
-
-🏗️ Stub Files Created (compilation only):
-   - <list of minimal stubs>
-
-══════════════════════════════════════════════════════════════
-```
-
-### ARCHITECTURAL GUIDANCE MOMENT
-
-After RED, pause and ask:
+**Correct approach**: Vertical slices via tracer bullets. One test → one implementation → repeat. Each test responds to what you learned from the previous cycle. Because you just wrote the code, you know exactly what behavior matters and how to verify it.
 
 ```
-🏛️ ARCHITECTURAL GUIDANCE (Optional)
+WRONG (horizontal):
+  RED:   test1, test2, test3, test4, test5
+  GREEN: impl1, impl2, impl3, impl4, impl5
 
-Before I implement Super Green, do you want to provide any architectural guidance?
-
-Examples:
-- "Use a Strategy pattern for the different validation rules"
-- "Implement this as an event-driven saga"
-- "Avoid any state mutation - use pure functions"
-- "Use the existing PaymentGateway interface"
-
-Options:
-1. Proceed with standard architectural approach
-2. Provide guidance: [your input]
+RIGHT (vertical):
+  RED→GREEN: test1→impl1
+  RED→GREEN: test2→impl2
+  RED→GREEN: test3→impl3
+  ...
 ```
 
-### STEP 2: SUPER GREEN Phase - Implement Production-Ready Code
+## Workflow
 
-With architectural guidance you know, implement the complete solution.
+### 1. Planning
 
-Then:
-1. **Run Tests to Verify**
-2. **Run Stack analysis tools**
+When exploring the codebase, read `CONTEXT.md` (if it exists) so that test names and interface vocabulary match the project's domain language, and respect ADRs in the area you're touching.
 
-**SUPER GREEN Phase Report Format:**
+Before writing any code:
+
+- [ ] Confirm with user what interface changes are needed
+- [ ] Confirm with user which behaviors to test (prioritize)
+- [ ] Identify opportunities for deep modules (small interface, deep implementation)
+- [ ] List the behaviors to test (not implementation steps)
+- [ ] Get user approval on the plan
+
+Ask: "What should the public interface look like? Which behaviors are most important to test?"
+
+**You can't test everything.** Confirm with the user exactly which behaviors matter most. Focus testing effort on critical paths and complex logic, not every possible edge case.
+
+### 2. Tracer Bullet
+
+Write ONE test that confirms ONE thing about the system:
+
 ```
-══════════════════════════════════════════════════════════════
-🟢 SUPER GREEN COMPLETE
-══════════════════════════════════════════════════════════════
+RED:   Write test for first behavior → test fails
+GREEN: Write minimal code to pass → test passes
+```
 
-📝 Test: <test file>
-✅ Status: PASSING
+This is your tracer bullet - proves the path works end-to-end.
 
-🏗️ Architectural Decisions:
-   - <key decision 1>
-   - <key decision 2>
+### 3. Incremental Loop
 
-══════════════════════════════════════════════════════════════
+For each remaining behavior:
+
+```
+RED:   Write next test → fails
+GREEN: Minimal code to pass → passes
+```
+
+Rules:
+
+- One test at a time
+- Only enough code to pass current test
+- Don't anticipate future tests
+- Keep tests focused on observable behavior
+
+### 4. Refactor
+
+After all tests pass, look for refactor candidates:
+
+- [ ] Extract duplication
+- [ ] Deepen modules (move complexity behind simple interfaces)
+- [ ] Apply SOLID principles where natural
+- [ ] Consider what new code reveals about existing code
+- [ ] Run tests after each refactor step
+
+**Never refactor while RED.** Get to GREEN first.
+
+## Checklist Per Cycle
+
+```
+[ ] Test describes behavior, not implementation
+[ ] Test uses public interface only
+[ ] Test would survive internal refactor
+[ ] Code is minimal for this test
+[ ] No speculative features added
 ```

@@ -1,7 +1,3 @@
-## Agents’ specificities
-
-- Any question from the `software-engineer` agent should be forwarded to me.
-
 ## Plan Mode
 
 - Make the plan extremely concise.
@@ -38,6 +34,7 @@
 - **Simplicity First**: Make every change as simple as possible. Impact minimal code.
 - **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
 - **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
+- **TDD**: Follow TDD development style for any change.
 
 ## Notion Integration
 

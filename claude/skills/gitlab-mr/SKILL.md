@@ -122,6 +122,10 @@ EOF
   -y
 ```
 
+### 4. Display results
+
+Display the MR link along with a short summary.
+
 ## Requirements
 
 - Git repository with commits ready to merge

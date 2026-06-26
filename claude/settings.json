@@ -13,6 +13,7 @@
     "allow": [
       "Read",
       "Grep",
+      "WebFetch",
       "Bash(make quick-phpstan:*)",
       "Bash(bin/symfony php bin/phpunit:*)",
       "Bash(find:*)",
@@ -21,21 +22,22 @@
       "Bash(git commit:*)",
       "Bash(git parents:*)",
       "Bash(glab:*)",
-      "mcp__linear-server__get_issue",
       "Bash(make test-cc:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
       "Bash(mkdir:*)",
-      "mcp__sentry__get_issue_details"
+      "Read(./.env.example)",
+      "Edit(./.env.example)",
+      "Write(./.env.example)"
     ],
     "deny": [
-      "Read(./.env)",
       "Read(./.env.*)",
       "Read(./secrets/**)"
     ],
     "ask": [],
     "defaultMode": "plan"
   },
+  "model": "opus[1m]",
   "hooks": {
     "Stop": [
       {
@@ -77,7 +79,9 @@
     "document-skills@anthropic-agent-skills": true,
     "example-skills@anthropic-agent-skills": false
   },
+  "skipWorkflowUsageWarning": true,
+  "theme": "light",
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "theme": "light"
+  "tui": "fullscreen"
 }
