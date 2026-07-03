@@ -37,7 +37,7 @@
     "ask": [],
     "defaultMode": "plan"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "Stop": [
       {
@@ -79,9 +79,10 @@
     "document-skills@anthropic-agent-skills": true,
     "example-skills@anthropic-agent-skills": false
   },
+  "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,
   "theme": "light",
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "tui": "fullscreen"
+  "effortLevel": "high"
 }
