@@ -66,6 +66,7 @@ bindkey "^[OF" end-of-line
 
 [ -f ~/z/z.sh ] && . ~/z/z.sh
 if command -v starship &> /dev/null; then eval "$(starship init zsh)"; fi
+if command -v mise &> /dev/null; then eval "$(mise activate zsh)"; fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

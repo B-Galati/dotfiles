@@ -27,8 +27,7 @@
       "Bash(ls:*)",
       "Bash(mkdir:*)",
       "Read(./.env.example)",
-      "Edit(./.env.example)",
-      "Write(./.env.example)"
+      "Edit(./.env.example)"
     ],
     "deny": [
       "Read(./.env.*)",
@@ -37,7 +36,7 @@
     "ask": [],
     "defaultMode": "plan"
   },
-  "model": "claude-fable-5[1m]",
+  "model": "opus[1m]",
   "hooks": {
     "Stop": [
       {
@@ -79,10 +78,11 @@
     "document-skills@anthropic-agent-skills": true,
     "example-skills@anthropic-agent-skills": false
   },
+  "effortLevel": "high",
   "tui": "fullscreen",
+  "autoMemoryEnabled": false,
   "skipWorkflowUsageWarning": true,
   "theme": "light",
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true,
-  "effortLevel": "high"
+  "voiceEnabled": true
 }

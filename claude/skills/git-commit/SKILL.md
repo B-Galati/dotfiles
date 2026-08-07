@@ -3,6 +3,7 @@ allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
 description: Create a git commit
 model: sonnet
 context: fork
+disable-model-invocation: true
 ---
 
 ## Context
