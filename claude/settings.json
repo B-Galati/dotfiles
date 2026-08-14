@@ -34,9 +34,8 @@
       "Read(./secrets/**)"
     ],
     "ask": [],
-    "defaultMode": "plan"
+    "defaultMode": "auto"
   },
-  "model": "opus[1m]",
   "hooks": {
     "Stop": [
       {
@@ -83,6 +82,7 @@
   "autoMemoryEnabled": false,
   "skipWorkflowUsageWarning": true,
   "theme": "light",
+  "verbose": false,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true
 }

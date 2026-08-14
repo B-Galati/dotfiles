@@ -1,7 +1,19 @@
+## Global behavior
+- Always post MR comments in French.
+- MR comments must be simple straightforward, polite and kind. 
+
 ## Plan Mode
 
 - Make the plan extremely concise.
 - At the end of each plan, give me a list of unresolved questions to answer, if any.
+
+## Core Principles
+
+- **Conciseness**: Use simple words and simple sentences and your reasoning must be short by default.
+- **Simplicity First**: Make every change as simple as possible. Impact minimal code.
+- **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
+- **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
+- **TDD**: Follow TDD development style for any change.
 
 ## Workflow Orchestration
 
@@ -28,13 +40,6 @@
 - If a fix feels hacky: "Knowing everything I know now, implement the elegant solution"
 - Skip this for simple, obvious fixes – don't over-engineer
 - Challenge your own work before presenting it
-
-## Core Principles
-
-- **Simplicity First**: Make every change as simple as possible. Impact minimal code.
-- **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
-- **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
-- **TDD**: Follow TDD development style for any change.
 
 ## Notion Integration
 
