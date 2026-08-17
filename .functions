@@ -366,58 +366,24 @@ review() {
         return 1
     fi
 
-    if ! command -v glab &> /dev/null; then
-        output_error "glab is not installed or not in PATH"
-        return 2
-    fi
-
     if ! command -v claude &> /dev/null; then
         output_error "claude is not installed or not in PATH"
-        return 3
-    fi
-
-    if ! command -v jq &> /dev/null; then
-        output_error "jq is not installed or not in PATH"
-        return 6
-    fi
-
-    if ! git rev-parse --git-dir &> /dev/null; then
-        output_error "Not inside a git repository"
-        return 4
+        return 2
     fi
 
     # Accept a full MR url or a bare MR id
     local mr_id="${mr##*/}"
     if ! [[ "$mr_id" =~ ^[0-9]+$ ]]; then
         output_error "Could not extract an MR id from: $mr"
-        return 5
+        return 3
     fi
 
-    # Fetch both MR branches upfront: this validates the MR and surfaces
-    # network/auth errors before Claude starts, and makes the checkout below local.
-    local mr_json mr_branch target_branch
-    mr_json="$(glab mr view "$mr_id" --output json 2>/dev/null)"
-    mr_branch="$(printf '%s' "$mr_json" | jq -r '.source_branch // empty')"
-    target_branch="$(printf '%s' "$mr_json" | jq -r '.target_branch // empty')"
-    if [ -z "$mr_branch" ] || [ -z "$target_branch" ]; then
-        output_error "Could not resolve the branches of MR !${mr_id}"
-        return 7
-    fi
+    output_info "Starting Claude review of MR !${mr_id} in worktree pr-${mr_id}"
 
-    output_info "Fetching branch ${mr_branch} of MR !${mr_id}"
-    if ! git fetch --quiet origin "$mr_branch"; then
-        output_error "Failed to fetch branch ${mr_branch}"
-        return 8
-    fi
-
-    output_info "Starting Claude review of MR !${mr_id} in worktree mr-${mr_id}"
-
-    # Keep glab's default branch name (the MR source branch, as on GitLab).
-    # Everything after `#` is a shell comment (keep it on a single line) but Claude
-    # still reads it as the prompt.
-    local prompt="!glab mr checkout ${mr_id}"
-    prompt+=" # and then run '/code-review' on the diff of this GitLab MR !${mr_id} (${mr_branch} -> ${target_branch}),"
+    # `claude --worktree` understands MR references: it fetches
+    # merge-requests/<id>/head from origin and checks it out in the worktree.
+    local prompt="Run '/code-review' on the diff of GitLab MR !${mr_id},"
     prompt+=" not on the working tree, which is clean."
     prompt+=" Get that diff with 'glab mr diff ${mr_id} --raw' ('glab mr view ${mr_id}' for the description)"
-    claude --worktree "mr-${mr_id}" "$prompt"
+    claude --worktree "#${mr_id}" "$prompt"
 }
