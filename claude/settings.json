@@ -84,5 +84,6 @@
   "theme": "light",
   "verbose": false,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "outputStyle": "Concise"
 }

@@ -1,6 +1,9 @@
 ## Global behavior
 - Always post MR comments in French.
-- MR comments must be simple straightforward, polite and kind. 
+- MR comments must be simple straightforward, polite and kind.
+- In code: prefer early return to improve code readability 
+- When adding tests: try to re-use existing DataProvider instead of adding a new test method
+- Apply outside-in test strategy, enforce decoupling with as many implementation details as possible
 
 ## Plan Mode
 
