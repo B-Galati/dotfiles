@@ -383,7 +383,7 @@ review() {
     # `claude --worktree` understands MR references: it fetches
     # merge-requests/<id>/head from origin and checks it out in the worktree.
     local prompt="Run '/code-review' on the diff of GitLab MR !${mr_id},"
-    prompt+=" not on the working tree, which is clean."
-    prompt+=" Get that diff with 'glab mr diff ${mr_id} --raw' ('glab mr view ${mr_id}' for the description)"
-    claude --worktree "#${mr_id}" "$prompt"
+    prompt+=" the current working tree has checked out the branch of the MR with another name."
+    prompt+=" you can read the diff with 'glab mr diff ${mr_id} --raw' ('glab mr view ${mr_id}' for the description)"
+    claude --model opus[1m] --permission-mode auto -w "#${mr_id}" "$prompt"
 }

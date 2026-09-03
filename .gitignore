@@ -11,7 +11,6 @@ claude/*
 !claude/hooks/
 !claude/skills/
 !claude/CLAUDE.md
-!claude/settings.json
 !claude/statusline.sh
 
 # NPM
