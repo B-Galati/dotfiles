@@ -47,3 +47,25 @@
 ## Notion Integration
 
 - When working with Notion documents, always fetch and read existing content carefully before proposing new content. Never assume a section or database is empty without verifying.
+
+## When to add a comment
+
+Only when the WHY is non-obvious to a future reader:
+- A hidden constraint or external requirement
+- A subtle invariant that is easy to break
+- A workaround for a specific bug or third-party limitation
+- Behavior that would surprise an experienced developer
+
+You can add a comment to describe what the code does BUT only when it's complex.
+The should be self-describing as much as possible.
+
+## Slack messages
+
+**Be as concise and synthetic as possible — always.** Long walls of text with every detail don't get read: they demand too much reading effort. Apply this the moment I ask for anything to be sent to Slack, without being reminded.
+
+- Lead with the outcome. If it fits in 3-5 lines, it must be 3-5 lines.
+- Keep only what the reader has to act on or decide. Cut the how, the iterations, the tests run, the internals — I'll ask if I want them.
+- Prefer short bullets over paragraphs; no section stacking on a status update.
+- Detail belongs in the linked ticket / MR / dashboard, not in the message. Link it instead of inlining it.
+- Adapt to the channel: a steering/stakeholder channel wants status + next step, not the technical narrative.
+- When drafting for validation, propose the short version first — don't hand over a long one expecting me to trim it.
