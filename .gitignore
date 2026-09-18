@@ -10,6 +10,7 @@ claude/*
 !claude/agents/
 !claude/hooks/
 !claude/skills/
+claude/skills/synced
 !claude/CLAUDE.md
 !claude/statusline.sh
 
