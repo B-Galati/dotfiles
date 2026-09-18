@@ -1,7 +1,6 @@
 ---
 name: daily-recap
-description: Reconstitue un résumé de ce que l'utilisateur a fait sur une journée donnée en croisant ses emails (Gmail), Slack, Linear, GitLab et son agenda (Google Calendar). Utilise ce skill dès que l'utilisateur demande un récap/résumé de sa journée, de sa semaine ou d'un jour précis — par exemple "résume ce que j'ai fait hier", "fais-moi un point sur ma journée", "qu'est-ce que j'ai fait lundi ?", "recap de la semaine" — même s'il ne mentionne aucune source explicitement.
-disable-model-invocation: true
+description: Récapitule l'activité de l'utilisateur lui-même sur une période écoulée, en croisant Gmail, Slack, Linear, GitLab et Google Calendar, et la clôt par une liste de liens copiable dans ses notes. Déclencher sur "résume ce que j'ai fait hier", "qu'est-ce que j'ai fait lundi", "récap de la semaine", ou une demande de mettre à jour ses notes de journée — même sans source nommée. Porte sur la personne, jamais sur l'état du système ; alertes, incidents ou santé de la prod relèvent de daily-alert-review ou sre-run.
 ---
 
 # Daily recap

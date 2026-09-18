@@ -69,3 +69,10 @@ The should be self-describing as much as possible.
 - Detail belongs in the linked ticket / MR / dashboard, not in the message. Link it instead of inlining it.
 - Adapt to the channel: a steering/stakeholder channel wants status + next step, not the technical narrative.
 - When drafting for validation, propose the short version first — don't hand over a long one expecting me to trim it.
+
+## Branches Linear
+
+- Nom de branche = le `gitBranchName` de Linear, tel quel (ex. `back-2209`).
+  Le récupérer via `get_issue`, ne pas le reconstruire.
+- Prime sur la convention de nommage de la skill `youtrust-product:gitlab-mr`.
+- Si la branche existe déjà (local ou `origin/`), checkout dessus.
