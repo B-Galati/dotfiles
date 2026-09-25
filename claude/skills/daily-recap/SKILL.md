@@ -82,7 +82,8 @@ Format exact, une ligne par élément :
 Règles :
 
 - **Un libellé court, repris de la source** — titre de MR, de ticket, de réunion, sujet du fil — pas une phrase reformulée et **pas de traduction** : le libellé doit rester reconnaissable dans l'outil d'origine.
-- **Un lien par trace utile, pas un par élément** : un même sujet a souvent vécu dans plusieurs outils, et les cumuler est le cas normal — `- Retry policy on the worker pool [[linear](…)] [[MR](…)] [[slack](…)]`. Chaque lien entre doubles crochets, séparés par une espace, label en minuscules d'après la source (`slack`, `notion`, `linear`, `mail`, `agenda`, `doc`) sauf `MR` en majuscules.
+- **Un lien par trace utile, pas un par élément** : un même sujet a souvent vécu dans plusieurs outils, et les cumuler est le cas normal — `- Retry policy on the worker pool [[linear](…)] [[MR](…)] [[slack](…)]`. Chaque lien entre doubles crochets, séparés par une espace, label en minuscules d'après la source (`slack`, `notion`, `linear`, `mail`, `doc`) sauf `MR` en majuscules.
+- **Pas de lien pour un événement d'agenda** : ça n'est pas utile
 - **Toujours le même ordre** de gauche à droite — `linear` → `MR` → `slack`/`mail` → `notion`/`doc`/`agenda` — pour que la liste se relise en colonne. Le premier lien est le point d'entrée : le ticket s'il existe, sinon la MR, sinon le fil.
 - **Ne cumuler que ce qui ajoute quelque chose** : trois fils Slack sur le même chantier se réduisent au plus décisif, et deux ou trois liens par ligne suffisent presque toujours. Au-delà de quatre, c'est que la ligne mélange deux sujets — la couper en deux.
 - **Jamais d'URL inventée ou reconstruite de mémoire.** N'utiliser que les URLs remontées par les subagents. Si un élément n'en a pas, le lister sans lien plutôt que de le supprimer ou de deviner.

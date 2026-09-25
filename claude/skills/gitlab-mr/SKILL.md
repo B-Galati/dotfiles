@@ -1,7 +1,6 @@
 ---
 name: gitlab-mr
 description: Create GitLab merge requests with intelligent title and description generation from git commits. Supports stacked MRs by targeting the parent branch (falls back to main). Use when you want to create an MR and need to generate a clear title following git conventions and auto-populate the description from commit messages.
-disable-model-invocation: true
 ---
 
 # GitLab Merge Request
@@ -35,6 +34,7 @@ The label `ai-generated` is **always** included. Additional labels depend on the
 |---------------|--------------------------------|
 | `back-`       | `ai-generated,Back,guild-back` |
 | `expand-`     | `ai-generated,Back,squad-expand` |
+| `core-`       | `ai-generated,Back,squad-app-core` |
 | *(other)*     | `ai-generated`                 |
 
 If a review app should be deployed, add the label `"deploy::review-app"`.
@@ -96,12 +96,15 @@ git log TARGET_BRANCH..HEAD --pretty=format:"%s%n%b"
 - Multiple commits: Primary type prefix + summary (e.g., `feat(expand-100): multiple improvements`)
 
 **Description:**
+- NO implementation details!!
 - Focus on **behavior changes**: what the MR changes from the user's or system's perspective
-- NO implementation details
 - Explain **WHY** the change is necessary: SUPER IMPORTANT!
 - Keep it concise and straight to the point
+- Add a section with all the checks performed (excluding automated tests)
 - Single commit: Rewrite the commit body as a behavior-focused summary (do not copy verbatim if it contains implementation details)
 - Multiple commits: Bullet-point list summarizing the behavior change of each commit
+- (optional) Manual actions to perform, as a checkable task list (`- [ ] action`) so reviewers can tick each item in GitLab
+- (optional) Links of the issue, stacked MR and DD
 
 ### 3. Create MR
 

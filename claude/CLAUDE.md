@@ -4,6 +4,7 @@
 - In code: prefer early return to improve code readability 
 - When adding tests: try to re-use existing DataProvider instead of adding a new test method
 - Apply outside-in test strategy, enforce decoupling with as many implementation details as possible
+- Tests should be decoupled from production code as much as possible.
 
 ## Plan Mode
 
