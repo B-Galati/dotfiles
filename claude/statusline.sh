@@ -95,10 +95,13 @@ pct_color() {
   fi
 }
 
-# Gradient progress bar (█ → ▓ → ▒) over a dim ░ track, into BAR.
+# Gradient progress bar (█ → ▓ → ▒) over a dim ░ track, into BAR. An optional
+# $3 reference percentage draws a ┃ tick at the position the bar would be at
+# had the window been spent evenly: fill short of it means under budget, fill
+# past it means ahead of pace.
 BAR=""
 render_bar() {
-  local pct=$1 width=${2:-15} filled rem empty part solid track
+  local pct=$1 width=${2:-15} ref=$3 filled rem empty part solid track
   filled=$((pct * width / 100))
   rem=$((pct * width % 100))
 
@@ -109,15 +112,38 @@ render_bar() {
   elif ((rem >= 33)); then part="▒"
   fi
 
-  empty=$((width - filled))
-  [ -n "$part" ] && empty=$((empty - 1))
-  ((empty < 0)) && empty=0
-
-  printf -v solid '%*s' "$filled" ''; solid=${solid// /█}
-  printf -v track '%*s' "$empty" ''; track=${track// /░}
-
   pct_color "$pct"
-  BAR="${CFG}${solid}${part}${RST}${CDIM}${track}${RST}"
+
+  if [ -z "$ref" ]; then
+    empty=$((width - filled))
+    [ -n "$part" ] && empty=$((empty - 1))
+    ((empty < 0)) && empty=0
+
+    printf -v solid '%*s' "$filled" ''; solid=${solid// /█}
+    printf -v track '%*s' "$empty" ''; track=${track// /░}
+    BAR="${CFG}${solid}${part}${RST}${CDIM}${track}${RST}"
+    return
+  fi
+
+  # With a reference point, render cell by cell so the tick can be spliced in
+  # at its own position instead of just two concatenated blocks.
+  local tick i ch col out=""
+  to_num "$ref"; tick=$((NUM * width / 100))
+  ((tick >= width)) && tick=$((width - 1))
+  ((tick < 0)) && tick=0
+  for ((i = 0; i < width; i++)); do
+    if ((i == tick)); then
+      ch="┃"; col=$'\033[1m'
+    elif ((i < filled)); then
+      ch="█"; col=$CFG
+    elif ((i == filled)) && [ -n "$part" ]; then
+      ch=$part; col=$CFG
+    else
+      ch="░"; col=$CDIM
+    fi
+    out+="${col}${ch}${RST}"
+  done
+  BAR=$out
 }
 
 # Current branch, into BRANCH. Read straight from .git rather than shelling out
@@ -231,12 +257,30 @@ if [ -n "$DIRLBL" ]; then
   [ -n "$BRANCH" ] && LINE1+=" ${DIM}⎇${RST} ${BRANCH}"
 fi
 
+# How far into a fixed-length window "now" falls, as a percentage, into EXP.
+# The window is [resets_at - duration, resets_at]; this is the fill level an
+# evenly-paced spend would be at right now, used as the bar's reference tick.
+EXP=""
+calc_expected() { # $1 resets_at epoch, $2 window duration in seconds
+  local resets duration elapsed
+  EXP=""
+  to_num "$1"
+  ((NUM)) || return
+  resets=$NUM
+  duration=$2
+  elapsed=$((EPOCHSECONDS - (resets - duration)))
+  ((elapsed < 0)) && elapsed=0
+  ((elapsed > duration)) && elapsed=duration
+  EXP=$((elapsed * 100 / duration))
+}
+
 # Line 2: effort | rate limits. Each segment reads <bar> <pct>% <label> (reset <in>)
-rate_segment() { # $1 percentage, $2 epoch, $3 label
+rate_segment() { # $1 percentage, $2 epoch, $3 label, $4 window duration seconds
   local pct
   to_num "$1"; pct=$NUM
   ((pct > 100)) && pct=100
-  render_bar "$pct"
+  calc_expected "$2" "$4"
+  render_bar "$pct" 15 "$EXP"
   [ -n "$RATE_STR" ] && RATE_STR+=" | "
   RATE_STR+="${BAR} ${pct}% ${DIM}${3}${RST}"
   fmt_countdown "$2"
@@ -244,8 +288,8 @@ rate_segment() { # $1 percentage, $2 epoch, $3 label
 }
 
 RATE_STR=""
-[ -n "$RATE_5H" ] && rate_segment "$RATE_5H" "$RATE_5H_RESET" "5h"
-[ -n "$RATE_7D" ] && rate_segment "$RATE_7D" "$RATE_7D_RESET" "7d"
+[ -n "$RATE_5H" ] && rate_segment "$RATE_5H" "$RATE_5H_RESET" "5h" 18000
+[ -n "$RATE_7D" ] && rate_segment "$RATE_7D" "$RATE_7D_RESET" "7d" 604800
 
 printf '%s\n' "$LINE1"
 if [ -n "$RATE_STR" ]; then
