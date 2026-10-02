@@ -71,3 +71,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 if command -v mise &> /dev/null; then eval "$(mise activate zsh)"; fi
+
+# opencode
+export PATH=/home/bgalati/.opencode/bin:$PATH
