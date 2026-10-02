@@ -41,6 +41,7 @@ doIt () {
         -not -name ".gitconfig_private" \
         -not -name ".git" \
         -not -name ".idea" \
+        -not -name ".claude" \
         -not -name ".local" \
         -not -name ".config" \
         -not -name "*.swp" \
