@@ -34,7 +34,7 @@ consent_given = false
 consent_date = "2026-05-12T08:25:55.797305842+00:00"
 
 [hooks]
-exclude_commands = []
+exclude_commands = ["git"]
 transparent_prefixes = []
 
 [limits]
