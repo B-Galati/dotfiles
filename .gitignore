@@ -1,11 +1,6 @@
 script/tmuxExtra
 script/php-v3
 
-.config/fabric/*
-!.config/fabric/patterns
-.config/fabric/patterns/*
-!.config/fabric/patterns/c_*
-
 claude/*
 !claude/agents/
 !claude/hooks/
