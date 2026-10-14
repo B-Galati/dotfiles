@@ -295,12 +295,30 @@ review() {
         return 3
     fi
 
+    local mr_json source target
+    mr_json=$(glab mr view "$mr_id" -F json)
+    source=$(jq -r '.source_branch // empty' <<< "$mr_json")
+    target=$(jq -r '.target_branch // empty' <<< "$mr_json")
+    if [ -z "$source" ] || [ -z "$target" ]; then
+        output_error "Could not read the source and target branches of MR !${mr_id}"
+        return 4
+    fi
+
+    # A stale origin/<target> makes the three-dot diff include target commits
+    # that are not part of the MR.
+    if ! git fetch --quiet origin "$target"; then
+        output_error "Could not fetch origin/${target}"
+        return 5
+    fi
+
     output_info "Starting Claude review of MR !${mr_id} in worktree pr-${mr_id}"
 
     # `claude --worktree` understands MR references: it fetches
     # merge-requests/<id>/head from origin and checks it out in the worktree.
-    local prompt="Run '/code-review high' on the diff of GitLab MR !${mr_id},"
-    prompt+=" the current working tree has checked out the branch of the MR with another name."
-    prompt+=" you can read the diff with 'glab mr diff ${mr_id} --raw' ('glab mr view ${mr_id}' for the description)"
-    claude --model opus[1m] --permission-mode auto -w "#${mr_id}" "$prompt"
+    local prompt="Review GitLab MR !${mr_id}: its head is checked out in this worktree, its target branch is origin/${target}."
+    prompt+=" Read 'glab mr view ${mr_id}' for the intent."
+    prompt+=" Run '/code-review high origin/${target}'."
+    prompt+=" Then challenge each finding against the code in this worktree: confirm it only with a concrete failing scenario, otherwise mark it a false positive."
+    prompt+=" Done when every finding has a verdict. Output: confirmed findings (file:line, scenario), then false positives with a one-line reason."
+    claude --model opus[1m] --permission-mode auto -w "#${mr_id}" -n "review ${source} ${mr_id}" "$prompt"
 }
