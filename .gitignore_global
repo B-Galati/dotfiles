@@ -5,3 +5,4 @@ github-changelog-http-cache/
 .claude/
 
 **/.claude/settings.local.json
+.scratch/
