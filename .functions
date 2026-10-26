@@ -322,3 +322,24 @@ review() {
     prompt+=" Done when every finding has a verdict. Output: confirmed findings (file:line, scenario), then false positives with a one-line reason."
     claude --model opus[1m] --permission-mode auto -w "#${mr_id}" -n "review ${source} ${mr_id}" "$prompt"
 }
+
+# Open a new tmux window split side by side, the left pane running `claude <args>`
+# Usage: tclaude [claude args...]
+tclaude() {
+    if [ -z "$TMUX" ]; then
+        output_error "tclaude must be run inside a tmux session"
+        return 1
+    fi
+
+    local cmd="claude"
+    if [ $# -gt 0 ]; then
+        cmd+=" $(printf '%q ' "$@")"
+    fi
+
+    local claude_pane
+    claude_pane=$(tmux new-window -c "$PWD" -P -F '#{pane_id}')
+    tmux split-window -h -c "$PWD" -t "$claude_pane"
+    tmux send-keys -l -t "$claude_pane" "$cmd"
+    tmux send-keys -t "$claude_pane" Enter
+    tmux select-pane -t "$claude_pane"
+}
