@@ -336,17 +336,33 @@ tclaude() {
         cmd+=" $(printf '%q ' "$@")"
     fi
 
-    local arg follow_worktree=false
-    for arg in "$@"; do
-        case "$arg" in
+    local session_name="" follow_worktree=false
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            -n|--name|-r|--resume)
+                # --resume without a value opens claude's session picker
+                if [[ -n "$2" && "$2" != -* ]]; then
+                    session_name="$2"
+                    shift
+                fi
+                ;;
+            --name=*|--resume=*)
+                session_name="${1#*=}"
+                ;;
             -w|--worktree|--worktree=*)
                 follow_worktree=true
                 ;;
         esac
+        shift
     done
 
+    local window_args=(-c "$PWD" -P -F '#{pane_id}')
+    if [ -n "$session_name" ]; then
+        window_args+=(-n "[${PWD##*/}] ${session_name}")
+    fi
+
     local claude_pane shell_pane
-    claude_pane=$(tmux new-window -c "$PWD" -P -F '#{pane_id}')
+    claude_pane=$(tmux new-window "${window_args[@]}")
     shell_pane=$(tmux split-window -h -c "$PWD" -t "$claude_pane" -P -F '#{pane_id}')
     tmux send-keys -l -t "$claude_pane" "$cmd"
     tmux send-keys -t "$claude_pane" Enter
