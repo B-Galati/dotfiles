@@ -336,10 +336,37 @@ tclaude() {
         cmd+=" $(printf '%q ' "$@")"
     fi
 
-    local claude_pane
+    local claude_pane shell_pane
     claude_pane=$(tmux new-window -c "$PWD" -P -F '#{pane_id}')
-    tmux split-window -h -c "$PWD" -t "$claude_pane"
+    shell_pane=$(tmux split-window -h -c "$PWD" -t "$claude_pane" -P -F '#{pane_id}')
     tmux send-keys -l -t "$claude_pane" "$cmd"
     tmux send-keys -t "$claude_pane" Enter
     tmux select-pane -t "$claude_pane"
+
+    local arg
+    for arg in "$@"; do
+        case "$arg" in
+            -w|--worktree|--worktree=*)
+                tmux send-keys -t "$shell_pane" "tmux_follow_worktree ${claude_pane}" Enter
+                return
+                ;;
+        esac
+    done
+}
+
+# Wait until a tmux pane's foreground process enters a Claude worktree, then cd there.
+# tmux reads the cwd of the pane's foreground process, so it catches `claude -w` moving into its worktree.
+# Usage: tmux_follow_worktree <pane-id>
+tmux_follow_worktree() {
+    local pane="$1" pane_path
+    output_info "Waiting for pane ${pane} to enter a Claude worktree (Ctrl-C to abort)"
+    while pane_path=$(tmux display-message -p -t "$pane" '#{pane_current_path}' 2> /dev/null); do
+        if [[ "$pane_path" == */.claude/worktrees/* ]]; then
+            cd "$pane_path"
+            return
+        fi
+        sleep 1
+    done
+    output_error "Pane ${pane} is gone"
+    return 1
 }
