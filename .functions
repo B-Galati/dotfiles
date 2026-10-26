@@ -336,6 +336,15 @@ tclaude() {
         cmd+=" $(printf '%q ' "$@")"
     fi
 
+    local arg follow_worktree=false
+    for arg in "$@"; do
+        case "$arg" in
+            -w|--worktree|--worktree=*)
+                follow_worktree=true
+                ;;
+        esac
+    done
+
     local claude_pane shell_pane
     claude_pane=$(tmux new-window -c "$PWD" -P -F '#{pane_id}')
     shell_pane=$(tmux split-window -h -c "$PWD" -t "$claude_pane" -P -F '#{pane_id}')
@@ -343,15 +352,10 @@ tclaude() {
     tmux send-keys -t "$claude_pane" Enter
     tmux select-pane -t "$claude_pane"
 
-    local arg
-    for arg in "$@"; do
-        case "$arg" in
-            -w|--worktree|--worktree=*)
-                tmux send-keys -t "$shell_pane" "tmux_follow_worktree ${claude_pane}" Enter
-                return
-                ;;
-        esac
-    done
+    if [ "$follow_worktree" != "true" ]; then
+        return
+    fi
+    tmux send-keys -t "$shell_pane" "tmux_follow_worktree ${claude_pane}" Enter
 }
 
 # Wait until a tmux pane's foreground process enters a Claude worktree, then cd there.
