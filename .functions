@@ -379,9 +379,11 @@ tclaude() {
         window_args+=(-n "[${source_dir}] ${window_name}")
     fi
 
-    local claude_pane shell_pane
+    local claude_pane shell_pane start_path
     claude_pane=$(tmux new-window "${window_args[@]}")
     shell_pane=$(tmux split-window -h -c "$PWD" -t "$claude_pane" -P -F '#{pane_id}')
+    # Read before claude starts: tmux reports the physical path, which may differ from $PWD
+    start_path=$(tmux display-message -p -t "$claude_pane" '#{pane_current_path}')
     tmux send-keys -l -t "$claude_pane" "$cmd"
     tmux send-keys -t "$claude_pane" Enter
     tmux select-pane -t "$claude_pane"
@@ -389,17 +391,18 @@ tclaude() {
     if [ "$follow_worktree" != "true" ]; then
         return
     fi
-    tmux send-keys -t "$shell_pane" "tmux_follow_worktree ${claude_pane}" Enter
+    tmux send-keys -l -t "$shell_pane" "tmux_follow_worktree ${claude_pane} $(printf '%q' "$start_path")"
+    tmux send-keys -t "$shell_pane" Enter
 }
 
-# Wait until a tmux pane's foreground process enters a Claude worktree, then cd there.
+# Wait until a tmux pane's foreground process enters another Claude worktree than the start path, then cd there.
 # tmux reads the cwd of the pane's foreground process, so it catches `claude -w` moving into its worktree.
-# Usage: tmux_follow_worktree <pane-id>
+# Usage: tmux_follow_worktree <pane-id> [start-path]
 tmux_follow_worktree() {
-    local pane="$1" pane_path
+    local pane="$1" start_path="${2:-$(pwd -P)}" pane_path
     output_info "Waiting for pane ${pane} to enter a Claude worktree (Ctrl-C to abort)"
     while pane_path=$(tmux display-message -p -t "$pane" '#{pane_current_path}' 2> /dev/null); do
-        if [[ "$pane_path" == */.claude/worktrees/* ]]; then
+        if [[ "$pane_path" == */.claude/worktrees/* && "$pane_path" != "$start_path" ]]; then
             cd "$pane_path"
             return
         fi
