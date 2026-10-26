@@ -369,9 +369,14 @@ tclaude() {
         window_name="⎇${window_name:+ $window_name}"
     fi
 
+    local source_dir="${PWD##*/}"
+    if [ "$source_dir" = "v3-kalos" ]; then
+        source_dir="v3"
+    fi
+
     local window_args=(-c "$PWD" -P -F '#{pane_id}')
     if [ -n "$window_name" ]; then
-        window_args+=(-n "[${PWD##*/}] ${window_name}")
+        window_args+=(-n "[${source_dir}] ${window_name}")
     fi
 
     local claude_pane shell_pane
