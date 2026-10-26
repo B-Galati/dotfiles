@@ -336,7 +336,7 @@ tclaude() {
         cmd+=" $(printf '%q ' "$@")"
     fi
 
-    local session_name="" follow_worktree=false
+    local session_name="" worktree_name="" follow_worktree=false
     while [ $# -gt 0 ]; do
         case "$1" in
             -n|--name|-r|--resume)
@@ -349,16 +349,29 @@ tclaude() {
             --name=*|--resume=*)
                 session_name="${1#*=}"
                 ;;
-            -w|--worktree|--worktree=*)
+            -w|--worktree)
                 follow_worktree=true
+                if [[ -n "$2" && "$2" != -* ]]; then
+                    worktree_name="$2"
+                    shift
+                fi
+                ;;
+            --worktree=*)
+                follow_worktree=true
+                worktree_name="${1#*=}"
                 ;;
         esac
         shift
     done
 
+    local window_name="${session_name:-$worktree_name}"
+    if [ "$follow_worktree" = "true" ]; then
+        window_name="⎇${window_name:+ $window_name}"
+    fi
+
     local window_args=(-c "$PWD" -P -F '#{pane_id}')
-    if [ -n "$session_name" ]; then
-        window_args+=(-n "[${PWD##*/}] ${session_name}")
+    if [ -n "$window_name" ]; then
+        window_args+=(-n "[${PWD##*/}] ${window_name}")
     fi
 
     local claude_pane shell_pane
