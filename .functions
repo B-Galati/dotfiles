@@ -317,7 +317,7 @@ review() {
     # merge-requests/<id>/head from origin and checks it out in the worktree.
     local prompt="Review GitLab MR !${mr_id}: its head is checked out in this worktree, its target branch is origin/${target}."
     prompt+=" Read 'glab mr view ${mr_id}' for the intent."
-    prompt+=" Run '/code-review high origin/${target}...HEAD'."
+    prompt+=" Run '/code-review high origin/${target}...HEAD --max-findings all'."
     prompt+=" Then challenge each finding against the code in this worktree: confirm it only with a concrete failing scenario, otherwise mark it a false positive."
     prompt+=" Done when every finding has a verdict. Output: confirmed findings (file:line, scenario), then false positives with a one-line reason."
     claude --model opus[1m] --permission-mode auto -w "#${mr_id}" -n "review ${source} ${mr_id}" "$prompt"
