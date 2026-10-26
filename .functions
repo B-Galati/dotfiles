@@ -364,25 +364,32 @@ tclaude() {
         shift
     done
 
+    # From a worktree, start in the main repository: --git-common-dir points to its .git
+    local work_dir="$PWD" common_dir
+    common_dir=$(git rev-parse --path-format=absolute --git-common-dir 2> /dev/null)
+    if [ -n "$common_dir" ] && [ "$(git rev-parse --absolute-git-dir)" != "$common_dir" ]; then
+        work_dir="${common_dir%/.git}"
+    fi
+
     local window_name="${session_name:-$worktree_name}"
     if [ "$follow_worktree" = "true" ]; then
         window_name="⎇${window_name:+ $window_name}"
     fi
 
-    local source_dir="${PWD##*/}"
+    local source_dir="${work_dir##*/}"
     if [ "$source_dir" = "v3-kalos" ]; then
         source_dir="v3"
     fi
 
-    local window_args=(-c "$PWD" -P -F '#{pane_id}')
+    local window_args=(-c "$work_dir" -P -F '#{pane_id}')
     if [ -n "$window_name" ]; then
         window_args+=(-n "[${source_dir}] ${window_name}")
     fi
 
     local claude_pane shell_pane start_path
     claude_pane=$(tmux new-window "${window_args[@]}")
-    shell_pane=$(tmux split-window -h -c "$PWD" -t "$claude_pane" -P -F '#{pane_id}')
-    # Read before claude starts: tmux reports the physical path, which may differ from $PWD
+    shell_pane=$(tmux split-window -h -c "$work_dir" -t "$claude_pane" -P -F '#{pane_id}')
+    # Read before claude starts: tmux reports the physical path, which may differ from $work_dir
     start_path=$(tmux display-message -p -t "$claude_pane" '#{pane_current_path}')
     tmux send-keys -l -t "$claude_pane" "$cmd"
     tmux send-keys -t "$claude_pane" Enter
