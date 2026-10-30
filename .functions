@@ -320,7 +320,7 @@ review() {
     prompt+=" Run '/code-review high origin/${target}...HEAD --max-findings all'."
     prompt+=" Then challenge each finding against the code in this worktree: confirm it only with a concrete failing scenario, otherwise mark it a false positive."
     prompt+=" Done when every finding has a verdict. Output: confirmed findings (file:line, scenario), then false positives with a one-line reason."
-    claude --model opus[1m] --permission-mode auto -w "#${mr_id}" -n "review ${source} ${mr_id}" "$prompt"
+    tclaude --model opus[1m] --permission-mode auto -w "#${mr_id}" -n "review ${source} ${mr_id}" "$prompt"
 }
 
 # Open a new tmux window split side by side, the left pane running `claude <args>`
